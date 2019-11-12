@@ -12,7 +12,10 @@ namespace telledge.Models
         public String name { get; set;}
         public String mailaddress { get; set; }
         public String skypeid { get; set; }
-        public int passworddigest { get; set; }
+        public int passwordDigest { get; set; }
+        public bool is2FA { get; set; }
+        public int point { get; set; }
+        public DateTime inactiveDate {get; set;}
 
 
         public ActionResult Index()
