@@ -21,7 +21,12 @@ namespace telledge
                 "{controller}/{action}/{id}", // パラメーター付きの URL
                 new { controller = "Home", action = "Index", id = UrlParameter.Optional } // パラメーターの既定値
             );
-
+            routes.MapRoute(
+                "Student",
+                "student/{controller}/{action}/{id}",
+                new { id = UrlParameter.Optional },
+                namespaces: new[] { "telledge.Controllers.Student" }
+            );
         }
 
         protected void Application_Start()
