@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace telledge.Models
 {
-    public class Teacher
+    public class Teacher : Controller
     {
         //講師ID
         public int id { set; get; }
