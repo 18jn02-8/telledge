@@ -9,6 +9,7 @@ namespace telledge
 {
     // メモ: IIS6 または IIS7 のクラシック モードの詳細については、
     // http://go.microsoft.com/?LinkId=9394801 を参照してください
+    // https://stackoverflow.com/questions/19777880/controller-with-same-name-as-an-area-asp-net-mvc4 を参考
 
     public class MvcApplication : System.Web.HttpApplication
     {
