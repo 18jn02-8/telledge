@@ -11,7 +11,7 @@ namespace telledge.Models
         public int id {get;}
         public String name { get; set;}
         public String mailaddress { get; set; }
-        public String Skypeid { get; set; }
+        public String skypeId { get; set; }
         public int passwordDigest { get; set; }
         public bool is2FA { get; set; }
         public int point { get; set; }
