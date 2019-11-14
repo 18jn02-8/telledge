@@ -13,7 +13,8 @@ namespace telledge.Tests.Models
         [TestMethod]
         public void SetPassWordTest()
         {
-            Teacher.setPassword("PassWord");
+            Teacher teacher = new Teacher();
+            teacher.setPassword("password");
         }
     }
 }
