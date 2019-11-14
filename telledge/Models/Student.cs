@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -38,25 +37,37 @@ namespace telledge.Models
         //生徒退会日
         public DateTime inactiveDate {get; set;}
 
-        public static Student login(String mailaddress, String password)
+        public static Student login(String mailaddress, String password) 
         {
+            Student retStudent = null;
             string cstr = ConfigurationManager.ConnectionStrings["Db"].ConnectionString;
             using (SqlConnection connection = new SqlConnection(cstr))
             {
-                Student s = new Student();
-                string sql = "select * from Student";
+                string sql = "select * from Student where id = @id";
+                SqlDataAdapter adapter = new SqlDataAdapter(sql,connection);
+                adapter.SelectCommand.Parameters.Add("@id",SqlDbType.VarChar);
+                DataSet ds = new DataSet();
+                int cnt = adapter.Fill(ds,"Student");
+                if(cnt != 0){
+                    retStudent = new Student();
+                    DataTable dt = ds.Tables["Student"];
+                    String test= dt.Rows[0]["Student"];
+                    retStudent.passwordDigest = Byte.Parse();
+                    retStudent.inactiveDate = (DateTime)dt.Rows[0]["inactiveDate"];
+                    
+                }
                 byte[] input = Encoding.ASCII.GetBytes(password);
                 SHA256 sha = new SHA256CryptoServiceProvider();
                 byte[] hash_sha256 = sha.ComputeHash(input);
                 if ( == hash_sha256)
                 {
-                    Session["Student"] = Student;
+                    HttpContext.Current.Session["Student"] = hash_sha256;
                 }
                 else
                 {
                     return null;
                 }
-                if (inactiveDate != null)
+                if (retStudent.inactiveDate != null)
                 {
                     return null;
                 }
