@@ -55,7 +55,7 @@ namespace telledge.Models
         }
         public static Teacher currentUser()
         {
-            return (Teacher)HttpContext.Current.Session["Student"];
+            return (Teacher)HttpContext.Current.Session["Teacher"];
         }
     }
 }
