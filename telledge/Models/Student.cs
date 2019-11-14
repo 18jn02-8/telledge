@@ -73,6 +73,11 @@ namespace telledge.Models
                 }
             }
         }
+        /*public static  Student currentUser()
+        {
+            Student s = new Student();
+           (Student)Session["Student"];
+        }*/
     }
 }
  //引数に渡されたメールアドレスを持つ生徒のパスワードダイジェストと引数の平文パスワードをSHA256でダイジェスト化したものを比較し、
