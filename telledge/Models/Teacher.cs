@@ -26,7 +26,7 @@ namespace telledge.Models
         //講師自己紹介
         public String intoroduction { set; get; }
         //講師のパスワードのダイジェスト
-        public byte[] passwordDigest { set; get; }
+        public static byte[] passwordDigest { set; get; }
         //講師メールアドレス
         public String mailaddress { set; get; }
         //講師保有ポイント
@@ -40,7 +40,7 @@ namespace telledge.Models
         //講師退会日
         public DateTime inactivedate { set; get; }
 
-        public void setPassWord(String passwordRow)
+        public static void setPassword(String passwordRow)
         {
             byte[] input = Encoding.ASCII.GetBytes(passwordRow);
             SHA256 sha = new SHA256CryptoServiceProvider();

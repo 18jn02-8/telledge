@@ -8,11 +8,12 @@ using telledge.Models;  //プロジェクトのテスト対象
 namespace telledge.Tests.Models
 {
     [TestClass]
-    public class Teacher
+    public class TeacherTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void SetPassWordTest()
         {
+            Teacher.setPassword("PassWord");
         }
     }
 }
