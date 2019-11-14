@@ -43,6 +43,10 @@ namespace telledge.Models
             string cstr = ConfigurationManager.ConnectionStrings["Db"].ConnectionString;
             using (SqlConnection connection = new SqlConnection(cstr))
             {
+                if (retStudent.inactiveDate != null)
+                {
+                    return null;
+                }
                 string sql = "select * from Student where id = @id";
                 SqlDataAdapter adapter = new SqlDataAdapter(sql,connection);
                 adapter.SelectCommand.Parameters.Add("@id",SqlDbType.VarChar);
@@ -51,23 +55,19 @@ namespace telledge.Models
                 if(cnt != 0){
                     retStudent = new Student();
                     DataTable dt = ds.Tables["Student"];
-                    String test= dt.Rows[0]["Student"];
-                    retStudent.passwordDigest = Byte.Parse();
-                    retStudent.inactiveDate = (DateTime)dt.Rows[0]["inactiveDate"];
-                    
+                    retStudent.passwordDigest = (Byte[])dt.Rows[0]["passwordDigest"];
+                    //retStudent.inactiveDate = (DateTime)dt.Rows[0]["inactiveDate"]; 
                 }
+
                 byte[] input = Encoding.ASCII.GetBytes(password);
                 SHA256 sha = new SHA256CryptoServiceProvider();
                 byte[] hash_sha256 = sha.ComputeHash(input);
-                if ( == hash_sha256)
+                if (retStudent.passwordDigest == hash_sha256)
                 {
-                    HttpContext.Current.Session["Student"] = hash_sha256;
+                    HttpContext.Current.Session["Student"] = retStudent;
+                    return retStudent;
                 }
                 else
-                {
-                    return null;
-                }
-                if (retStudent.inactiveDate != null)
                 {
                     return null;
                 }
