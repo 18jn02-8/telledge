@@ -80,6 +80,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="Views\Rooms\index.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
