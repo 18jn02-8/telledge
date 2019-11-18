@@ -1,4 +1,4 @@
-﻿###################
+###################
 # compiled source #
 ###################
 *.com
@@ -79,5 +79,18 @@ _[Ss]cripts
 ## addition settings 
 .DS_Store 
 /.vs/telledge/xs/ 
-/telledge/Web.config 
-/telledge.Tests/App.config
+#/telledge/Web.config 
+#/telledge.Tests/App.config
+
+
+.vs/telledge_experiment/DesignTimeBuild/.dtbcache
+
+*.lock
+
+.vs/telledge_experiment/v16/Server/sqlite3/
+
+telledge/.vs/telledge/v16/Server/sqlite3/
+
+telledge/.vs/telledge/v15/Server/sqlite3/
+
+.vs/telledge/v15/Server/sqlite3/
