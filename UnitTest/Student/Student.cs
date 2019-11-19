@@ -1,6 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using telledge.Models;  //プロジェクトのテスト対象
-
+using telledge.Models;
 
 namespace telledge.Tests.Models
 {
@@ -45,6 +44,30 @@ namespace telledge.Tests.Models
         {
             Student student = new Student();
             student.setPassword("password");
+        }
+        [TestMethod]
+        public void TestCreate()
+        {
+            Student student = new Student();
+            student.name = "Test";
+            student.mailaddress = "OARO@jec.ac.jp";
+            student.is2FA = false;
+            student.point = 0;
+            student.profileImage = "Gafeokfwaoefa.pix";
+            student.skypeId = "Test@skypeid";
+            bool test = student.create();
+            Assert.IsTrue(test);
+        }
+        public void TestCreateFailed()
+        {
+            Student student = new Student();
+            student.name = "Test";
+            student.mailaddress = "OARO@jec.ac.jp";
+            student.is2FA = false;
+            student.point = 0;
+            student.profileImage = "Gafeokfwaoefa.pix";
+            bool test = student.create();
+            Assert.IsFalse(test);
         }
     }
 }

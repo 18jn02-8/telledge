@@ -95,17 +95,17 @@ namespace telledge.Models
         {
             bool check = false;
             string cstr = ConfigurationManager.ConnectionStrings["Db"].ConnectionString;
-            using (var connection = new SqlConnection(connectionString))
+            using (var connection = new SqlConnection(cstr))
             using (var command = connection.CreateCommand())
             {
-                String sql = "Insert Into Student Values (@name,@mailaddress,@profileImage,@skypeId,@passwordDigest,@is2FA,@point)";
-                command.Parameter.Add(new SqlParameter("@name",name));
-                command.Parameter.Add(new SqlParameter("@mailaddress", mailaddress));
-                command.Parameter.Add(new SqlParameter("@profileImage", profileImage));
-                command.Parameter.Add(new SqlParameter("@skypeId", skypeId));
-                command.Parameter.Add(new SqlParameter("@passwordDigest", passwordDigest));
-                command.Parameter.Add(new SqlParameter("@is2FA", is2FA));
-                command.Parameter.Add(new SqlParameter("@point", point));
+                command.CommandText = "Insert Into Student Values (@name,@mailaddress,@profileImage,@skypeId,@passwordDigest,@is2FA,@point)";
+                command.Parameters.Add(new SqlParameter("@name",name));
+                command.Parameters.Add(new SqlParameter("@mailaddress", mailaddress));
+                command.Parameters.Add(new SqlParameter("@profileImage", profileImage));
+                command.Parameters.Add(new SqlParameter("@skypeId", skypeId));
+                command.Parameters.Add(new SqlParameter("@passwordDigest", passwordDigest));
+                command.Parameters.Add(new SqlParameter("@is2FA", is2FA));
+                command.Parameters.Add(new SqlParameter("@point", point));
                 int cnt = command.ExecuteNonQuery();
                 if(cnt == 0)
                 {
