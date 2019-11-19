@@ -31,7 +31,7 @@ namespace telledge.Models
         //ポイント
         public int point { get; set; }
         //生徒退会日
-        public DateTime inactiveDate { get; set; }
+        public DateTime? inactiveDate {get; set;}
 
         public bool logout()
         {
@@ -98,7 +98,8 @@ namespace telledge.Models
             using (var connection = new SqlConnection(cstr))
             using (var command = connection.CreateCommand())
             {
-                command.CommandText = "Insert Into Student Values (@name,@mailaddress,@profileImage,@skypeId,@passwordDigest,@is2FA,@point)";
+                connection.Open();
+                command.CommandText = "Insert Into Student ( name , mailaddress , profileImage , skypeId , passwordDigest , is2FA , point ) Values ( @name , @mailaddress , @profileImage , @skypeId , @passwordDigest , @is2FA , @point ) ";
                 command.Parameters.Add(new SqlParameter("@name",name));
                 command.Parameters.Add(new SqlParameter("@mailaddress", mailaddress));
                 command.Parameters.Add(new SqlParameter("@profileImage", profileImage));
@@ -106,6 +107,7 @@ namespace telledge.Models
                 command.Parameters.Add(new SqlParameter("@passwordDigest", passwordDigest));
                 command.Parameters.Add(new SqlParameter("@is2FA", is2FA));
                 command.Parameters.Add(new SqlParameter("@point", point));
+                command.Parameters.Add(new SqlParameter("@inactiveDate", inactiveDate));
                 int cnt = command.ExecuteNonQuery();
                 if(cnt == 0)
                 {
