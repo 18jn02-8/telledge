@@ -84,5 +84,35 @@ namespace telledge.Models
             }
             return check;
         }
+        public Room[] getRooms()
+        {
+            Room retRooms = null;
+            string cstr = ConfigurationManager.ConnectionStrings["Db"].ConnectionString;
+            using (SqlConnection connection = new SqlConnection(cstr))
+            {
+                string sql = "select * from Room where id = @id";
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
+                adapter.SelectCommand.Parameters.Add("@id", SqlDbType.VarChar);
+                DataSet ds = new DataSet();
+                int cnt = adapter.Fill(ds, "Room");
+                while (cnt != 0)
+                {
+                    //retStudent = new Student();
+                    DataTable dt = ds.Tables["Room"];
+                    retRooms.id = dt.Rows[0]["id"];
+                    retRooms.teacherId = dt.Rows[0]["teacherId"];
+                    retRooms.roomName = dt.Rows[0]["roomName"];
+                    retRooms.tag = dt.Rows[0]["tag"];
+                    retRooms.description = dt.Rows[0]["description"];
+                    retRooms.worstTime = dt.Rows[0]["worstTime"];
+                    retRooms.extensionTime = dt.Rows[0]["extensionTime"];
+                    retRooms.point = dt.Rows[0]["point"];
+                    retRooms.beginTime = dt.Rows[0]["beginTime"];
+                    retRooms.endTime = dt.Rows[0]["endTime"];
+                    return retRooms;
+
+                }
+            }
+        }
     }
 }
