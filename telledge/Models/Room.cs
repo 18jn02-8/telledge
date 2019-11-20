@@ -95,24 +95,26 @@ namespace telledge.Models
             {
                 string sql = "select * from Room";
                 DataSet ds = new DataSet();
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
                 int cnt = adapter.Fill(ds, "Room");
                 while (cnt != 0)
                 {
-                    retRooms = new Room();
-                    DataTable dt = ds.Tables["Room"];
-                    retRooms.id = dt.Rows[0]["id"];
-                    retRooms.teacherId = dt.Rows[0]["teacherId"];
-                    retRooms.roomName = dt.Rows[0]["roomName"];
-                    retRooms.tag = dt.Rows[0]["tag"];
-                    retRooms.description = dt.Rows[0]["description"];
-                    retRooms.worstTime = dt.Rows[0]["worstTime"];
-                    retRooms.extensionTime = dt.Rows[0]["extensionTime"];
-                    retRooms.point = dt.Rows[0]["point"];
-                    retRooms.beginTime = dt.Rows[0]["beginTime"];
-                    retRooms.endTime = dt.Rows[0]["endTime"];
-                    return retRooms;
-
+                    for(int i=0; i<cnt; i++) {
+                        retRooms = new Room[cnt];
+                        DataTable dt = ds.Tables["Room"];
+                        retRooms[i].id = (int)dt.Rows[i]["id"];
+                        retRooms[i].teacherId = (int)dt.Rows[i]["teacherId"];
+                        retRooms[i].roomName = (String)dt.Rows[i]["roomName"];
+                        retRooms[i].tag = (String)dt.Rows[i]["tag"];
+                        retRooms[i].description = (String)dt.Rows[i]["description"];
+                        retRooms[i].worstTime = (int)dt.Rows[i]["worstTime"];
+                        retRooms[i].extensionTime = (int)dt.Rows[i]["extensionTime"];
+                        retRooms[i].point = (int)dt.Rows[i]["point"];
+                        retRooms[i].beginTime = (DateTime)dt.Rows[i]["beginTime"];
+                        retRooms[i].endTime = (DateTime)dt.Rows[i]["endTime"];
+                    }                    
                 }
+                return retRooms;
             }
         }
     }
