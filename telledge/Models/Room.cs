@@ -49,7 +49,7 @@ namespace telledge.Models
             using (SqlConnection connection = new SqlConnection(cstr))
             {
                 string sql = "select * from Room";
-                DataSet ds = DataSet();
+                DataSet ds = new DataSet();
                 int cnt = adapter.Fill(ds, "Room");
                 while (cnt != 0)
                 {
