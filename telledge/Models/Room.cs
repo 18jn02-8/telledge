@@ -97,8 +97,6 @@ namespace telledge.Models
                 DataSet ds = new DataSet();
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
                 int cnt = adapter.Fill(ds, "Room");
-                while (cnt != 0)
-                {
                     DataTable dt = ds.Tables["Room"];
                     for (int i=0; i<cnt; i++) {
                         retRooms = new Room(cnt);               
@@ -112,8 +110,7 @@ namespace telledge.Models
                         retRooms[i].point = (int)dt.Rows[i]["point"];
                         retRooms[i].beginTime = (DateTime)dt.Rows[i]["beginTime"];
                         retRooms[i].endTime = (DateTime)dt.Rows[i]["endTime"];
-                    }                    
-                }
+                    }                                   
                 return retRooms;
             }
         }
