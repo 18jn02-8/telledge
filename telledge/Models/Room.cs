@@ -35,7 +35,7 @@ namespace telledge.Models
         {
             if (endTime == null)
             {
-                return ture;
+                return true;
             }
             else
             {
@@ -49,7 +49,7 @@ namespace telledge.Models
             using (SqlConnection connection = new SqlConnection(cstr))
             {
                 string sql = "select * from Room";
-                
+                DataSet ds = DataSet();
                 int cnt = adapter.Fill(ds, "Room");
                 while (cnt != 0)
                 {
