@@ -29,35 +29,28 @@ namespace telledge.Models
             string cstr = ConfigurationManager.ConnectionStrings["Db"].ConnectionString;
             using (SqlConnection connection = new SqlConnection(cstr))
             {
-                if (retStudent.inactiveDate != null)
-                {
-                    return null;
-                }
-                string sql = "select * from Student where id = @id";
+                string sql = "select * from Room where roomId = @roomid";
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
                 adapter.SelectCommand.Parameters.Add("@id", SqlDbType.VarChar);
                 DataSet ds = new DataSet();
-                int cnt = adapter.Fill(ds, "Student");
+                int cnt = adapter.Fill(ds, "Room");
                 if (cnt != 0)
                 {
-                    retStudent = new Student();
-                    DataTable dt = ds.Tables["Student"];
-                    retStudent.passwordDigest = (Byte[])dt.Rows[0]["passwordDigest"];
-                }
-
-                byte[] input = Encoding.ASCII.GetBytes(password);
-                SHA256 sha = new SHA256CryptoServiceProvider();
-                byte[] hash_sha256 = sha.ComputeHash(input);
-                if (retStudent.passwordDigest == hash_sha256)
-                {
-                    HttpContext.Current.Session["Student"] = retStudent;
-                    return retStudent;
-                }
-                else
-                {
-                    return null;
+                    DataTable dt = ds.Tables["Room"];
+                    retRoom = new Room();
+                    retRoom.id = (int)dt.Rows[0]["id"];
+                    retRoom.teacherId = (int)dt.Rows[0]["teacherId"];
+                    retRoom.roomName = dt.Rows[0]["roomName"].ToString();
+                    retRoom.tag = dt.Rows[0]["tag"].ToString();
+                    retRoom.description = dt.Rows[0]["description"].ToString();
+                    retRoom.worstTime = (int)dt.Rows[0]["worstTime"];
+                    retRoom.extensionTime = (int)dt.Rows[0]["extensionTime"];
+                    retRoom.point = (int)dt.Rows[0]["point"];
+                    retRoom.beginTime = (DateTime)dt.Rows[0]["beginTime"];
+                    retRoom.endTime = (DateTime)dt.Rows[0]["endTime"];
                 }
             }
+            return retRoom;
         }
     }
 }
