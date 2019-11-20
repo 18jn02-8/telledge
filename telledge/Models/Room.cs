@@ -4,6 +4,9 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace telledge.Models
 {
@@ -86,18 +89,16 @@ namespace telledge.Models
         }
         public Room[] getRooms()
         {
-            Room retRooms = null;
+            Room[] retRooms = null;
             string cstr = ConfigurationManager.ConnectionStrings["Db"].ConnectionString;
             using (SqlConnection connection = new SqlConnection(cstr))
             {
-                string sql = "select * from Room where id = @id";
-                SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
-                adapter.SelectCommand.Parameters.Add("@id", SqlDbType.VarChar);
-                DataSet ds = new DataSet();
+                string sql = "select * from Room";
+                
                 int cnt = adapter.Fill(ds, "Room");
                 while (cnt != 0)
                 {
-                    //retStudent = new Student();
+                    retRooms = new Room();
                     DataTable dt = ds.Tables["Room"];
                     retRooms.id = dt.Rows[0]["id"];
                     retRooms.teacherId = dt.Rows[0]["teacherId"];
