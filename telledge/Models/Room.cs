@@ -56,7 +56,7 @@ namespace telledge.Models
                 {
                     DataTable dt = ds.Tables["Room"];
                     for (int i=0; i<cnt; i++) {
-                        retRooms = new Room[cnt];               
+                        retRooms = new Room(cnt);               
                         retRooms[i].id = (int)dt.Rows[i]["id"];
                         retRooms[i].teacherId = (int)dt.Rows[i]["teacherId"];
                         retRooms[i].roomName = (String)dt.Rows[i]["roomName"];
