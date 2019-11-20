@@ -109,8 +109,8 @@ namespace telledge.Models
                     retRooms.point = dt.Rows[0]["point"];
                     retRooms.beginTime = dt.Rows[0]["beginTime"];
                     retRooms.endTime = dt.Rows[0]["endTime"];
-                    return retRooms;
-
+                    return retRooms;
+
                 }
             }
         }
