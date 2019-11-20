@@ -31,7 +31,8 @@ namespace telledge.Models
             {
                 string sql = "select * from Room where roomId = @roomid";
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
-                adapter.SelectCommand.Parameters.Add("@id", SqlDbType.VarChar);
+                adapter.SelectCommand.Parameters.Add("@roomid", SqlDbType.Int);
+                adapter.SelectCommand.Parameters["roomid"].Value = this.roomId;
                 DataSet ds = new DataSet();
                 int cnt = adapter.Fill(ds, "Room");
                 if (cnt != 0)
