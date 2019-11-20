@@ -53,6 +53,7 @@ namespace telledge.Models
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
                 int cnt = adapter.Fill(ds, "Room");
                 DataTable dt = ds.Tables["Room"];
+                if(cnt != 0) { 
                 for (int i = 0; i < cnt; i++)
                 {
                     retRooms[cnt] = new Room(cnt);
@@ -66,7 +67,8 @@ namespace telledge.Models
                     retRooms[i].point = (int)dt.Rows[i]["point"];
                     retRooms[i].beginTime = (DateTime)dt.Rows[i]["beginTime"];
                     retRooms[i].endTime = (DateTime)dt.Rows[i]["endTime"];
-                }                                     
+                }
+                }
                 return retRooms;
             }
         }
