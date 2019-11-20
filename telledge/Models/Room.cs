@@ -97,20 +97,21 @@ namespace telledge.Models
                 DataSet ds = new DataSet();
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
                 int cnt = adapter.Fill(ds, "Room");
-                    DataTable dt = ds.Tables["Room"];
-                    for (int i=0; i<cnt; i++) {
-                        retRooms = new Room(cnt);               
-                        retRooms[i].id = (int)dt.Rows[i]["id"];
-                        retRooms[i].teacherId = (int)dt.Rows[i]["teacherId"];
-                        retRooms[i].roomName = (String)dt.Rows[i]["roomName"];
-                        retRooms[i].tag = (String)dt.Rows[i]["tag"];
-                        retRooms[i].description = (String)dt.Rows[i]["description"];
-                        retRooms[i].worstTime = (int)dt.Rows[i]["worstTime"];
-                        retRooms[i].extensionTime = (int)dt.Rows[i]["extensionTime"];
-                        retRooms[i].point = (int)dt.Rows[i]["point"];
-                        retRooms[i].beginTime = (DateTime)dt.Rows[i]["beginTime"];
-                        retRooms[i].endTime = (DateTime)dt.Rows[i]["endTime"];
-                    }                                   
+                DataTable dt = ds.Tables["Room"];
+                for (int i = 0; i < cnt; i++)
+                {
+                    retRooms[cnt] = new Room(cnt);
+                    retRooms[i].id = (int)dt.Rows[i]["id"];
+                    retRooms[i].teacherId = (int)dt.Rows[i]["teacherId"];
+                    retRooms[i].roomName = (String)dt.Rows[i]["roomName"];
+                    retRooms[i].tag = (String)dt.Rows[i]["tag"];
+                    retRooms[i].description = (String)dt.Rows[i]["description"];
+                    retRooms[i].worstTime = (int)dt.Rows[i]["worstTime"];
+                    retRooms[i].extensionTime = (int)dt.Rows[i]["extensionTime"];
+                    retRooms[i].point = (int)dt.Rows[i]["point"];
+                    retRooms[i].beginTime = (DateTime)dt.Rows[i]["beginTime"];
+                    retRooms[i].endTime = (DateTime)dt.Rows[i]["endTime"];
+                }                                     
                 return retRooms;
             }
         }
