@@ -53,5 +53,34 @@ namespace telledge.Models
             }
             return retRoom;
         }
+
+        public Student getStudent()
+        {
+            Student retStudent = null;
+            string cstr = ConfigurationManager.ConnectionStrings["Db"].ConnectionString;
+            using (SqlConnection connection = new SqlConnection(cstr))
+            {
+                string sql = "select * from Student where roomId = @roomid";
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
+                adapter.SelectCommand.Parameters.Add("@id", SqlDbType.VarChar);
+                DataSet ds = new DataSet();
+                int cnt = adapter.Fill(ds, "Student");
+                if (cnt != 0)
+                {
+                    DataTable dt = ds.Tables["Student"];
+                    retStudent = new Student();
+                    retStudent.id = (int)dt.Rows[0]["id"];
+                    retStudent.inactiveDate = (DateTime)dt.Rows[0]["inactiveDate"];
+                    retStudent.is2FA = (bool)dt.Rows[0]["is2FA"];
+                    retStudent.mailaddress = dt.Rows[0]["mailaddress"].ToString();
+                    retStudent.name = dt.Rows[0]["name"].ToString();
+                    retStudent.passwordDigest = (byte[])dt.Rows[0]["passwordDigest"];
+                    retStudent.point = (int)dt.Rows[0]["point"];
+                    retStudent.profileImage = dt.Rows[0]["profileImage"].ToString();
+                    retStudent.skypeId = dt.Rows[0]["skypeId"].ToString();
+                }
+            }
+            return retStudent;
+        }
     }
 }
