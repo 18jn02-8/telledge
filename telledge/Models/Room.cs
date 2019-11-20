@@ -99,7 +99,7 @@ namespace telledge.Models
                 int cnt = adapter.Fill(ds, "Room");
                 DataTable dt = ds.Tables["Room"];
                 if(cnt != 0) { 
-                    retRooms = new Room[cnt];   //配列オブジェクトとして一見以上返すことが確定したため領域を生成する
+                    retRooms = new Room[cnt];   //配列オブジェクトとして一件以上の要素を返すことが確定したため領域を生成する
                     for (int i = 0; i < cnt; i++)
                     {
                         retRooms[i] = new Room();   //引数なしコンストラクタで初期化し、戻したい値を格納する領域を生成する
