@@ -24,7 +24,7 @@ namespace telledge.Models
         //通話に必要なポイント
         public int point { get; set; }
         //通話終了予定時刻
-        public int endScheduleTime { get; set; }
+        public DateTime endScheduleTime { get; set; }
         //通話開始時刻
         public DateTime beginTime { get; set; }
         //通話終了時刻
