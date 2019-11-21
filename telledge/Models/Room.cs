@@ -111,8 +111,11 @@ namespace telledge.Models
                         retRooms[i].worstTime = (int)dt.Rows[i]["worstTime"];
                         retRooms[i].extensionTime = (int)dt.Rows[i]["extensionTime"];
                         retRooms[i].point = (int)dt.Rows[i]["point"];
-                        retRooms[i].beginTime = (DateTime)dt.Rows[i]["beginTime"];
-                        retRooms[i].endTime = (DateTime)dt.Rows[i]["endTime"];
+                        retRooms[i].beginTime = DateTime.Parse(dt.Rows[i]["beginTime"].ToString());
+                        if (dt.Rows[i]["endTime"] != DBNull.Value)
+                        {
+                            retRooms[i].endTime = DateTime.Parse(dt.Rows[i]["endTime"].ToString());
+                        }
                     }
                 }
                 return retRooms;

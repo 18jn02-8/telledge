@@ -10,7 +10,7 @@ namespace UnitTest.Rooms
         [TestMethod]
         public void Success()
         {
-            
+            Assert.IsNotNull(Room.getRooms());
         }
         [TestMethod]
         public void Failed()
