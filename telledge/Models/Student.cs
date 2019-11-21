@@ -64,7 +64,7 @@ namespace telledge.Models
                 {
                     return null;
                 }
-                if (retStudent.inactiveDate != null)
+                if (retStudent.inactiveDate == null)
                 {
                     byte[] input = Encoding.ASCII.GetBytes(password);
                     SHA256 sha = new SHA256CryptoServiceProvider();
