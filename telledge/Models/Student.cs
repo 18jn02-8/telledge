@@ -89,9 +89,7 @@ namespace telledge.Models
         {
             return (Student)HttpContext.Current.Session["Student"];
         }
-    }
-}
-       /* public bool create()
+        public bool create()
         {
             bool check = false;
             string cstr = ConfigurationManager.ConnectionStrings["Db"].ConnectionString;
@@ -136,7 +134,7 @@ namespace telledge.Models
             return check;
         }
     }
-}*/
+}
  //引数に渡されたメールアドレスを持つ生徒のパスワードダイジェストと引数の平文パスワードをSHA256でダイジェスト化したものを比較し、
         //等しければ対応するStudentクラスのオブジェクトを返しセッション変数名"Student"のセッションにオブジェクトを登録する。
         //等しくなければnullを返し、セッションへの登録は行わない。 また、退会日がnull以外の場合は無条件にnullを返す。

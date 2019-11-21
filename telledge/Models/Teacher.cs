@@ -55,9 +55,7 @@ namespace telledge.Models
         {
             return (Teacher)HttpContext.Current.Session["Teacher"];
         }
-    }
-}
-        /*public bool create()
+         public bool create()
         {
             bool check = false;
             string cstr = ConfigurationManager.ConnectionStrings["Db"].ConnectionString;
@@ -93,4 +91,4 @@ namespace telledge.Models
             return check;
         }
     }
-}*/
+}
