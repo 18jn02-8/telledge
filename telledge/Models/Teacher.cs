@@ -62,31 +62,37 @@ namespace telledge.Models
             using (var connection = new SqlConnection(cstr))
             using (var command = connection.CreateCommand())
             {
-                connection.Open();
-                command.CommandText = "Insert Into Teacher Values (@name,@sex,@profileImage,@age,@language,@intoroduction,@passwordDigest,@mailaddress,@point,@address,@is2FA,@nationality,@inactiveDate)";
-                command.Parameters.Add(new SqlParameter("@name", name));
-                command.Parameters.Add(new SqlParameter("@sex", sex));
-                command.Parameters.Add(new SqlParameter("@profileImage", profileImage));
-                command.Parameters.Add(new SqlParameter("@age", age));
-                command.Parameters.Add(new SqlParameter("@language", language));
-                command.Parameters.Add(new SqlParameter("@intoroduction", intoroduction));
-                command.Parameters.Add(new SqlParameter("@passwordDigest", passwordDigest));
-                command.Parameters.Add(new SqlParameter("@mailaddress", mailaddress));
-                command.Parameters.Add(new SqlParameter("@point", point));
-                command.Parameters.Add(new SqlParameter("@address", address));
-                command.Parameters.Add(new SqlParameter("@is2FA", is2FA));
-                command.Parameters.Add(new SqlParameter("@nationality", nationality));
-                command.Parameters.Add(new SqlParameter("@inactiveDate", DBNull.Value));
-                int cnt = command.ExecuteNonQuery();
-                if (cnt == 0)
+                try
                 {
-                    //Errorの構文を記述する
+                    connection.Open();
+                    command.CommandText = "Insert Into Teacher Values (@name,@sex,@profileImage,@age,@language,@intoroduction,@passwordDigest,@mailaddress,@point,@address,@is2FA,@nationality,@inactiveDate)";
+                    command.Parameters.Add(new SqlParameter("@name", name));
+                    command.Parameters.Add(new SqlParameter("@sex", sex));
+                    command.Parameters.Add(new SqlParameter("@profileImage", profileImage));
+                    command.Parameters.Add(new SqlParameter("@age", age));
+                    command.Parameters.Add(new SqlParameter("@language", language));
+                    command.Parameters.Add(new SqlParameter("@intoroduction", intoroduction));
+                    command.Parameters.Add(new SqlParameter("@passwordDigest", passwordDigest));
+                    command.Parameters.Add(new SqlParameter("@mailaddress", mailaddress));
+                    command.Parameters.Add(new SqlParameter("@point", point));
+                    command.Parameters.Add(new SqlParameter("@address", address));
+                    command.Parameters.Add(new SqlParameter("@is2FA", is2FA));
+                    command.Parameters.Add(new SqlParameter("@nationality", nationality));
+                    command.Parameters.Add(new SqlParameter("@inactiveDate", DBNull.Value));
+                    int cnt = command.ExecuteNonQuery();
+                    if (cnt == 0)
+                    {
+                        //Errorの構文を記述する
+                    }
+                    else
+                    {
+                        check = true;
+                    }
+                    connection.Close();
+                }catch(SqlException e){
+                    //入力情報が足りないメッセージを吐く
+                    return false;
                 }
-                else
-                {
-                    check = true;
-                }
-                connection.Close();
             }
             return check;
         }
