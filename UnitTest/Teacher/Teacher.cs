@@ -16,17 +16,24 @@ namespace telledge.Tests.Models
             Teacher teacher = new Teacher();
             teacher.setPassword("password");
         }
+        [TestMethod]
         public void TestCreate()
         {
-            Student student = new Student();
-            student.name = "Test";
-            student.mailaddress = "OARO@jec.ac.jp";
-            student.is2FA = false;
-            student.point = 0;
-            student.profileImage = "Gafeokfwaoefa.pix";
-            student.skypeId = "Test@skypeid";
-            bool test = student.create();
-            Assert.IsFalse(test);
+            Teacher teacher = new Teacher();
+            teacher.name = "Test";
+            teacher.sex = 1;
+            teacher.profileImage = "Gafeokfwaoefa.pix";
+            teacher.age = 20;
+            teacher.language = "English";
+            teacher.intoroduction = "Japan";
+            teacher.setPassword("password");
+            teacher.mailaddress = "OARO@jec.ac.jp";
+            teacher.is2FA = false;
+            teacher.point = 0;
+            teacher.address = "Japan Sinjuku Kabukityo";
+            teacher.nationality = "???";
+            bool test = teacher.create();
+            Assert.IsTrue(test);
         }
     }
 }

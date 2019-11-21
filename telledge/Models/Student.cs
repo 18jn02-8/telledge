@@ -96,28 +96,42 @@ namespace telledge.Models
             bool check = false;
             string cstr = ConfigurationManager.ConnectionStrings["Db"].ConnectionString;
             using (var connection = new SqlConnection(cstr))
-            using (var command = connection.CreateCommand())
             {
-                connection.Open();
-                command.CommandText = "Insert Into Student ( name , mailaddress , profileImage , skypeId , passwordDigest , is2FA , point ) Values ( @name , @mailaddress , @profileImage , @skypeId , @passwordDigest , @is2FA , @point ) ";
-                command.Parameters.Add(new SqlParameter("@name",name));
-                command.Parameters.Add(new SqlParameter("@mailaddress", mailaddress));
-                command.Parameters.Add(new SqlParameter("@profileImage", profileImage));
-                command.Parameters.Add(new SqlParameter("@skypeId", skypeId));
-                command.Parameters.Add(new SqlParameter("@passwordDigest", passwordDigest));
-                command.Parameters.Add(new SqlParameter("@is2FA", is2FA));
-                command.Parameters.Add(new SqlParameter("@point", point));
-                command.Parameters.Add(new SqlParameter("@inactiveDate", inactiveDate));
-                int cnt = command.ExecuteNonQuery();
-                if(cnt == 0)
+                try
                 {
-                    //Errorの構文を記述する
+                    String sql = "Insert Into Student ( name , mailaddress , profileImage , skypeId , passwordDigest , is2FA , point , inactiveDate) Values ( @name , @mailaddress , @profileImage , @skypeId , @passwordDigest , @is2FA , @point , @inactiveDate) ";
+                    SqlCommand command = new SqlCommand(sql, connection);
+                    command.Parameters.Add("@name", SqlDbType.VarChar);
+                    command.Parameters["@name"].Value = name;
+                    command.Parameters.Add("@mailaddress", SqlDbType.VarChar);
+                    command.Parameters["@mailaddress"].Value = mailaddress;
+                    command.Parameters.Add("@profileImage", SqlDbType.VarChar);
+                    command.Parameters["@profileImage"].Value = profileImage;
+                    command.Parameters.Add("@skypeId", SqlDbType.VarChar);
+                    command.Parameters["@skypeId"].Value = skypeId;
+                    command.Parameters.Add("@passwordDigest", SqlDbType.VarBinary);
+                    command.Parameters["@passwordDigest"].Value = passwordDigest;
+                    command.Parameters.Add("@is2FA", SqlDbType.Bit);
+                    command.Parameters["@is2FA"].Value = is2FA;
+                    command.Parameters.Add("@point", SqlDbType.Int);
+                    command.Parameters["@point"].Value = point;
+                    command.Parameters.Add("@inactiveDate", SqlDbType.Date);
+                    command.Parameters["@inactiveDate"].Value = DBNull.Value;
+                    connection.Open();
+                    int cnt = command.ExecuteNonQuery();
+                    connection.Close();
+                    if (cnt == 0)
+                    {
+                        //Errorの構文を記述する
+                    }
+                    else
+                    {
+                        check = true;
+                    }
+                }catch(SqlException e){
+                    //入力情報が足りないメッセージを吐く
+                    return false;
                 }
-                else
-                {
-                    check = true;
-                }
-                connection.Close();
             }
             return check;
         }

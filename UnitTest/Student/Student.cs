@@ -60,6 +60,7 @@ namespace telledge.Tests.Models
             bool test = student.create();
             Assert.IsTrue(test);
         }
+        [TestMethod]
         public void TestCreateFailed()
         {
             Student student = new Student();

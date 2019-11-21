@@ -64,7 +64,8 @@ namespace telledge.Models
             using (var connection = new SqlConnection(cstr))
             using (var command = connection.CreateCommand())
             {
-                command.CommandText = "Insert Into Student Values (@name,@sex,@profileImage,@age,@language,@intoroduction,@passwordDigest,@mailaddress,@point,@address,@id2FA,@nationality)";
+                connection.Open();
+                command.CommandText = "Insert Into Teacher Values (@name,@sex,@profileImage,@age,@language,@intoroduction,@passwordDigest,@mailaddress,@point,@address,@is2FA,@nationality,@inactiveDate)";
                 command.Parameters.Add(new SqlParameter("@name", name));
                 command.Parameters.Add(new SqlParameter("@sex", sex));
                 command.Parameters.Add(new SqlParameter("@profileImage", profileImage));
@@ -77,6 +78,7 @@ namespace telledge.Models
                 command.Parameters.Add(new SqlParameter("@address", address));
                 command.Parameters.Add(new SqlParameter("@is2FA", is2FA));
                 command.Parameters.Add(new SqlParameter("@nationality", nationality));
+                command.Parameters.Add(new SqlParameter("@inactiveDate", DBNull.Value));
                 int cnt = command.ExecuteNonQuery();
                 if (cnt == 0)
                 {
