@@ -87,7 +87,7 @@ namespace telledge.Models
             }
             return check;
         }
-        public Room[] getRooms()
+        public static Room[] getRooms()
         {
             Room[] retRooms = null; //配列オブジェクトの参照先をnullとする
             string cstr = ConfigurationManager.ConnectionStrings["Db"].ConnectionString;
