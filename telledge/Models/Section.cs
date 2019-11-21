@@ -29,10 +29,10 @@ namespace telledge.Models
             string cstr = ConfigurationManager.ConnectionStrings["Db"].ConnectionString;
             using (SqlConnection connection = new SqlConnection(cstr))
             {
-                string sql = "select * from Room where roomId = @roomid";
+                string sql = "select * from Room where Id = @roomid";
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
                 adapter.SelectCommand.Parameters.Add("@roomid", SqlDbType.Int);
-                adapter.SelectCommand.Parameters["roomid"].Value = this.roomId;
+                adapter.SelectCommand.Parameters["@roomid"].Value = this.roomId;
                 DataSet ds = new DataSet();
                 int cnt = adapter.Fill(ds, "Room");
                 if (cnt != 0)
@@ -47,8 +47,11 @@ namespace telledge.Models
                     retRoom.worstTime = (int)dt.Rows[0]["worstTime"];
                     retRoom.extensionTime = (int)dt.Rows[0]["extensionTime"];
                     retRoom.point = (int)dt.Rows[0]["point"];
-                    retRoom.beginTime = (DateTime)dt.Rows[0]["beginTime"];
-                    retRoom.endTime = (DateTime)dt.Rows[0]["endTime"];
+                    retRoom.beginTime = DateTime.Parse(dt.Rows[0]["beginTime"].ToString());
+                    if (dt.Rows[0]["endTime"].ToString() == null)
+                    {
+                        retRoom.endTime = DateTime.Parse(dt.Rows[0]["endTime"].ToString());
+                    }
                 }
             }
             return retRoom;
