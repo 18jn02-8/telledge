@@ -116,6 +116,7 @@ namespace telledge.Models
                         {
                             retRooms[i].endTime = DateTime.Parse(dt.Rows[i]["endTime"].ToString());
                         }
+                        retRooms[i].endScheduleTime = DateTime.Parse(dt.Rows[i]["endScheduleTime"].ToString());
                     }
                 }
                 return retRooms;
