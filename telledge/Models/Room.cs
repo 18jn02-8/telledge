@@ -58,7 +58,7 @@ namespace telledge.Models
                 try
                 {
                     connection.Open();
-                    command.CommandText = "Insert Into Teacher Values (@teacherId,@roomName,@tag,@description,@worstTime,@extensionTime,@point,@endScheduleTime,@beginTime,@endTime)";
+                    command.CommandText = "Insert Into Room Values (@teacherId,@roomName,@tag,@description,@worstTime,@extensionTime,@point,@endScheduleTime,@beginTime,@endTime)";
                     command.Parameters.Add(new SqlParameter("@teacherId", teacherId));
                     command.Parameters.Add(new SqlParameter("@roomName", roomName));
                     command.Parameters.Add(new SqlParameter("@tag", tag));
@@ -66,8 +66,8 @@ namespace telledge.Models
                     command.Parameters.Add(new SqlParameter("@worstTime", worstTime));
                     command.Parameters.Add(new SqlParameter("@extensionTime", extensionTime));
                     command.Parameters.Add(new SqlParameter("@point", point));
-                    command.Parameters.Add(new SqlParameter("@beginTime", beginTime));
                     command.Parameters.Add(new SqlParameter("@endScheduleTime", endScheduleTime));
+                    command.Parameters.Add(new SqlParameter("@beginTime", beginTime));
                     command.Parameters.Add(new SqlParameter("@endTime",DBNull.Value));
                     int cnt = command.ExecuteNonQuery();
                     if (cnt == 0)

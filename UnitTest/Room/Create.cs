@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using telledge.Models;
 
 namespace UnitTest.Rooms
@@ -17,20 +18,23 @@ namespace UnitTest.Rooms
             room.worstTime = 40;
             room.extensionTime = 60;
             room.point = 2000;
-            room.
+            room.endScheduleTime = DateTime.Parse("2010-01-10 10:30:00.000");
+            room.beginTime = DateTime.Parse("2010-01-10 10:30:00.000");
             bool test = room.create();
             Assert.IsTrue(test);
         }
         [TestMethod]
         public void TestCreateFailed()
         {
-            Student student = new Student();
-            student.name = "Test";
-            student.mailaddress = "OARO@jec.ac.jp";
-            student.is2FA = false;
-            student.point = 0;
-            student.profileImage = "Gafeokfwaoefa.pix";
-            bool test = student.create();
+            Room room = new Room();
+            room.teacherId = 1;
+            room.roomName = "楽しい英語";
+            room.worstTime = 40;
+            room.extensionTime = 60;
+            room.point = 2000;
+            room.endScheduleTime = DateTime.Parse("2010-01-10 10:30:00.000");
+            room.beginTime = DateTime.Parse("2010-01-10 10:30:00.000");
+            bool test = room.create();
             Assert.IsFalse(test);
         }
     }
