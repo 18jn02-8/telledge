@@ -76,7 +76,7 @@ namespace telledge.Models
                     byte[] hash_sha256 = sha.ComputeHash(input);
                     if (retTeacher.passwordDigest.SequenceEqual(hash_sha256))
                     {
-                        DataTable dt = ds.Tables["Student"];
+                        DataTable dt = ds.Tables["Teacher"];
                         retTeacher.id = (int)dt.Rows[0]["id"];
                         retTeacher.name = dt.Rows[0]["name"].ToString();
                         retTeacher.sex = (int)dt.Rows[0]["sex"];
