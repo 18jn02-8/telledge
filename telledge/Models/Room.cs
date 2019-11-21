@@ -70,11 +70,7 @@ namespace telledge.Models
                     command.Parameters.Add(new SqlParameter("@beginTime", beginTime));
                     command.Parameters.Add(new SqlParameter("@endTime",DBNull.Value));
                     int cnt = command.ExecuteNonQuery();
-                    if (cnt == 0)
-                    {
-                        //Errorの構文を記述する
-                    }
-                    else
+                    if (cnt != 0)
                     {
                         check = true;
                     }
