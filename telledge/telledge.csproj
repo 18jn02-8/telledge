@@ -143,6 +143,7 @@
     <Compile Include="Models\Student.cs" />
     <Compile Include="Models\Teacher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TemplateModel\RoomsIndex.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -186,13 +187,12 @@
     <Content Include="Views\Shared\studentMenu.cshtml" />
     <Content Include="Views\Students\Sessions\create.cshtml" />
     <Content Include="Views\Teachers\Sessions\create.cshtml" />
+    <Content Include="Views\Rooms\index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="TemplateModel\" />
     <Folder Include="Views\Sessions\" />
     <Folder Include="Views\Students\Rooms\" />
-    <Folder Include="Views\Teachers\Sessions\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
