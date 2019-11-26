@@ -18,6 +18,7 @@ namespace telledge.Controllers.Teachers
         {
             return View();
         }
+        [HttpPost]
         public ActionResult Create(String mailaddress, String password)
         {
             Teacher ret = Teacher.login(mailaddress, password);
