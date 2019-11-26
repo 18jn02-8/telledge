@@ -86,7 +86,7 @@ namespace telledge.Models
                         }
                         HttpContext.Current.Session["Student"] = retStudent;
                     }
-                    return retStudent;
+                    return null;
                 }
                 return null;
             }
