@@ -12,7 +12,7 @@ namespace telledge.Controllers.Students
         // GET: Sessions
         public ActionResult Create()
         {
-            return RedirectToAction("Index");
+            return View("Create");
         }
         public ActionResult Index()
         {
