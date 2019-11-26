@@ -183,6 +183,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Controllers\Teacher\" />
     <Folder Include="TemplateModel\" />
     <Folder Include="Views\Students\" />
     <Folder Include="Views\Teachers\" />
