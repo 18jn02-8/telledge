@@ -55,10 +55,10 @@ namespace telledge.Models
                 int cnt = adapter.Fill(ds, "Student");
                 if (cnt != 0)
                 {
-                    
+                   
                     DataTable dt = ds.Tables["Student"];
                     Byte[] passwordDigest = (Byte[])dt.Rows[0]["passwordDigest"];
-                    if (retStudent.inactiveDate == null)
+                    if(dt.Rows[0]["inactiveDate"] != DBNull.Value)
                     {
                         byte[] input = Encoding.ASCII.GetBytes(password);
                         SHA256 sha = new SHA256CryptoServiceProvider();
