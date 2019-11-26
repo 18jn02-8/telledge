@@ -10,6 +10,10 @@ namespace telledge.Controllers.Students
     public class SessionsController : Controller
     {
         // GET: Sessions
+        public ActionResult Create()
+        {
+            return RedirectToAction("Index");
+        }
         public ActionResult Index()
         {
             return View();
