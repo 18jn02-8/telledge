@@ -124,7 +124,7 @@ namespace telledge.Models
         }
 
         private Teacher cachedGetTeacher = null;
-        public Teacher getStudent()
+        public Teacher getTeacher()
         {
             if (this.cachedGetTeacher != null) return this.cachedGetTeacher;
             Teacher retTeacher = null;
