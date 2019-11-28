@@ -180,8 +180,6 @@ namespace telledge.Models
                 {
                     DataTable dt = ds.Tables["Room"];
                     retRoom = new Room();
-
-                    retRoom = new Room();   //引数なしコンストラクタで初期化し、戻したい値を格納する領域を生成する
                     retRoom.id = (int)dt.Rows[0]["id"];
                     retRoom.teacherId = (int)dt.Rows[0]["teacherId"];
                     retRoom.roomName = (String)dt.Rows[0]["roomName"];
