@@ -1,0 +1,68 @@
+﻿@model IEnumerable<telledge.Models.Room>
+
+@{
+    ViewBag.Title = "index";
+    Layout = "~/Views/Shared/studentMenu.cshtml";
+}
+
+<main>
+    @foreach (var item in Model)
+    {
+     <div class="image">
+        <div class="bkRGBA">
+            <div class="Text">
+                <p>
+                    ルーム名
+                </p>
+                <p>
+                    タグ1、タグ2、タグ3
+                </p>
+                <p>
+                    画像
+                </p>
+                <p>
+                    講師名
+                </p>
+                <p>
+                    講師
+                </p>
+                <p>
+                    評価
+                </p>
+                <p>
+                    開始時間
+                </p>
+                <p>
+                    終了予定時刻
+                </p>
+                <p>
+                    料金
+                </p>
+                <p>
+                    待機人数
+                </p>
+                <p>
+                    最低通話時間
+                </p>
+                <p>
+                    最大延長時間
+                </p>
+                <p>
+                    予想待ち時間
+                </p>
+                <hr wight="70%" />
+                <p>
+                    講師からのメッセージ
+                </p>
+                <p>
+                    講師本文
+                </p>
+                <input type="button" value="戻る" onclick="">
+                <input type="button" value="参加" onclick="">
+            </div>
+        </div>
+     </div>
+    }
+
+
+</main>

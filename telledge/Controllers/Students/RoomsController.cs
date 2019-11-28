@@ -17,6 +17,11 @@ namespace telledge.Controllers.Students
             var model = Room.getRooms();
             return View("/Views/Students/Rooms/index.cshtml", model);
         }
+        public ActionResult Show()
+        {
+            var model = Room.getRooms();
+            return View("/Views/Students/Rooms/show.cshtml", model);
+        }
 
         //
         // GET: /Rooms/Details/5
