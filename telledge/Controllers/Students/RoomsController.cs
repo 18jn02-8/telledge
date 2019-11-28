@@ -26,6 +26,10 @@ namespace telledge.Controllers.Students
             return View();
         }
 
+        public ActionResult call()
+        {
+            
+        }
         //
         // GET: /Rooms/Create
 
