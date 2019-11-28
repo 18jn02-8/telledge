@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "index";
+    Layout = "~/Views/Shared/studentMenu.cshtml";
 }
 
 <h2>index</h2>
@@ -14,14 +15,90 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
 
 </table>
+
+
+
+<main>
+    <div class="room-boxes">
+        <h2 class="room-title">楽しい料理入門</h2>
+        <div class="flex">
+            <div class="float flex flex-middle">
+                <img class="example">
+            </div>
+            <div class="room-detail" class="float">
+                <table class="rooms-table">
+                    <col span="2" width="150px">
+                    <tbody>
+                        <tr>
+                            <td>最低通話時間</td>
+                            <td>30分</td>
+                        </tr>
+                        <tr>
+                            <td>最大延長時間</td>
+                            <td>20分</td>
+                        </tr>
+                        <tr>
+                            <td>タグ</td>
+                            <td>tag1,tag2,tag3</td>
+                        </tr>
+                        <tr>
+                            <td>料金</td>
+                            <td>¥5000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div>
+            <span>ここにルームの説明が入る</span>
+        </div>
+    </div>
+
+    <div class="room-boxes">
+        <h2 class="room-title">銅メダリストに聞くノウハウ！</h2>
+        <div class="flex">
+            <div class="float flex flex-middle">
+                <img class="example">
+            </div>
+            <div class="room-detail" class="float">
+                <table class="rooms-table">
+                    <col span="2" width="150px">
+                    <tbody>
+                        <tr>
+                            <td>最低通話時間</td>
+                            <td>30分</td>
+                        </tr>
+                        <tr>
+                            <td>最大延長時間</td>
+                            <td>20分</td>
+                        </tr>
+                        <tr>
+                            <td>タグ</td>
+                            <td>tag1,tag2,tag3</td>
+                        </tr>
+                        <tr>
+                            <td>料金</td>
+                            <td>¥5000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div>
+            <span>ここにルームの説明が入る</span>
+        </div>
+    </div>
+
+</main>
