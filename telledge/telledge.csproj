@@ -192,19 +192,16 @@
     <Content Include="Views\Shared\teacherMenu.cshtml" />
     <Content Include="Views\Shared\studentMenu.cshtml" />
     <Content Include="Views\Students\Sessions\create.cshtml" />
-    <Content Include="Views\Teachers\Sessions\create.cshtml" />
-    <Content Include="Views\Teachers\Rooms\Roomsindex.cshtml" />
-    <Content Include="Views\Students\Sessions\StudentLogin.cshtml" />
-    <Content Include="Views\Teachers\Sessions\TeacherLogin.cshtml" />
-    <Content Include="Views\Teachers\Rooms\TeacherRoomcall.cshtml" />
-    <Content Include="Views\Teachers\Rooms\TeacherRoomnew.cshtml" />
     <Content Include="Views\Students\Rooms\index.cshtml" />
+    <Content Include="Views\Teachers\Rooms\index.cshtml" />
+    <Content Include="Views\Teachers\Sessions\Create.cshtml" />
+    <Content Include="Views\Teachers\Rooms\call.cshtml" />
+    <Content Include="Views\Teachers\Rooms\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="TemplateModel\" />
     <Folder Include="Views\Sessions\" />
-    <Folder Include="Views\Students\Rooms\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
