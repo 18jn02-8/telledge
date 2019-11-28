@@ -17,7 +17,7 @@ namespace telledge.Controllers.Teachers
         [HttpGet]
         public ActionResult Create()
         {
-            return View("//Create");
+            return View("/Views/Teachers/Rooms/create.cshtml");
 
         }
         public ActionResult call(int id)
