@@ -126,6 +126,7 @@ namespace telledge.Models
         private Teacher cachedGetTeacher = null;
         public Teacher getStudent()
         {
+            if (this.cachedGetTeacher != null) return this.cachedGetTeacher;
             Teacher retTeacher = null;
             string cstr = ConfigurationManager.ConnectionStrings["Db"].ConnectionString;
             using (SqlConnection connection = new SqlConnection(cstr))
@@ -157,6 +158,7 @@ namespace telledge.Models
                     retTeacher.passwordDigest = (byte[])dt.Rows[0]["passwordDigest"];
                     retTeacher.point = (int)dt.Rows[0]["point"];
                     retTeacher.profileImage = dt.Rows[0]["profileImage"].ToString();
+                    this.cachedGetTeacher = retTeacher; //次回のリクエストに高速で返答するために値をキャッシュしておく
                 }
             }
             return retTeacher;
