@@ -19,6 +19,10 @@ namespace telledge.Controllers.Teachers
             return View("//Create");
 
         }
+        public ActionResult call()
+        {
+            return View();
+        }
         public ActionResult index()
         {
             var model = Room.getRooms();
