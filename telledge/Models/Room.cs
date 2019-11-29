@@ -198,5 +198,41 @@ namespace telledge.Models
             }
             return retRoom;
         }
+
+        public int getWaitCount()
+        {
+            string cstr = ConfigurationManager.ConnectionStrings["Db"].ConnectionString;
+            using (SqlConnection connection = new SqlConnection(cstr))
+            {
+                string sql = "SELECT COUNT(studentId) From Section WHERE roomId = @Id";
+                adapter.SelectCommand.Parameters.Add("@id", SqlDbType.Integer);
+                adapter.SelectCommand.Parameters["@id"].Value = id;
+                DataSet ds = new DataSet();
+                int cnt = adapter.Fill(ds, "Room");
+                if(cnt == null)
+                {
+                    cnt = 0;
+                }
+            }
+            return cnt;
+        }
+
+        public int getWaitTime()
+        {
+            string cstr = ConfigurationManager.ConnectionStrings["Db"].ConnectionString;
+            using (SqlConnection connection = new SqlConnection(cstr))
+            {
+                string sql = "SELECT (worstTime + extensionTime) / 2 * (SELECT COUNT(studentId) From Section WHERE roomId = @id) FROM Room WHERE Id = @id";
+                adapter.SelectCommand.Parameters.Add("@id", SqlDbType.Integer);
+                adapter.SelectCommand.Parameters["@id"].Value = id;
+                DataSet ds = new DataSet();
+                int cnt = adapter.Fill(ds, "Room");
+                if (cnt == null)
+                {
+                    cnt = 0;
+                }
+            }
+            return cnt;
+        }
     }
 }
