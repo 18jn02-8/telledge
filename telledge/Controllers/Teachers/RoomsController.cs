@@ -26,7 +26,7 @@ namespace telledge.Controllers.Teachers
 			Room ret = Room.create(String name, String description, String tag, DateTime endScheduleTime, int maxExtendTime, int minGuaranteeTime, int fee);
 			if(ret == true)
 			{
-				RedirectToAction("call", "Rooms");
+				return RedirectToAction("call", "Rooms");
 			}
 			else
 			{
