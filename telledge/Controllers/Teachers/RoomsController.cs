@@ -23,7 +23,7 @@ namespace telledge.Controllers.Teachers
 		[HttpPost]
 		public ActionResult Create(String name,String description,String tag,DateTime endScheduleTime,int maxExtendTime,int minGuaranteeTime,int fee)
 		{
-			Room ret = Room.Create(String name, String description, String tag, DateTime endScheduleTime, int maxExtendTime, int minGuaranteeTime, int fee)
+			Room ret = Room.create(String name, String description, String tag, DateTime endScheduleTime, int maxExtendTime, int minGuaranteeTime, int fee);
 			if(ret == true)
 			{
 				RedirectToAction("call", "Rooms");
