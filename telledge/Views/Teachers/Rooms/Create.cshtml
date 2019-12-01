@@ -23,29 +23,29 @@
 				<col span="1" width="180px">
 				<tr>
 					<td class="room-font">ルーム名</td>
-					<td><input type="text" placeholder="[大幅値引き！] OOOO" name="text" value=""></td>
+					<td><input type="text" placeholder="[大幅値引き！] OOOO" name="name" value=""></td>
 				</tr>
 				<tr>
 					<td>ルーム説明</td>
 					<td>
-						<textarea name="msg2" placeholder="このルームでは特別にOOについての情報を公開しようと思います。今回は特別価格で通常価格の90%割引価格で提供します！
+						<textarea name="msg2"name="description" placeholder="このルームでは特別にOOについての情報を公開しようと思います。今回は特別価格で通常価格の90%割引価格で提供します！
 					こんなチャンスは二度とありません。この機会をお見逃しなく！！！" cols="30" rows="7"></textarea>
 					</td>
 				</tr>
 				<tr>
 					<td>タグ</td>
-					<td><input type="text" placeholder="conversation,hobby,business" name="text" value=""></td>
+					<td><input type="text"placeholder="conversation,hobby,business" name="tag" value=""></td>
 				</tr>
 				<tr>
-					<td>終了予定時間</td>
-					<td><input type="text" placeholder="30" name="text" value=""></td>
+					<td>通話終了予定時間</td>@*maxExtendTime*@
+					<td><input type="text" placeholder="30" name="endScheduleTime" value=""></td>
 				</tr>
 				<tr>
-					<td>最大通話時間(分)</td>
-					<td><input type="text" placeholder="10" name="text" value=""></td>
+					<td>最大通話時間(分)</td>@*minGuaranteeTime*@
+					<td><input type="text" name="extensionTime" placeholder="10" name="text" value=""></td>
 				</tr>
 				<tr>
-					<td>最低通話時間(分)</td>
+					<td>最低通話時間(分)</td>@*fee*@
 					<td><input type="text" placeholder="30" name="text" value=""></td>
 				</tr>
 				<tr>
