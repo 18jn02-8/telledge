@@ -1,4 +1,4 @@
-﻿@model telledge.Models.Room
+@model telledge.Models.Room
 
 @{
 	Layout = "~/Views/Shared/teacherMenu.cshtml";
@@ -18,44 +18,45 @@
 		<div id="room-name" class="center example">
 			<span>ルーム作成</span>
 		</div>
-
-		<table class="example">
-			<col span="1" width="180px">
-			<tr>
-				<td class="room-font">ルーム名</td>
-				<td><input type="text" placeholder="[大幅値引き！] OOOO" name="text" value=""></td>
-			</tr>
-			<tr>
-				<td>ルーム説明</td>
-				<td>
-					<textarea name="msg2" placeholder="このルームでは特別にOOについての情報を公開しようと思います。今回は特別価格で通常価格の90%割引価格で提供します！
-こんなチャンスは二度とありません。この機会をお見逃しなく！！！" cols="30" rows="7"></textarea>
-				</td>
-			</tr>
-			<tr>
-				<td>タグ</td>
-				<td><input type="text" placeholder="conversation,hobby,business" name="text" value=""></td>
-			</tr>
-			<tr>
-				<td>終了予定時間</td>
-				<td><input type="text" placeholder="30" name="text" value=""></td>
-			</tr>
-			<tr>
-				<td>最大通話時間(分)</td>
-				<td><input type="text" placeholder="10" name="text" value=""></td>
-			</tr>
-			<tr>
-				<td>最低通話時間(分)</td>
-				<td><input type="text" placeholder="30" name="text" value=""></td>
-			</tr>
-			<tr>
-				<td>生徒支払いポイント</td>
-				<td><input type="text" placeholder="100" name="text" value=""></td>
-			</tr>
-			<tr>
-				<td id="margin-bottom"><input type="submit" class="Room-buttom" id="Room-buttom" name="submit" value="ルーム作成"></td>
-			</tr>
-		</table>
+		<form action="/teacher/Rooms/create" method="post" name="Teacher">
+			<table class="example">
+				<col span="1" width="180px">
+				<tr>
+					<td class="room-font">ルーム名</td>
+					<td><input type="text" placeholder="[大幅値引き！] OOOO" name="text" value=""></td>
+				</tr>
+				<tr>
+					<td>ルーム説明</td>
+					<td>
+						<textarea name="msg2" placeholder="このルームでは特別にOOについての情報を公開しようと思います。今回は特別価格で通常価格の90%割引価格で提供します！
+					こんなチャンスは二度とありません。この機会をお見逃しなく！！！" cols="30" rows="7"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td>タグ</td>
+					<td><input type="text" placeholder="conversation,hobby,business" name="text" value=""></td>
+				</tr>
+				<tr>
+					<td>終了予定時間</td>
+					<td><input type="text" placeholder="30" name="text" value=""></td>
+				</tr>
+				<tr>
+					<td>最大通話時間(分)</td>
+					<td><input type="text" placeholder="10" name="text" value=""></td>
+				</tr>
+				<tr>
+					<td>最低通話時間(分)</td>
+					<td><input type="text" placeholder="30" name="text" value=""></td>
+				</tr>
+				<tr>
+					<td>生徒支払いポイント</td>
+					<td><input type="text" placeholder="100" name="text" value=""></td>
+				</tr>
+				<tr>
+					<td id="margin-bottom"><input type="submit" class="Room-buttom" id="Room-buttom" name="submit" value="ルーム作成"></td>
+				</tr>
+			</table>
+		</form>
 	</main>
 </body>
 </html>
