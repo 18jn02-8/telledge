@@ -18,42 +18,48 @@
 		<div id="room-name" class="center example">
 			<span>ルーム作成</span>
 		</div>
-		<form action="/teacher/Rooms/create" method="post" name="Teacher">
+		<form action="/teacher/Rooms/index" method="post" name="Teacher">
 			<table class="example">
 				<col span="1" width="180px">
 				<tr>
 					<td class="room-font">ルーム名</td>
-					<td><input type="text" placeholder="[大幅値引き！] OOOO" name="name" value=""></td>
+					<td><input type="text" name="roomName" value=""></td>
+				</tr>
+				<tr>
+					<td>タグ</td>
+					<td><input type="text" name="tag" value=""></td>
 				</tr>
 				<tr>
 					<td>ルーム説明</td>
 					<td>
-						<textarea name="msg2" name="description" placeholder="このルームでは特別にOOについての情報を公開しようと思います。今回は特別価格で通常価格の90%割引価格で提供します！
-					こんなチャンスは二度とありません。この機会をお見逃しなく！！！" cols="30" rows="7"></textarea>
+						<textarea name="msg2" name="description" cols="30" rows="7"></textarea>
 					</td>
 				</tr>
 				<tr>
-					<td>タグ</td>
-					<td><input type="text" placeholder="conversation,hobby,business" name="tag" value=""></td>
+					<td>最低保障時間</td>
+					<td><input type="text" name="worstTime" value=""></td>
 				</tr>
 				<tr>
-					<td>通話終了予定時間</td>
-					@*maxExtendTime*@
-					<td><input type="text" placeholder="30" name="endScheduleTime" value=""></td>
+					<td>最大延長時間</td>
+					<td><input type="text"name="extensionTime" value=""></td>
 				</tr>
 				<tr>
-					<td>最大通話時間(分)</td>
+					<td>ポイント</td>
 					@*minGuaranteeTime*@
-					<td><input type="text" name="extensionTime" placeholder="10" name="text" value=""></td>
+					<td><input type="text" name="point"name="text" value=""></td>
 				</tr>
 				<tr>
-					<td>最低通話時間(分)</td>
+					<td>通話終了予定時刻</td>
 					@*fee*@
-					<td><input type="text" placeholder="30" name="text" value=""></td>
+					<td><input type="text"name="endScheduleTime" value=""></td>
 				</tr>
 				<tr>
-					<td>生徒支払いポイント</td>
-					<td><input type="text" placeholder="100" name="text" value=""></td>
+					<td>通話開始時刻</td>
+					<td><input type="text"name="beginTime" value=""></td>
+				</tr>
+				<tr>
+					<td>通話終了時刻</td>
+					<td><input type="text"name="endTimes" value=""></td>
 				</tr>
 				<tr>
 					<td id="margin-bottom"><input type="submit" class="Room-buttom" id="Room-buttom" name="submit" value="ルーム作成"></td>
