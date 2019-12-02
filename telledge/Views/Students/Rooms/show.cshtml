@@ -17,7 +17,9 @@
         $(document).ready(function () {
             $("#readOnlyTags").tagit({
                 readOnly: true
-            })
+            }).ready(function () {
+                $(this).find('.tagit-new').css('display', 'none')
+            });
         });
 
     </script>
