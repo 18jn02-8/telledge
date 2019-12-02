@@ -16,7 +16,6 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $("#myTags").tagit({
-                readOnly: true
             })
         });
 
@@ -30,9 +29,12 @@
                 </p>
                 <p>
                     <ul id="myTags">
-                        <li>@(Model.tag)</li>
+                        @foreach (var tag in Model.tag.Split(','))
+                        {
+                            <li>@(tag)</li>
+                        }
                     </ul>
-                </p>
+                    </p>
                 <p>
                     画像
                     @(Model.getTeacher().profileImage)
