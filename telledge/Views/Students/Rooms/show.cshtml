@@ -15,7 +15,8 @@
     </header>
     <script type="text/javascript">
         $(document).ready(function () {
-            $("#myTags").tagit({
+            $("#readOnlyTags").tagit({
+                readOnly: true
             })
         });
 
@@ -27,14 +28,12 @@
                     ルーム名
                     @(Model.roomName)
                 </p>
-                <p>
-                    <ul id="myTags">
+                    <ul class="tagFrex" id="readOnlyTags">
                         @foreach (var tag in Model.tag.Split(','))
                         {
                             <li>@(tag)</li>
                         }
                     </ul>
-                    </p>
                 <p>
                     画像
                     @(Model.getTeacher().profileImage)
