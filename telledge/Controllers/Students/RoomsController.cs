@@ -126,5 +126,13 @@ namespace telledge.Controllers.Students
 			section.create();
 			return RedirectToAction("call", "rooms", new { Id = Convert.ToInt32(id) });
 		}
-    }
+
+		[HttpPut]
+		public ActionResult leave()
+		{
+			//ルームから退出する処理
+			if (Student.currentUser() == null) return RedirectToAction("create", "sessions");
+
+		}
+	}
 }
