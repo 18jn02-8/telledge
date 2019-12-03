@@ -113,12 +113,14 @@ namespace telledge.Controllers.Students
                 return View();
             }
         }
-		public ActionResult join(int id)
+		public ActionResult join(int id, string request)
 		{
 			Section section = new Section();
 			section.roomId = id;
 			section.studentId = Student.currentUser().id;
-			section.
+			section.request = request;
+			section.create();
+			return RedirectToAction("call", "rooms");
 		}
     }
 }
