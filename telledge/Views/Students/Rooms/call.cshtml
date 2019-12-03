@@ -1,73 +1,118 @@
-﻿@model telledge.Models.Room
+@model telledge.Models.Room
 
 @{
-    Layout = null;
+	Layout = null;
 }
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" href="ModalWindow.css">
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+	<script src="main.js"></script>
+	<script src="http://localhost:53766/Scripts/jquery-3.3.1.js"></script>
 
+	<script>
+		$(function () {
+			$('.js-modal-open').on('click', function () {
+				$('.js-modal').fadeIn();
+				return false;
+			});
+			$('.js-modal-close').on('click', function () {
+				$('.js-modal').fadeOut();
+				return false;
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="content">
+		<a class="js-modal-open" href="">モーダルウィンドウ表示</a>
+	</div>
+	<div class="modal js-modal">
+		<div class="modal__bg js-modal-close"></div>
+		<div class="modal__content">
+			<h3 class="h3-margin-left">休憩時間です!!次の生徒の対応を開始しますか?</h3>
+			<div class="div-margin">
+				<span>生徒名</span>
+				<span>山田</span>
+			</div>
+			<div class="div-margin">
+				<span>要望</span>
+				<span>こうしてください。</span>
+			</div>
+			<div class="div-margin">
+				<input class="buttom-margin" type="submit" value="対応不可" id="button-color-red">
+				<input class="buttom-margin" type="submit" value="次の生徒へ" id="button-color-Green">
+				<a class="js-modal-close" href=""></a>
+			</div>
+		</div>
+	</div>
+</body>
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
-    <link rel="stylesheet" href="~/StyleSheets/studentRoomCall.css">
-    <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
-    <script type="text/javascript" src="~/Scripts/jquery-3.3.1.min.js"></script>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="~/StyleSheets/studentRoomCall.css">
+	<script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
+	<script type="text/javascript" src="~/Scripts/jquery-3.3.1.min.js"></script>
 </head>
 <body>
-    <main class="clearfix">
-        <div id="main-left" class="boxes  float">
-            <div id="room-name" class="center">
-                <h1>@Model.roomName</h1>
-            </div>
-            <div id="room-tag" class="center">
-                <span>@Model.tag</span>
-            </div>
-            <hr width="70%" />
-            <div id="room-description" class="left-margin">
-                <span>@Model.description</span>
-            </div>
-            <hr width="70%" />
-            <div id="room-detail">
-                <table class="left-margin">
-                    <col span="1" width="200px">
-                    <tr>
-                        <td>料金</td>
-                        <td>@(Model.point)ポイント</td>
-                    </tr>
-                    <tr>
-                        <td>終了予定時刻</td>
-                        <td>@Model.endScheduleTime</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-        <div id="main-right" class="boxes float">
-            <div id="call" class="divide">
-                <div id="image">画像</div>
-                <table>
-                    <col span="1" width="200px">
-                    <tbody>
-                        <tr>
-                            <td>講師名</td>
-                            <td>@Model.getTeacher().name</td>
-                        </tr>
-                        <tr>
-                            <td>通話開始時刻</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>通話時間</td>
-                            <td><td>
-                        </tr>
-                        <tr>
-                            <td>終了予定時刻</td>
-                            <td>@Model.endScheduleTime</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </main>
+	<main class="clearfix">
+		<div id="main-left" class="boxes  float">
+			<div id="room-name" class="center">
+				<h1>@Model.roomName</h1>
+			</div>
+			<div id="room-tag" class="center">
+				<span>@Model.tag</span>
+			</div>
+			<hr width="70%" />
+			<div id="room-description" class="left-margin">
+				<span>@Model.description</span>
+			</div>
+			<hr width="70%" />
+			<div id="room-detail">
+				<table class="left-margin">
+					<col span="1" width="200px">
+					<tr>
+						<td>料金</td>
+						<td>@(Model.point)ポイント</td>
+					</tr>
+					<tr>
+						<td>終了予定時刻</td>
+						<td>@Model.endScheduleTime</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div id="main-right" class="boxes float">
+			<div id="call" class="divide">
+				<div id="image">画像</div>
+				<table>
+					<col span="1" width="200px">
+					<tbody>
+						<tr>
+							<td>講師名</td>
+							<td>@Model.getTeacher().name</td>
+						</tr>
+						<tr>
+							<td>通話開始時刻</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>通話時間</td>
+							<td>
+							<td>
+						</tr>
+						<tr>
+							<td>終了予定時刻</td>
+							<td>@Model.endScheduleTime</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</main>
 </body>
 </html>
