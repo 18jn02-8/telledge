@@ -19,9 +19,11 @@ namespace UnitTest.Sections
 			section.studentId = 1;
 			section.roomId = 1;
 
+			section.beginTime = DateTime.Parse("2000/1/1");
 			section.request = "変更テスト";
 			section.talkTime = 500;
 			section.valuation = null;
+			Assert.IsNotNull(section.update());
 		}
 	}
 }
