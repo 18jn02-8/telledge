@@ -1,4 +1,4 @@
-﻿@model telledge.Models.Room
+@model telledge.Models.Room
 
 @{
     ViewBag.Title = "show";
@@ -87,4 +87,11 @@
             </div>
         </div>
     </div>
+	<div class="modal">
+		<form action="student/rooms/join/@Model.id" method="post">
+			<h3>講師への要望</h3>
+			<input type="text" name="request" />
+			<input type="submit" value="参加" />
+		</form>
+	</div>
 </main>
