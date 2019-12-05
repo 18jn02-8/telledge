@@ -140,6 +140,7 @@ namespace telledge.Controllers.Students
 		{
 			if (Student.currentUser() == null) return RedirectToAction("create", "sessions");
 
+			return RedirectToAction("index", "rooms");
 		}
 	}
 }
