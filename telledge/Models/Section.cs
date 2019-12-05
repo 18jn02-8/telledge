@@ -237,7 +237,35 @@ namespace telledge.Models
 		}
 		public Section find(int roomId, int studentId)
 		{
-
+			Section retSection = null;
+			string cstr = ConfigurationManager.ConnectionStrings["Db"].ConnectionString;
+			using (SqlConnection connection = new SqlConnection(cstr))
+			{
+				string sql = "select * from Section where roomId = @roomId and studentId = @studentId";
+				SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
+				adapter.SelectCommand.Parameters.Add("@roomId", SqlDbType.Int);
+				adapter.SelectCommand.Parameters["@roomId"].Value = this.roomId;
+				adapter.SelectCommand.Parameters.Add("@studentId", SqlDbType.Int);
+				adapter.SelectCommand.Parameters["@studentId"].Value = this.studentId;
+				DataSet ds = new DataSet();
+				int cnt = adapter.Fill(ds, "Section");
+				if (cnt != 0)
+				{
+					DataTable dt = ds.Tables["Section"];
+					retSection = new Section();
+					retSection.order = (int)dt.Rows[0]["order"];
+					retSection.request = dt.Rows[0]["request"].ToString();
+					retSection.roomId = (int)dt.Rows[0]["roomId"];
+					retSection.studentId = (int)dt.Rows[0]["studentId"];
+					retSection.talkTime = (int)dt.Rows[0]["talkTime"];
+					retSection.valuation = (int)dt.Rows[0]["valuation"];
+					if (dt.Rows[0]["beginTime"] != DBNull.Value)
+					{
+						retSection.beginTime = DateTime.Parse(dt.Rows[0]["beginTime"].ToString());
+					}
+				}
+			}
+			return retSection;
 		}
     }
 }
