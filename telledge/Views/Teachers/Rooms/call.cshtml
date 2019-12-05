@@ -39,8 +39,8 @@
 					</tr>
 				</table>
 			</div>
-			@foreach (var item in Model)
-			{
+			@*@foreach (var item in @Model)
+			{*@
 				<div id="room--list">
 					<table border="1" class="list-margin">
 						<col span="5" width="200px">
@@ -51,14 +51,14 @@
 							<td>対応不可</td>
 						</tr>
 						<tr>
-							<td>@item.order</td>
-							<td>@item.getStudent().name</td>
-							<td>@item.request</td>
+							<td>2人</td>
+							<td>田中</td>
+							<td>手短に説明してほしいです。</td>
 							<td><input type="submit" class="button-cancel" name="cancel" value="キャンセル"></td>
 						</tr>
 					</table>
 				</div>
-			}
+			@*}*@
 		</div>
 
 		<div id="main-right" class="boxes float">
