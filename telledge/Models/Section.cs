@@ -235,5 +235,9 @@ namespace telledge.Models
 			}
 			return check;
 		}
+		public Section find(int roomId, int studentId)
+		{
+
+		}
     }
 }
