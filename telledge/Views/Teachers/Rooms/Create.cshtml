@@ -1,69 +1,61 @@
-@model IEnumerable<telledge.Models.Room>
-
+﻿@model IEnumerable<telledge.Models.Room>
 @{
 	Layout = "~/Views/Shared/teacherMenu.cshtml";
 }
 
-<!DOCTYPE html>
-<html>
-<head>
-	<meta name="viewport" content="width=device-width" />
-	<link rel="stylesheet" href="new.css">
-	<link rel="stylesheet" href="bootstrap.min.css">
-	<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
-	<script type="text/javascript" src="bootstrap.min.js"></script>
-</head>
-<body>
-	<main class="clearfix">
-		<div id="room-name" class="center example">
-			<span>ルーム作成</span>
-		</div>
-		<form action="/teacher/Rooms/index" method="post" name="Teacher">
-			<table class="example">
-				<col span="1" width="180px">
-				<tr>
-					<td class="room-font">ルーム名</td>
-					<td><input type="text" name="roomName" value=""></td>
-				</tr>
-				<tr>
-					<td>タグ</td>
-					<td><input type="text" name="tag" value=""></td>
-				</tr>
-				<tr>
-					<td>ルーム説明</td>
-					<td>
-						<textarea name="description" cols="30" rows="7"></textarea>
-					</td>
-				</tr>
-				<tr>
-					<td>最低保障時間</td>
-					<td><input type="text" name="worstTime" value=""></td>
-				</tr>
-				<tr>
-					<td>最大延長時間</td>
-					<td><input type="text"name="extensionTime" value=""></td>
-				</tr>
-				<tr>
-					<td>ポイント</td>
-					<td><input type="text" name="point"value=""></td>
-				</tr>
-				<tr>
-					<td>通話終了予定時刻</td>
-					<td><input type="text"name="endScheduleTime" value=""></td>
-				</tr>
-				<tr>
-					<td>通話開始時刻</td>
-					<td><input type="text"name="beginTime" value=""></td>
-				</tr>
-				<tr>
-					<td>通話終了時刻</td>
-					<td><input type="text"name="endTimes" value=""></td>
-				</tr>
-				<tr>
-					<td id="margin-bottom"><input type="submit" class="Room-buttom" id="Room-buttom" name="submit" value="ルーム作成"></td>
-				</tr>
-			</table>
-		</form>
-	</main>
-</body>
-</html>
+<meta name="viewport" content="width=device-width" />
+<link rel="stylesheet" href="~/StyleSheets/TeacherRoomnew.css">
+<link rel="stylesheet" href="bootstrap.min.css">
+<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="bootstrap.min.js"></script>
+<main class="clearfix">
+	<div id="room-name" class="center example">
+		<span>ルーム作成</span>
+	</div>
+	<form action="/teacher/Rooms/index" method="post" name="Teacher">
+		<table class="example">
+			<col span="1" width="180px">
+			<tr>
+				<td class="room-font">ルーム名</td>
+				<td><input type="text" name="roomName" value=""></td>
+			</tr>
+			<tr>
+				<td>タグ</td>
+				<td><input type="text" name="tag" value=""></td>
+			</tr>
+			<tr>
+				<td>ルーム説明</td>
+				<td>
+					<textarea name="description" cols="30" rows="7"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td>最低保障時間</td>
+				<td><input type="text" name="worstTime" value=""></td>
+			</tr>
+			<tr>
+				<td>最大延長時間</td>
+				<td><input type="text" name="extensionTime" value=""></td>
+			</tr>
+			<tr>
+				<td>ポイント</td>
+				<td><input type="text" name="point" value=""></td>
+			</tr>
+			<tr>
+				<td>通話終了予定時刻</td>
+				<td><input type="text" name="endScheduleTime" value=""></td>
+			</tr>
+			<tr>
+				<td>通話開始時刻</td>
+				<td><input type="text" name="beginTime" value=""></td>
+			</tr>
+			<tr>
+				<td>通話終了時刻</td>
+				<td><input type="text" name="endTimes" value=""></td>
+			</tr>
+			<tr>
+				<td id="margin-bottom"><input type="submit" class="Room-buttom" id="Room-buttom" name="submit" value="ルーム作成"></td>
+			</tr>
+		</table>
+	</form>
+</main>
