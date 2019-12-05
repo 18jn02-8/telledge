@@ -7,7 +7,11 @@ namespace UnitTest.Rooms
     [TestClass]
     public class RoomCreate
     {
-        [TestMethod]
+		public RoomCreate()
+		{
+		}
+
+		[TestMethod]
         public void TestCreate()
         {
             Room room = new Room();

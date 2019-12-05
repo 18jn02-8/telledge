@@ -11,7 +11,7 @@ namespace UnitTest.Rooms
 		public void success()
 		{
 			Room room = new Room();
-			room.id = 2;
+			room.id = 1;
 			Assert.AreNotEqual(0,room.getWaitCount());
 		}
         [TestMethod]
