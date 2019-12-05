@@ -1,11 +1,35 @@
 class Timer{
-	constructor(mintime, overtime) {
+	constructor(element, mintime, overtime) {
+		this.element = element;
 		this.mintime = mintime;
 		this.overtime = overtime;
 	}
+	setTimerAsEssential() {
+		this.sec = this.mintime;
+	}
+	setTimerAsExtend() {
+		this.sec = this.overtime;
+	}
+	showTime() {
+		const min = this.sec / 60;
+		const sec = min * 60 - this.sec;
+		this.element.text(parseInt(min) + ":" + parseInt(sec));
+	}
+
+	setTimer() {
+		let sec = this.sec;
+		const interval = setInterval(() => {
+			this.sec--;
+			this.showTime();
+			if (this.sec <= 0) {
+				clearInterval(interval); //idをclearIntervalで指定している
+			}
+		}, 1000);
+	}
+
 	minTime() {
-		var flag = 0;
-		var count = 0;
+		let flag = 0;
+		let count = 0;
 		var id = setInterval(function () {
 			var mintimer = (parseInt(mintime) * 60) - count;
 			var min = mintimer / 60;
@@ -37,30 +61,6 @@ class Timer{
 	}
 }
 
-/*$.ajax({
-	url: './request.php',
-	type: 'POST',
-	data: {
-		'userid': $('#userid').val(),
-		'passward': $('#passward').val()
-	}
-})
-	// Ajaxリクエストが成功した時発動
-	.done((data) => {
-		$('.result').html(data);
-		console.log(data);
-	})
-	// Ajaxリクエストが失敗した時発動
-	.fail((data) => {
-		$('.result').html(data);
-		console.log(data);
-	})
-	// Ajaxリクエストが成功・失敗どちらでも発動
-	.always((data) => {
-
-	});
-	*/
-var flag = 0;
-if(con.minTime());
-var con = new Timer(mintime, overtime);
-if (flag != 1) con.overTime();
+var con = new Timer($('te'), mintime, overtime);
+con.setTimerAsEssential();
+con.setTimer( )
