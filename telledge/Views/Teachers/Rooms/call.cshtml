@@ -1,106 +1,54 @@
 ﻿@model telledge.Models.Room
 
 @{
-    Layout = null;
+	Layout = null;
 }
 
 <!DOCTYPE html>
-
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>call</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" href="ModalWindow.css">
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+	<script src="main.js"></script>
+	<script src="http://localhost:53766/Scripts/jquery-3.3.1.js"></script>
+
+	<script>
+		$(function () {
+			$('.js-modal-open').on('click', function () {
+				$('.js-modal').fadeIn();
+				return false;
+			});
+			$('.js-modal-close').on('click', function () {
+				$('.js-modal').fadeOut();
+				return false;
+			});
+		});
+	</script>
 </head>
 <body>
-    <div>
-        <h4>Room</h4>
-        <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.teacherId)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.teacherId)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.roomName)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.roomName)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.tag)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.tag)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.description)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.description)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.worstTime)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.worstTime)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.extensionTime)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.extensionTime)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.point)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.point)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.endScheduleTime)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.endScheduleTime)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.beginTime)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.beginTime)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.endTime)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.endTime)
-            </dd>
-    
-        </dl>
-    </div>
-    <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
-        @Html.ActionLink("Back to List", "Index")
-    </p>
+	<div class="content">
+		<a class="js-modal-open" href=""></a>
+	</div>
+	<div class="modal js-modal">
+		<div class="modal__bg js-modal-close"></div>
+		<div class="modal__content">
+			<h3 class="h3-margin-left">休憩時間です!!次の生徒の対応を開始しますか?</h3>
+			<div class="div-margin">
+				<span>生徒名</span>
+				<span>山田</span>
+			</div>
+			<div class="div-margin">
+				<span>要望</span>
+				<span>こうしてください。</span>
+			</div>
+			<div class="div-margin">
+				<input class="buttom-margin" type="submit" value="対応不可" id="button-color-red">
+				<input class="buttom-margin" type="submit" value="次の生徒へ" id="button-color-Green">
+				<a class="js-modal-close" href=""></a>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
