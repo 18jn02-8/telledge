@@ -244,9 +244,9 @@ namespace telledge.Models
 				string sql = "select * from Section where roomId = @roomId and studentId = @studentId";
 				SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
 				adapter.SelectCommand.Parameters.Add("@roomId", SqlDbType.Int);
-				adapter.SelectCommand.Parameters["@roomId"].Value = this.roomId;
+				adapter.SelectCommand.Parameters["@roomId"].Value = roomId;
 				adapter.SelectCommand.Parameters.Add("@studentId", SqlDbType.Int);
-				adapter.SelectCommand.Parameters["@studentId"].Value = this.studentId;
+				adapter.SelectCommand.Parameters["@studentId"].Value = studentId;
 				DataSet ds = new DataSet();
 				int cnt = adapter.Fill(ds, "Section");
 				if (cnt != 0)
@@ -258,7 +258,10 @@ namespace telledge.Models
 					retSection.roomId = (int)dt.Rows[0]["roomId"];
 					retSection.studentId = (int)dt.Rows[0]["studentId"];
 					retSection.talkTime = (int)dt.Rows[0]["talkTime"];
-					retSection.valuation = (int)dt.Rows[0]["valuation"];
+					if(dt.Rows[0]["valuation"] != DBNull.Value)
+					{
+						retSection.valuation = (int)dt.Rows[0]["valuation"];
+					}
 					if (dt.Rows[0]["beginTime"] != DBNull.Value)
 					{
 						retSection.beginTime = DateTime.Parse(dt.Rows[0]["beginTime"].ToString());
