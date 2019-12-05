@@ -13,7 +13,12 @@ using telledge.Models;
 
 namespace telledge.Models
 {
-    public class Section
+	enum KeyTarget
+	{
+		roomId,
+		studentId
+	}
+	public class Section
     {
         public int roomId { get; set; }
         public int studentId { get; set; }
