@@ -42,38 +42,8 @@ class Timer{
 			}
 		}, 1000);
 	}
-
-	minTime() {
-		let flag = 0;
-		let count = 0;
-		var id = setInterval(function () {
-			var mintimer = (parseInt(mintime) * 60) - count;
-			var min = mintimer / 60;
-			var sec = mintimer % 60;
-			$('te').text(parseInt(min) + ":" + parseInt(sec));
-			count++;
-			if (mintimer <= 0) {
-				flag = 1;
-				clearInterval(id); //idをclearIntervalで指定している
-			}
-		}, 1000);
-		return flag;
-	}
-	overTime() {
-		var count = 0;
-		var id = setInterval(function () {
-			var overtimer = (parseInt(overtime) * 60);
-			var min = count / 60;
-			var sec = count % 60;
-			$('te').text(parseInt(min) + ":" + parseInt(sec));
-			count++;
-			if (overtimer < count) {
-				clearInterval(id);　//idをclearIntervalで指定している
-			}
-		}, 1000);
-	}
 }
 
 var con = new Timer($('te'), mintime, overtime);
-con.setTimerAsEssential();
+con.setTimerAsEssential();	//最低通話として処理
 con.setTimer( )
