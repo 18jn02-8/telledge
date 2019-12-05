@@ -1,29 +1,31 @@
 class Timer{
-	constructor(mintimer, overtimer) {
-		super(mintimer, overtimer);
+	constructor(mintime, overtime) {
+		this.mintime = mintime;
+		this.overtime = overtime;
 	}
 	minTime() {
+		var flag = 0;
 		var count = 0;
 		var id = setInterval(function () {
-			mintimer = (parseInt(mintimer) * 60) - count;
+			var mintimer = (parseInt(mintime) * 60) - count;
 			var min = mintimer / 60;
 			var sec = mintimer % 60;
-			$('#calltime').Text(parseInt(min) + ":" + parseInt(sec));
+			$('te').text(parseInt(min) + ":" + parseInt(sec));
 			count++;
 			if (mintimer <= 0) {
-				clearInterval(id);　//idをclearIntervalで指定している
-				return 0;
+				flag = 1;
+				clearInterval(id); //idをclearIntervalで指定している
 			}
 		}, 1000);
-		return 1;
+		return flag;
 	}
 	overTime() {
 		var count = 0;
 		var id = setInterval(function () {
-			overtimer = (parseInt(overtimer) * 60);
-			var min = overtimer / 60;
-			var sec = overtimer % 60;
-			$('#calltime').Text(parseInt(min) + ":" + parseInt(sec));
+			var overtimer = (parseInt(overtime) * 60);
+			var min = count / 60;
+			var sec = count % 60;
+			$('te').text(parseInt(min) + ":" + parseInt(sec));
 			count++;
 			if (overtimer < count) {
 				clearInterval(id);　//idをclearIntervalで指定している
@@ -31,10 +33,34 @@ class Timer{
 		}, 1000);
 	}
 
-	startTime() {
-		flag = minTime();
-		if (flag == 0) {
-			overTime();
-		}
+	typeSection(mintime,overtime) {
 	}
 }
+
+/*$.ajax({
+	url: './request.php',
+	type: 'POST',
+	data: {
+		'userid': $('#userid').val(),
+		'passward': $('#passward').val()
+	}
+})
+	// Ajaxリクエストが成功した時発動
+	.done((data) => {
+		$('.result').html(data);
+		console.log(data);
+	})
+	// Ajaxリクエストが失敗した時発動
+	.fail((data) => {
+		$('.result').html(data);
+		console.log(data);
+	})
+	// Ajaxリクエストが成功・失敗どちらでも発動
+	.always((data) => {
+
+	});
+	*/
+var flag = 0;
+if(con.minTime());
+var con = new Timer(mintime, overtime);
+if (flag != 1) con.overTime();
