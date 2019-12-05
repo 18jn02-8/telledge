@@ -3,17 +3,30 @@ class Timer{
 		this.element = element;
 		this.mintime = mintime;
 		this.overtime = overtime;
+		this.status = 0;
 	}
 	setTimerAsEssential() {
-		this.sec = this.mintime;
+		this.sec = this.mintime * 60;
+		this.status = 1;
 	}
 	setTimerAsExtend() {
-		this.sec = this.overtime;
+		this.sec = this.overtime * 60;
+		this.status = 2;
+	}
+	getStatusCode() {
+		return this.status;
+	}
+	getStatusDetail() {
+		let ret;
+		if (this.status == 0) ret = "Not started";
+		else if (this.status == 1) ret = "Essential";
+		else if (this.status == 2) ret = "Extend";
+		else ret = "All done";
 	}
 	showTime() {
 		const min = this.sec / 60;
-		const sec = min * 60 - this.sec;
-		this.element.text(parseInt(min) + ":" + parseInt(sec));
+		const sec = this.sec % 60;
+		$('te').text(parseInt(min) + ":" + parseInt(sec));
 	}
 
 	setTimer() {
@@ -22,7 +35,9 @@ class Timer{
 			this.sec--;
 			this.showTime();
 			if (this.sec <= 0) {
-				clearInterval(interval); //idをclearIntervalで指定している
+				this.status++;
+				if (this.status == 1) this.setTimerAsEssential();
+				if (this.status == 2) this.setTimerAsExtend();
 			}
 		}, 1000);
 	}
@@ -55,9 +70,6 @@ class Timer{
 				clearInterval(id);　//idをclearIntervalで指定している
 			}
 		}, 1000);
-	}
-
-	typeSection(mintime,overtime) {
 	}
 }
 
