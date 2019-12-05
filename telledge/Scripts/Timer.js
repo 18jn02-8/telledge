@@ -1,6 +1,14 @@
+/*
+ * 構造例
+ * <タグ id="parent_selector引数">
+ *	<タグ id="timer-status"></タグ>
+ *	<タグ id="timer-count"></タグ>
+ * </タグ>
+ */
+
 class Timer{
-	constructor(selector, mintime, overtime) {
-		this.selector = selector;
+	constructor(parent_selector, mintime, overtime) {
+		this.selector = parent_selector;
 		this.mintime = mintime;
 		this.overtime = overtime;
 		this.status = 0;
@@ -11,7 +19,9 @@ class Timer{
 	}
 	setTimerAsExtend() {
 		this.sec = this.overtime * 60;
-		$(this.selector).css('color', 'red');
+		$(this.selector).children('#timer-count').css('color', 'red');
+		$(this.selector).children('#timer-status').css('color', 'red');
+		$(this.selector).children('#timer-status').text("延長時間");
 		this.status = 2;
 	}
 	getStatusCode() {
@@ -30,7 +40,7 @@ class Timer{
 		//secを適切な形に変換して表示する
 		const min = this.sec / 60;
 		const sec = this.sec % 60;
-		$(this.selector).text(parseInt(min) + ":" + parseInt(sec));
+		$(this.selector).children('#timer-count').text(parseInt(min) + ":" + parseInt(sec));
 	}
 
 	setTimer() {
@@ -48,6 +58,6 @@ class Timer{
 	}
 }
 
-var con = new Timer('te', mintime, overtime);
+var con = new Timer('#timer', mintime, overtime);
 con.setTimerAsEssential();	//最低通話として処理
 con.setTimer( )
