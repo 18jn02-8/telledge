@@ -11,6 +11,7 @@ class Timer{
 	}
 	setTimerAsExtend() {
 		this.sec = this.overtime * 60;
+		$('te').css('color', 'red');
 		this.status = 2;
 	}
 	getStatusCode() {
