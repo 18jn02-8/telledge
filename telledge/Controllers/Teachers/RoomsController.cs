@@ -25,8 +25,6 @@ namespace telledge.Controllers.Teachers
 		{
 			var model = Room.find(id);
 			return View("/Views/Teachers/Rooms/call.cshtml", model);
-		}
-	}
         }
 		[HttpPost]
 		public ActionResult Create(int teacherId,String roomName,String tag,String description,int worstTime,int extensionTime,int point,DateTime endScheduleTime, DateTime beginTime, DateTime endTime)
@@ -54,10 +52,5 @@ namespace telledge.Controllers.Teachers
 			}
 
 		}
-		public ActionResult index()
-        {
-            var model = Room.getRooms();
-            return View("/Views/Teachers/Rooms/call.cshtml", model);
-        }
     }
 }
