@@ -1,6 +1,6 @@
 class Timer{
-	constructor(element, mintime, overtime) {
-		this.element = element;
+	constructor(selector, mintime, overtime) {
+		this.selector = selector;
 		this.mintime = mintime;
 		this.overtime = overtime;
 		this.status = 0;
@@ -11,7 +11,7 @@ class Timer{
 	}
 	setTimerAsExtend() {
 		this.sec = this.overtime * 60;
-		$('te').css('color', 'red');
+		$(this.selector).css('color', 'red');
 		this.status = 2;
 	}
 	getStatusCode() {
@@ -30,16 +30,16 @@ class Timer{
 		//secを適切な形に変換して表示する
 		const min = this.sec / 60;
 		const sec = this.sec % 60;
-		$('te').text(parseInt(min) + ":" + parseInt(sec));
+		$(this.selector).text(parseInt(min) + ":" + parseInt(sec));
 	}
 
 	setTimer() {
 		//secを減らす
 		let sec = this.sec;
 		const interval = setInterval(() => {
-			this.sec--;
 			this.showTime();
-			if (this.sec <= 0) {
+			this.sec--;
+			if (this.sec < 0) {
 				this.status++;
 				if (this.status == 1) this.setTimerAsEssential();
 				if (this.status == 2) this.setTimerAsExtend();
@@ -48,6 +48,6 @@ class Timer{
 	}
 }
 
-var con = new Timer($('te'), mintime, overtime);
+var con = new Timer('te', mintime, overtime);
 con.setTimerAsEssential();	//最低通話として処理
 con.setTimer( )
