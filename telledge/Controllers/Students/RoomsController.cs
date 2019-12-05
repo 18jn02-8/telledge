@@ -138,10 +138,13 @@ namespace telledge.Controllers.Students
 		}
 		[ActionName("leave")]
 		[HttpPut]
-		public ActionResult leavePut()
+		public ActionResult leavePut(int id)
 		{
 			if (Student.currentUser() == null) return RedirectToAction("create", "sessions");
-
+			Section section = Section.find(id, Student.currentUser().id);
+			TimeSpan span = DateTime.Now - section.beginTime;
+			section.talkTime = span.Minutes + span.Hours * 60;
+			section.update();
 			return RedirectToAction("index", "rooms");
 		}
 	}
