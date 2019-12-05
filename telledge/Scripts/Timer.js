@@ -15,9 +15,11 @@ class Timer{
 		this.status = 2;
 	}
 	getStatusCode() {
+		//statusコードを返却する
 		return this.status;
 	}
 	getStatusDetail() {
+		//statusに応じた状態を返却する
 		let ret;
 		if (this.status == 0) ret = "Not started";
 		else if (this.status == 1) ret = "Essential";
@@ -25,12 +27,14 @@ class Timer{
 		else ret = "All done";
 	}
 	showTime() {
+		//secを適切な形に変換して表示する
 		const min = this.sec / 60;
 		const sec = this.sec % 60;
 		$('te').text(parseInt(min) + ":" + parseInt(sec));
 	}
 
 	setTimer() {
+		//secを減らす
 		let sec = this.sec;
 		const interval = setInterval(() => {
 			this.sec--;
