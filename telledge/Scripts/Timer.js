@@ -57,7 +57,3 @@ class Timer{
 		}, 1000);
 	}
 }
-
-var con = new Timer('#timer', mintime, overtime);
-con.setTimerAsEssential();	//最低通話として処理
-con.setTimer( )

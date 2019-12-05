@@ -59,11 +59,11 @@
 						</tr>
 						<tr>
 							<td>通話開始時刻</td>
-							<td></td>
+							<td>@DateTime.Now</td>
 						</tr>
 						<tr id="timer">
-							<td id="timer-status">通話時間</td>
-							<td id="timer-count"></td>
+							<td id="timer-status">最低通話時間</td>
+							<td id="timer-count">@Model.worstTime</td>
 						</tr>
 						<tr>
 							<td>終了予定時刻</td>
@@ -74,5 +74,11 @@
 			</div>
 		</div>
 	</main>
+	<script>
+		var con = new Timer('#timer', mintime, overtime);
+		con.setTimerAsEssential();	//最低通話として処理
+		con.setTimer()
+
+	</script>
 </body>
 </html>
