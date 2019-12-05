@@ -235,7 +235,7 @@ namespace telledge.Models
 			}
 			return check;
 		}
-		public Section find(int roomId, int studentId)
+		public static Section find(int roomId, int studentId)
 		{
 			Section retSection = null;
 			string cstr = ConfigurationManager.ConnectionStrings["Db"].ConnectionString;
