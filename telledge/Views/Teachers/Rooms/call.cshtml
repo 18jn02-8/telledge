@@ -31,11 +31,11 @@
 					<col span="1" width="200px">
 					<tr>
 						<td>通話待ち人数</td>
-						<td></td>
+						<td>２人</td>
 					</tr>
 					<tr>
 						<td>通話合計時間</td>
-						<td></td>
+						<td>２５分</td>
 					</tr>
 				</table>
 			</div>
@@ -68,7 +68,11 @@
 					<tbody>
 						<tr>
 							<td>生徒名</td>
-							<td>@Model.getStudent().name</td>
+							<td>@Model.name</td>
+						</tr>
+						<tr>
+							<td>SkypeID</td>
+							<td>@Model.skypeId</td>
 						</tr>
 						<tr>
 							<td>残り時間</td>
@@ -80,7 +84,7 @@
 						</tr>
 						<tr>
 							<td id="margin-bottom">要望</td>
-							<td id="margin-bottom">@Model.request</td>
+							<td id="margin-bottom">@Model.</td>
 						</tr>
 						<tr>
 							<td id="margin-bottomm"><input type="submit" class="button-cancel" name="submit" value="通話終了" /></td>
