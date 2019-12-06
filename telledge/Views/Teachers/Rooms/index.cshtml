@@ -10,12 +10,12 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title></title>
-	<link rel="stylesheet" href="../work/index.css">
+	<link rel="stylesheet" href="~/StyleSheets/Roomsindex.css">
 </head>
 <body>
 	<!-- bodyタグ内の要素を取り出す -->
 	<main>
-		<link href="~/Views/Teachers/Rooms/Create.cshtml">ルーム作成
+		<a href="~/Views/Teachers/Rooms/Create.cshtml">ルーム作成</a>
 		@foreach (var item in Model)
 		{
 			<div class="room-boxes">
@@ -29,7 +29,7 @@
 
 						<tbody>
 							<tr>
-								<td><h3>タグ<h3></td>
+								<td><h3>タグ</h3></td>
 								<td><h3>@item.tag</h3></td>
 							</tr>
 							<tr>
