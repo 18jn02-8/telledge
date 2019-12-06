@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -26,7 +26,7 @@ namespace telledge.Controllers.Teachers
             {
 				return RedirectToRoute("Teacher", new { controller = "Rooms", Action = "Index" });
 			}
-            return View("new");
+            return View("create");
 
         }
         [HttpDelete]
