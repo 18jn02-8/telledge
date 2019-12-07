@@ -1,4 +1,4 @@
-@model telledge.Models.Room
+﻿@model telledge.Models.Room
 
 @{
 	Layout = null;
@@ -9,23 +9,11 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<link rel="stylesheet" href="ModalWindow.css">
-	<script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
-	<script src="main.js"></script>
-	<script src="http://localhost:53766/Scripts/jquery-3.3.1.js"></script>
-
-	<script>
-		$(function () {
-			$('.js-modal-open').on('click', function () {
-				$('.js-modal').fadeIn();
-				return false;
-			});
-			$('.js-modal-close').on('click', function () {
-				$('.js-modal').fadeOut();
-				return false;
-			});
-		});
-	</script>
+	<link rel="stylesheet" href="~/StyleSheets/ModalWindow.css">
+	<link rel="stylesheet" href="~/StyleSheets/TeacherRoomcall.css">
+	<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+	<script src="~/Scripts/ModalWindow.js"></script>
+	
 </head>
 <body>
 	<div class="content">
@@ -86,8 +74,8 @@
 					</tr>
 				</table>
 			</div>
-			@foreach (var item in Model)
-			{
+			@*@foreach (var item in Model)*@
+			@*{*@
 				<div id="room--list">
 					<table border="1" class="list-margin">
 						<col span="5" width="200px">
@@ -98,14 +86,14 @@
 							<td>対応不可</td>
 						</tr>
 						<tr>
-							<td>@item.order</td>
-							<td>@item.getStudent().name</td>
-							<td>@item.request</td>
+							<td></td>
+							<td></td>
+							<td></td>
 							<td><input type="submit" class="button-cancel" name="cancel" value="キャンセル"></td>
 						</tr>
 					</table>
 				</div>
-			}
+			@*  *@}
 		</div>
 
 		<div id="main-right" class="boxes float">
@@ -115,19 +103,19 @@
 					<tbody>
 						<tr>
 							<td>生徒名</td>
-							<td>@Model.getStudent().name</td>
+							<td></td>
 						</tr>
 						<tr>
 							<td>残り時間</td>
-							<td>@Model.endTime</td>
+							<td></td>
 						</tr>
 						<tr>
 							<td>最大残り時間</td>
-							<td>@Model.endScheduleTime</td>
+							<td></td>
 						</tr>
 						<tr>
 							<td id="margin-bottom">要望</td>
-							<td id="margin-bottom">@Model.request</td>
+							<td id="margin-bottom"></td>
 						</tr>
 						<tr>
 							<td id="margin-bottomm"><input type="submit" class="button-cancel js-modal-open" name="submit" value="通話終了" /></td>
