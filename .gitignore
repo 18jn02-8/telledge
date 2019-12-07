@@ -81,6 +81,6 @@ _[Ss]cripts
 /.vs/telledge/xs/ 
 /telledge.Tests/App.config
 /telledge/.vs/
-/Authentication.config
+/telledge/Authentication.config
 /.vs/
 *.lock
