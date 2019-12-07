@@ -84,3 +84,4 @@ _[Ss]cripts
 /telledge/Authentication.config
 /.vs/
 *.lock
+/UnitTest/App.config
