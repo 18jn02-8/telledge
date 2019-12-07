@@ -159,6 +159,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\ModalWindow.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
@@ -171,6 +172,7 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\tag-it.js" />
     <Content Include="Scripts\tag-it.min.js" />
+    <Content Include="StyleSheets\ModalWindow.css" />
     <Content Include="StyleSheets\Roomsindex.css" />
     <Content Include="StyleSheets\StudentLogin.css" />
     <Content Include="StyleSheets\studentMenuStyle.css" />
