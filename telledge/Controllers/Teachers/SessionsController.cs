@@ -26,7 +26,7 @@ namespace telledge.Controllers.Teachers
             {
 				return RedirectToRoute("Teacher", new { controller = "Rooms", Action = "Index" });
 			}
-            return View("create");
+            return View("/Views/Teachers/Sessions/create.cshtml");
 
         }
         [HttpDelete]
