@@ -1,10 +1,9 @@
-@model IEnumerable<telledge.Models.Room>
+﻿@model IEnumerable<telledge.Models.Room>
 
 @{
 	Layout = "~/Views/Shared/teacherMenu.cshtml";
 }
 
-<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -32,11 +31,11 @@
 							<tbody>
 								<tr>
 									<td><h3>タグ</h3></td>
-									<td><h3>家</h3></td>
+									<td><h3>@item.tag</h3></td>
 								</tr>
 								<tr>
 									<td><h3>獲得ポイント数</h3></td>
-									<td><h3>３０００ポイント</h3></td>
+									<td><h3>@item.point</h3></td>
 								</tr>
 							</tbody>
 						</table>
