@@ -33,7 +33,7 @@ namespace telledge.Controllers.Students
 		}
 
 		// DELETE api/<controller>/5
-		public void Delete(int id)
+		public void Delete(int room_id, int student_id, string api_key)
 		{
 			//ルームから退出する処理
 			if (Student.currentUser() == null) return RedirectToAction("create", "sessions");
