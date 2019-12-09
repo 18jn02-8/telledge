@@ -223,14 +223,14 @@ namespace telledge.Models
 			string cstr = ConfigurationManager.ConnectionStrings["Db"].ConnectionString;
 			using (SqlConnection connection = new SqlConnection(cstr))
 			{
-				string sql = "SELECT(worstTime + extensionTime) / 2 * (SELECT COUNT(studentId) as time From Section WHERE roomId = @id) FROM Room WHERE Id = @id";
+				string sql = "SELECT(worstTime + extensionTime) / 2 * (SELECT COUNT(studentId) From Section WHERE roomId = @id) as time FROM Room WHERE Id = @id";
 				SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
 				adapter.SelectCommand.Parameters.Add("@id", SqlDbType.Int);
 				adapter.SelectCommand.Parameters["@id"].Value = id;
 				DataSet ds = new DataSet();
 				adapter.Fill(ds, "Room");
 				DataTable dt = ds.Tables["Room"];
-				cnt = Int32.Parse(dt.Rows[0]["count"].ToString());
+				cnt = Int32.Parse(dt.Rows[0]["time"].ToString());
 			}
 			return cnt;
 		}

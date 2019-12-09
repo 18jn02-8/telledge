@@ -51,9 +51,6 @@
   <ItemGroup>
     <Compile Include="Room\getWaitTime.cs" />
     <Compile Include="Room\getWaitCount.cs" />
-    <Compile Include="Room\getTime.cs" />
-    <Compile Include="Room\getWaitTime.cs" />
-    <Compile Include="Room\getWaitCount.cs" />
     <Compile Include="Room\Create.cs" />
     <Compile Include="Room\getTeacher.cs" />
     <Compile Include="Room\find.cs" />
