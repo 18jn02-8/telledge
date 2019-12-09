@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
@@ -19,6 +19,10 @@ namespace telledge
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+			config.Routes.MapHttpRoute(
+				name: "SectionApi",
+				routeTemplate: "api/{controller}/{student_id}/{room_id}"
+			);
         }
     }
 }
