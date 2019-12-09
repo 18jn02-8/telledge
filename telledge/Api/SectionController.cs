@@ -6,8 +6,13 @@ using System.Net.Http;
 using System.Web.Http;
 using telledge.Models;
 
-namespace telledge.Controllers.Students
+namespace telledge.Api
 {
+	public class ApiResult<Type>
+	{
+		public string message { get; set; }
+		public Type contents { get; set; }
+	}
 	public class SectionController : ApiController
 	{
 		// GET api/<controller>
@@ -33,12 +38,18 @@ namespace telledge.Controllers.Students
 		}
 
 		// DELETE api/<controller>/5
-		public void Delete(int room_id, int student_id, string api_key)
+		public ApiResult<Section> Delete(int room_id, int student_id, string api_key)
 		{
 			//ルームから退出する処理
 			//if (Student.currentUser() == null) return RedirectToAction("create", "sessions");
-			Section.delete(Student.currentUser().id, Section.KeyTarget.studentId);
-			return RedirectToAction("index", "rooms");
+			ApiResult<Section> result = new ApiResult<Section>();
+			result.message = "Delete was successed!";
+			Section section = new Section(); 
+			section.studentId = student_id;
+			section.roomId = room_id;
+			section.delete();
+
+			return result;
 		}
 	}
 }
