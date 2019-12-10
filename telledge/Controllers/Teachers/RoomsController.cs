@@ -44,7 +44,7 @@ namespace telledge.Controllers.Teachers
 			bool ret = room.create();
 			if(ret == true)
 			{
-				return RedirectToRoute("Teacher", new { controller = "Rooms", Action = "call" });
+				return RedirectToRoute("Teacher", new { controller = "Rooms", Action = "index" });
 			}else
 			{
 				return View("/Views/Teachers/Sessions/create.cshtml");
