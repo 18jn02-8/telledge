@@ -16,9 +16,6 @@
 
 </head>
 <body>
-	<div class="content">
-		@*<a class="js-modal-open" href=""></a>*@
-	</div>
 	<div class="modal js-modal">
 		<div class="modal__bg js-modal-close"></div>
 		<div class="modal__content">
@@ -45,9 +42,9 @@
 <head>
 	<meta name="viewport" content="width=device-width" />
 	<link rel="stylesheet" href="style.css">
-	<link rel="stylesheet" href="bootstrap.min.css">
+	<link rel="stylesheet" href="~/Content/bootstrap.min.css">
 	<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
-	<script type="text/javascript" src="bootstrap.min.js"></script>
+	<script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
 </head>
 <body>
 	<main class="clearfix">
@@ -59,7 +56,6 @@
 				<span>@Model.description</span>
 			</div>
 			<div id="room-buttom" class="left-margin">
-				<input type="submit" id="submit_button" class="button" name="finishRoom" value="ルーム終了">
 			</div>
 			<div id="room-detail">
 				<table class="left-margin">
@@ -89,7 +85,9 @@
 						<td>1</td>
 						<td>小暮</td>
 						<td>プログラム教えてください</td>
-						<td><input type="submit" class="button-cancel" name="cancel" value="キャンセル"></td>
+						<td>
+							<button class="btn btn-danger">キャンセル</button>
+						</td>
 					</tr>
 				</table>
 			</div>
@@ -117,14 +115,19 @@
 							<td id="margin-bottom">要望</td>
 							<td id="margin-bottom">教えて</td>
 						</tr>
-						<tr>
-							<td id="margin-bottomm"><input type="submit" class="button-cancel js-modal-open" name="submit" value="通話終了" /></td>
-						</tr>
-						<tr>
-							<td id="margin-bottommm"><input type="submit" id="button-blacklist" name="submit" value="ブラックリスト"></td>
-						</tr>
+
 					</tbody>
 				</table>
+				<div>
+					<button class="btn btn-success js-modal-open">通話終了</button>
+					<button class="btn btn-success" disabled="disabled">通話終了</button>
+					<button class="btn btn-danger">ルーム終了</button>
+
+				</div>
+				<div>
+					<td id="margin-bottommm"><input type="submit" id="button-blacklist" name="submit" value="ブラックリスト"></td>
+				</div>
+
 			</div>
 		</div>
 </body>
