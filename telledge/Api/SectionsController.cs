@@ -13,7 +13,7 @@ namespace telledge.Api
 		public string message { get; set; }
 		public Type contents { get; set; }
 	}
-	public class SectionController : ApiController
+	public class SectionsController : ApiController
 	{
 		// GET api/<controller>
 		public IEnumerable<string> Get()
