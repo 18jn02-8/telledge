@@ -208,7 +208,7 @@ namespace telledge.Models
 				string sql = "SELECT COUNT(studentId) as count From Section WHERE roomId = @Id";
 				SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
 				adapter.SelectCommand.Parameters.Add("@id", SqlDbType.Int);
-				adapter.SelectCommand.Parameters["@id"].Value = id;
+				adapter.SelectCommand.Parameters["@id"].Value = this.id;
 				DataSet ds = new DataSet();
 				adapter.Fill(ds, "Room");
 				DataTable dt = ds.Tables["Room"];
@@ -226,7 +226,7 @@ namespace telledge.Models
 				string sql = "SELECT(worstTime + extensionTime) / 2 * (SELECT COUNT(studentId) From Section WHERE roomId = @id) as time FROM Room WHERE Id = @id";
 				SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
 				adapter.SelectCommand.Parameters.Add("@id", SqlDbType.Int);
-				adapter.SelectCommand.Parameters["@id"].Value = id;
+				adapter.SelectCommand.Parameters["@id"].Value = this.id;
 				DataSet ds = new DataSet();
 				adapter.Fill(ds, "Room");
 				DataTable dt = ds.Tables["Room"];
