@@ -27,7 +27,7 @@ namespace telledge.Controllers.Teachers
 			return View("/Views/Teachers/Rooms/call.cshtml", model);
         }
 		[HttpPost]
-		public ActionResult Create(int teacherId,String roomName,String tag,String description,int worstTime,int extensionTime,int point,DateTime endScheduleTime, DateTime beginTime, DateTime endTime)
+		public ActionResult Create(int teacherId,String roomName,String tag,String description,int worstTime,int extensionTime,int point,DateTime endScheduleTime)
 		{
 			Room room = new Room();
 			room.teacherId = teacherId;
@@ -38,19 +38,15 @@ namespace telledge.Controllers.Teachers
 			room.extensionTime = extensionTime;
 			room.point = point;
 			room.endScheduleTime = endScheduleTime;
-			room.beginTime = beginTime;
-			room.endTime = endTime;
 
 			bool ret = room.create();
 			if(ret == true)
 			{
-				return RedirectToAction("call", "Rooms");
-			}
-			else
+				return RedirectToRoute("Teacher", new { controller = "Rooms", Action = "Index" });
+			}else
 			{
-				return View("Create");
+				return View("/Views/Teachers/Sessions/create.cshtml");
 			}
-
 		}
     }
 }
