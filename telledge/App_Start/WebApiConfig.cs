@@ -13,17 +13,17 @@ namespace telledge
 
             // Web API ルート
             config.MapHttpAttributeRoutes();
-
-            config.Routes.MapHttpRoute(
+			config.Routes.MapHttpRoute(
+				name: "SectionApi",
+				routeTemplate: "api/{controller}/{studentId}/{roomId}/{api_key}",
+				defaults: new { api_key = RouteParameter.Optional }
+			);
+			config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
-			config.Routes.MapHttpRoute(
-				name: "SectionApi",
-				routeTemplate: "api/{controller}/{student_id}/{room_id}/{api_key}",
-				defaults: new { api_key = RouteParameter.Optional }
-			);
+
         }
     }
 }

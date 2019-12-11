@@ -16,15 +16,16 @@ namespace telledge.Api
 	public class SectionsController : ApiController
 	{
 		// GET api/<controller>
+
 		public IEnumerable<string> Get()
 		{
 			return new string[] { "value1", "value2" };
 		}
 
 		// GET api/<controller>/5
-		public string Get(int id)
+		public Section Get(int studentId, int roomId)
 		{
-			return "value";
+			return Section.find(roomId, studentId);
 		}
 
 		// POST api/<controller>
