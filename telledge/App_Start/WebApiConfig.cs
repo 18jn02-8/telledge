@@ -15,8 +15,8 @@ namespace telledge
             config.MapHttpAttributeRoutes();
 			config.Routes.MapHttpRoute(
 				name: "SectionApi",
-				routeTemplate: "api/sections/{studentId}/{roomId}/{api_key}",
-				defaults: new { controller = "sections", api_key = RouteParameter.Optional }
+				routeTemplate: "api/sections/{studentId}/{roomId}/{apiKey}",
+				defaults: new { controller = "sections", apiKey = RouteParameter.Optional }
 			);
 			config.Routes.MapHttpRoute(
                 name: "DefaultApi",

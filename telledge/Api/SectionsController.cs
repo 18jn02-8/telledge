@@ -8,11 +8,6 @@ using telledge.Models;
 
 namespace telledge.Api
 {
-	public class ApiResult<Type>
-	{
-		public string message { get; set; }
-		public Type contents { get; set; }
-	}
 	public class SectionsController : ApiController
 	{
 		// GET api/<controller>
@@ -39,18 +34,28 @@ namespace telledge.Api
 		}
 
 		// DELETE api/<controller>/5
-		public ApiResult<Section> Delete(int room_id, int student_id, string api_key)
+		public String Delete(int roomId, int studentId)
 		{
 			//ルームから退出する処理
 			//if (Student.currentUser() == null) return RedirectToAction("create", "sessions");
-			ApiResult<Section> result = new ApiResult<Section>();
-			result.message = "Delete was successed!";
+			String message;
+			
 			Section section = new Section(); 
-			section.studentId = student_id;
-			section.roomId = room_id;
-			section.delete();
+			section.studentId = studentId;
+			section.roomId = roomId;
+			if (section.delete() == true)
+			{
+				message = "Delete was successed!";
+			}
+			else
+			{
+				message = "Delete was failed...\n" +
+					"There are parameters\n" +
+					 "roomId: " + roomId + "\n" +
+					 "studentId: " + studentId;
+			}
 
-			return result;
+			return message;
 		}
 	}
 }
