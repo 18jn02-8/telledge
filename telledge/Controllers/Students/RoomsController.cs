@@ -128,11 +128,14 @@ namespace telledge.Controllers.Students
 		}
 
 		[HttpDelete]
-		public ActionResult leave()
+		public ActionResult leave(int roomId)
 		{
 			//ルームから退出する処理
 			if (Student.currentUser() == null) return RedirectToAction("create", "sessions");
-			Section.delete(Student.currentUser().id, Section.KeyTarget.studentId);
+			Section section = new Section();
+			section.roomId = roomId;
+			section.studentId = Student.currentUser().id;
+			section.delete();
 			return RedirectToAction("index", "rooms");
 		}
 		[HttpPut]
