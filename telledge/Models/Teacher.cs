@@ -140,5 +140,29 @@ namespace telledge.Models
             }
             return check;
         }
-    }
+		public bool delete()
+		{
+			bool check = false;
+			string cstr = ConfigurationManager.ConnectionStrings["Db"].ConnectionString;
+			using (SqlConnection connection = new SqlConnection(cstr))
+			{
+				string sql = "delete from teacher where id = @id";
+				SqlCommand command = new SqlCommand(sql, connection);
+				command.Parameters.Add("@id",SqlDbType.Int);
+				command.Parameters["@id"].Value = id;
+				connection.Open();
+				int cnt = command.ExecuteNonQuery();
+				connection.Close();
+				if (cnt != 0)
+				{
+					check = true;				
+				}
+				else
+				{
+				return check;
+				}
+			}
+			return check;
+		}	
+	}
 }
