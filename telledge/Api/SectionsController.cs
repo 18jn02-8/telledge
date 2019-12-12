@@ -18,9 +18,9 @@ namespace telledge.Api
 		}
 
 		// GET api/<controller>/5
-		public Section Get(int studentId, int roomId)
+		public Section Get(int student_id, int room_id, string api_key=null)
 		{
-			return Section.find(roomId, studentId);
+			return Section.find(room_id, student_id);
 		}
 
 		// POST api/<controller>
@@ -34,25 +34,28 @@ namespace telledge.Api
 		}
 
 		// DELETE api/<controller>/5
-		public String Delete(int roomId, int studentId)
+		public String[] Delete(int room_id, int student_id)
 		{
 			//ルームから退出する処理
 			//if (Student.currentUser() == null) return RedirectToAction("create", "sessions");
-			String message;
+			String[] message;
 			
 			Section section = new Section(); 
-			section.studentId = studentId;
-			section.roomId = roomId;
+			section.studentId = student_id;
+			section.roomId = room_id;
 			if (section.delete() == true)
 			{
-				message = "Delete was successed!";
+				message = new[] { "Delete was successed!"};
 			}
 			else
 			{
-				message = "Delete was failed...\n" +
-					"There are parameters\n" +
-					 "roomId: " + roomId + "\n" +
-					 "studentId: " + studentId;
+				message = new[]
+				{
+					"Delete was failed...",
+					"These parameters are given.",
+					"room_id: " + room_id,
+					"student_id: " + student_id
+				};
 			}
 
 			return message;
