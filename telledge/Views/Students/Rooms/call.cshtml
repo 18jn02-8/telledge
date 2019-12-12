@@ -100,7 +100,14 @@
 							<td>@Model.endScheduleTime</td>
 						</tr>
 						<tr>
-							<td><a ></td>
+							<td>
+								<a href="/student/rooms/leave/@(Model.id)" class="btn btn-danger">
+									<button class="btn btn-danger">ルーム退出</button>
+								</a>
+								<a href="">
+									<button class="btn btn-danger" formmethod="get" formaction="/student/rooms/end/@(Model.id)">通話終了</button>
+								</a>
+							</td>
 						</tr>
 					</tbody>
 				</table>
