@@ -325,7 +325,7 @@ namespace telledge.Models
             }
             return check;
         }
-		public bool chengePassword(String oldPasswordRaw,String newPasswordRaw)
+		public bool changePassword(String oldPasswordRaw,String newPasswordRaw)
 		{
 			bool check = false;
 			SHA256 sha = new SHA256CryptoServiceProvider();

@@ -4,7 +4,7 @@ using telledge.Models;
 namespace UnitTest.Students
 {
     [TestClass]
-    public class StudentchengePassword
+    public class StudentchangePassword
     {
         [TestMethod]
         public void TestchengePassword()
@@ -12,7 +12,7 @@ namespace UnitTest.Students
             Student student = new Student();
 			student.id = 2;
 			student.setPassword("password");
-			bool test = student.chengePassword("password", "newpass");
+			bool test = student.changePassword("password", "newpass");
             Assert.IsTrue(test);
         }
         [TestMethod]
@@ -21,7 +21,7 @@ namespace UnitTest.Students
 			Student student = new Student();
 			student.id = 2;
 			student.setPassword("password");
-			bool test = student.chengePassword("pappappa", "newpass");
+			bool test = student.changePassword("pappappa", "newpass");
 			Assert.IsFalse(test);
         }
     }
