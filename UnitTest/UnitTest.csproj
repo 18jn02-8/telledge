@@ -64,6 +64,7 @@
     <Compile Include="Student\Create.cs" />
     <Compile Include="Student\SetPassWord.cs" />
     <Compile Include="Student\Login.cs" />
+    <Compile Include="Teacher\delete.cs" />
     <Compile Include="Teacher\SetPassWord.cs" />
     <Compile Include="Teacher\Create.cs" />
     <Compile Include="Section\getRoom.cs" />
