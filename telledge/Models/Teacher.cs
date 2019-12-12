@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Web;
 using System.Configuration;
 using System.Data.SqlClient;
@@ -159,7 +159,7 @@ namespace telledge.Models
 				}
 				else
 				{
-				return check;
+					return check;
 				}
 			}
 			return check;
