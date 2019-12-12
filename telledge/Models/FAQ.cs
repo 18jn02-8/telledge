@@ -10,11 +10,11 @@ namespace telledge.Models
 	public class FAQ
 	{
 		//FAQID
-		public int id;
+		public int id { get; set; }
 		//FAQ質問
-		public String question;
+		public String question { get; set; }
 		//FAQ回答
-		public String answer;
+		public String answer { get; set; }
 
 		public bool create()
 		{
