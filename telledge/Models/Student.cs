@@ -136,7 +136,34 @@ namespace telledge.Models
             }
             return check;
         }
-    }
+		public bool delete()
+		{
+			bool check = false;
+			string cstr = ConfigurationManager.ConnectionStrings["Db"].ConnectionString;
+			using (SqlConnection connection = new SqlConnection(cstr))
+			{
+				string sql = "UPDATE teacher SET inactivedate = @inactivedate WHERE  id = @id;";
+				SqlCommand command = new SqlCommand(sql, connection);
+				command.Parameters.Add("@id", SqlDbType.Int);
+				command.Parameters["@id"].Value = id;
+				command.Parameters.Add("@inactivedate", SqlDbType.DateTime);
+				command.Parameters["@inactivedate"].Value = DateTime.Today;
+				connection.Open();
+				int cnt = command.ExecuteNonQuery();
+				connection.Close();
+				if (cnt != 0)
+				{
+					
+					check = true;
+				}
+				else
+				{
+					return check;
+				}
+			}
+			return check;
+		}
+	}
 }
  //引数に渡されたメールアドレスを持つ生徒のパスワードダイジェストと引数の平文パスワードをSHA256でダイジェスト化したものを比較し、
         //等しければ対応するStudentクラスのオブジェクトを返しセッション変数名"Student"のセッションにオブジェクトを登録する。
