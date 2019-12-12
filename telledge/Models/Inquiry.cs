@@ -13,7 +13,7 @@ namespace telledge.Models
 		public String senderName;//送信者名
 		public String senderContent;//送信内容
 		public int replierId;//返信者ID
-		public String repliersContent;//返信内容
+		public String replierContent;//返信内容
 		public Boolean isReplied;//問い合わせ返信有無
 	}
 }
