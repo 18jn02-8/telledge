@@ -15,7 +15,7 @@ namespace UnitTest.Students
 		public void TestCreate()
 		{
 			Student student = new Student();
-			student.id = 10;
+			student.id = 1;
 			bool test = student.delete();
 			Assert.IsTrue(test);
 		}
@@ -23,7 +23,7 @@ namespace UnitTest.Students
 		public void TestCreateFailed()
 		{
 			Student student = new Student();
-			student.id = 10;
+			student.id = 1;
 			bool test = student.delete();
 			Assert.IsFalse(test);
 		}
