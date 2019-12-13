@@ -15,7 +15,7 @@ namespace UnitTest.Teachers
 		public void TestDelete()
 		{
 			Teacher teacher = new Teacher();
-			teacher.id = 12;
+			teacher.id = 1;
 			bool test = teacher.delete();
 			Assert.IsTrue(test);
 		}
@@ -23,7 +23,7 @@ namespace UnitTest.Teachers
 		public void TestDeleteFailed()
 		{
 			Teacher teacher = new Teacher();
-			teacher.id = 12;
+			teacher.id = 1;
 			bool test = teacher.delete();
 			Assert.IsFalse(test);
 		}
