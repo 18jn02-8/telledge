@@ -157,6 +157,7 @@ namespace telledge.Models
 					DataTable dt = ds.Tables["teacher"];
 					if (dt.Rows[0]["inactiveDate"] == DBNull.Value)
 					{
+						this.inactiveDate = DateTime.Now;
 						sql = "UPDATE teacher SET inactiveDate = @inactiveDate WHERE  id = @id";
 						SqlCommand command = new SqlCommand(sql, connection);
 						connection.Open();
