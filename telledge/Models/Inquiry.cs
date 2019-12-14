@@ -66,7 +66,7 @@ namespace telledge.Models
 			string cstr = ConfigurationManager.ConnectionStrings["Db"].ConnectionString;
 			using (SqlConnection connection = new SqlConnection(cstr))
 			{
-				String sql = "delete * from inquery where id = @id";
+				String sql = "delete from inquery where id = @id";
 				SqlCommand command = new SqlCommand(sql, connection);
 				connection.Open();
 				command.Parameters.Add("@id", SqlDbType.Int);
