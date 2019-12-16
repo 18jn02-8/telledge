@@ -81,5 +81,33 @@ namespace telledge.Models
 			}
 			return check;
 		}
+		public static Inquiry find(int id)
+		{
+			Inquiry retinquery = null;
+			string cstr = ConfigurationManager.ConnectionStrings["Db"].ConnectionString;
+			using (SqlConnection connection = new SqlConnection(cstr))
+			{
+				string sql = "select * from Inquery where id=@id";
+				SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
+				adapter.SelectCommand.Parameters.Add("@id", SqlDbType.Int);
+				adapter.SelectCommand.Parameters["@id"].Value = id;
+				DataSet ds = new DataSet();
+				int cnt = adapter.Fill(ds, "inquery");
+				if (cnt != 0)
+				{
+					DataTable dt = ds.Tables["inquery"];
+					retinquery = new Inquiry();
+					retinquery.id = (int)dt.Rows[0]["id"];
+					retinquery.inquiryContent = (String)dt.Rows[0]["inquiryContent"];
+					retinquery.inquiryTime = DateTime.Parse(dt.Rows[0]["inquiryTime"].ToString());
+					retinquery.senderName = (String)dt.Rows[0]["senderName"];
+					retinquery.senderContent = (String)dt.Rows[0]["senderContent"];
+					retinquery.replierId = (int)dt.Rows[0]["replierId"];
+					retinquery.replierContent = (String)dt.Rows[0]["replierContent"];
+					retinquery.isReplied = (bool)dt.Rows[0]["isReplied"];					
+				}
+			}
+			return retinquery;
+		}
 	}
 }
