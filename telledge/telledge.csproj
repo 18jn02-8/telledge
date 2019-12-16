@@ -149,21 +149,32 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Picture\Test.jpg" />
+    <Content Include="Assets\Raty\cancel-off.png" />
+    <Content Include="Assets\Raty\cancel-on.png" />
+    <Content Include="Assets\Raty\star-half.png" />
+    <Content Include="Assets\Raty\star-off.png" />
+    <Content Include="Assets\Raty\star-on.png" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\jquery.raty.css" />
     <Content Include="Content\jquery.tagit.css" />
     <Content Include="Content\tagit.ui-zendesk.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\Raty\raty.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Authentication.config" />
+    <Content Include="fonts\Raty\raty.eot" />
+    <Content Include="fonts\Raty\raty.ttf" />
+    <Content Include="fonts\Raty\raty.woff" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Content\JqueryUI\jquery-ui-1.12.1.min.css" />
+    <Content Include="Scripts\jquery.raty.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Scripts\JqueryUI\jquery-ui-1.12.1.min.js" />
     <Content Include="Scripts\JqueryUI\jquery-ui-1.8.12.min.js" />
