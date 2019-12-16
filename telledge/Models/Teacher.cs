@@ -184,7 +184,11 @@ namespace telledge.Models
 		public bool isDeleted()
 		{
 			bool check = false;
-			if (this.in)
+			if (this.inactiveDate != null)
+			{
+				check = true;
+			}
+			return check;
 		}
 	}
 }
