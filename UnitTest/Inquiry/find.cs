@@ -4,12 +4,12 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace UnitTest.Inquirys
 {
 	[TestClass]
-	class find
+	public class find
 	{
 		[TestMethod]
 		public void success()
 		{
-			Inquiry inquiry = Inquiry.find(1);
+			Inquiry inquiry = Inquiry.find(6);
 			Assert.IsNotNull(inquiry);
 		}
 	}
