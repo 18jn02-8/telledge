@@ -110,6 +110,7 @@
 								<a href="/student/rooms/end/@(Model.id)">
 									<button class="btn btn-danger" formmethod="get" formaction="/student/rooms/end/@(Model.id)">通話終了</button>
 								</a>
+								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#review-modal">
 							</td>
 						</tr>
 					</tbody>
@@ -117,9 +118,24 @@
 			</div>
 		</div>
 	</main>
-	<div>
-		<div id="raty">
-			<p>Hint: <span id="review"></span></p>
+
+	<div class="modal fade" id="review-modal" tabindex="-1">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+					<h4 class="modal-title">タイトル</h4>
+				</div>
+				<div class="modal-body">
+					<div id="raty">
+						<p>Hint: <span id="review"></span></p>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+					<button type="button" class="btn btn-primary">ボタン</button>
+				</div>
+			</div>
 		</div>
 	</div>
 	<script>
