@@ -23,7 +23,7 @@ namespace telledge.Models
 		//返信者ID
 		public int? replierId { get; set; }
 		//返信内容
-		public string replierContent { get; set; }
+		public string repliersContent { get; set; }
 		//問い合わせ返信有無
 		public Boolean isReplied { get; set; }
 
@@ -83,31 +83,31 @@ namespace telledge.Models
 		}
 		public static Inquiry find(int id)
 		{
-			Inquiry retinquery = null;
+			Inquiry retinquiry = null;
 			string cstr = ConfigurationManager.ConnectionStrings["Db"].ConnectionString;
 			using (SqlConnection connection = new SqlConnection(cstr))
 			{
-				string sql = "select * from Inquery where id=@id";
+				string sql = "select * from inquiry where id=@id";
 				SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
 				adapter.SelectCommand.Parameters.Add("@id", SqlDbType.Int);
 				adapter.SelectCommand.Parameters["@id"].Value = id;
 				DataSet ds = new DataSet();
-				int cnt = adapter.Fill(ds, "inquery");
+				int cnt = adapter.Fill(ds, "inquiry");
 				if (cnt != 0)
 				{
-					DataTable dt = ds.Tables["inquery"];
-					retinquery = new Inquiry();
-					retinquery.id = (int)dt.Rows[0]["id"];
-					retinquery.inquiryContent = (String)dt.Rows[0]["inquiryContent"];
-					retinquery.inquiryTime = DateTime.Parse(dt.Rows[0]["inquiryTime"].ToString());
-					retinquery.senderName = (String)dt.Rows[0]["senderName"];
-					retinquery.senderContent = (String)dt.Rows[0]["senderContent"];
-					retinquery.replierId = (int)dt.Rows[0]["replierId"];
-					retinquery.replierContent = (String)dt.Rows[0]["replierContent"];
-					retinquery.isReplied = (bool)dt.Rows[0]["isReplied"];					
+					DataTable dt = ds.Tables["inquiry"];
+					retinquiry = new Inquiry();
+					retinquiry.id = (int)dt.Rows[0]["id"];
+					retinquiry.inquiryContent = (String)dt.Rows[0]["inquiryContent"];
+					retinquiry.inquiryTime = DateTime.Parse(dt.Rows[0]["inquiryTime"].ToString());
+					retinquiry.senderName = (String)dt.Rows[0]["senderName"];
+					retinquiry.senderContent = (String)dt.Rows[0]["senderContent"];
+					retinquiry.replierId = (int)dt.Rows[0]["replierId"];
+					retinquiry.repliersContent = (String)dt.Rows[0]["repliersContent"];
+					retinquiry.isReplied = (bool)dt.Rows[0]["isReplied"];					
 				}
 			}
-			return retinquery;
+			return retinquiry;
 		}
 	}
 }
