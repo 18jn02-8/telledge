@@ -244,22 +244,31 @@ namespace telledge.Models
 				if(cnt != 0)
 				{
 					DataTable dt = ds.Tables["Room"];
+					int row = 0;
+					int rowOrder = (int)dt.Rows[0]["order"]; ;
+					for (int i = 1;i < cnt; i++)
+					{
+						if(rowOrder < (int)dt.Rows[i]["order"])
+						{
+							row = i;
+						}
+					}
 					section = new Section();
-					section.order = (int)dt.Rows[0]["order"];
-					section.request = dt.Rows[0]["request"].ToString();
-					section.roomId = (int)dt.Rows[0]["roomId"];
-					section.studentId = (int)dt.Rows[0]["studentId"];
+					section.order = (int)dt.Rows[row]["order"];
+					section.request = dt.Rows[row]["request"].ToString();
+					section.roomId = (int)dt.Rows[row]["roomId"];
+					section.studentId = (int)dt.Rows[row]["studentId"];
 					if (dt.Rows[0]["talkTime"] != DBNull.Value)
 					{
-						section.talkTime = (int)dt.Rows[0]["talkTime"];
+						section.talkTime = (int)dt.Rows[row]["talkTime"];
 					}
 					if (dt.Rows[0]["valuation"] != DBNull.Value)
 					{
-						section.valuation = (int)dt.Rows[0]["valuation"];
+						section.valuation = (int)dt.Rows[row]["valuation"];
 					}
 					if (dt.Rows[0]["beginTime"] != DBNull.Value)
 					{
-						section.beginTime = DateTime.Parse(dt.Rows[0]["beginTime"].ToString());
+						section.beginTime = DateTime.Parse(dt.Rows[row]["beginTime"].ToString());
 					}
 				}
 			}
