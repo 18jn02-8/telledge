@@ -516,7 +516,7 @@ namespace telledge.Models
 			if (passwordDigest.SequenceEqual(CheckPasswordDigest))
 			{
 				input = Encoding.ASCII.GetBytes(newPasswordRaw);
-				passwordDigest = CheckPasswordDigest;
+				passwordDigest = input;
 				check = true;
 			}
 			return check;
