@@ -149,11 +149,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Picture\Test.jpg" />
-    <Content Include="Assets\Raty\cancel-off.png" />
-    <Content Include="Assets\Raty\cancel-on.png" />
-    <Content Include="Assets\Raty\star-half.png" />
-    <Content Include="Assets\Raty\star-off.png" />
-    <Content Include="Assets\Raty\star-on.png" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -163,18 +158,13 @@
     <Content Include="Content\tagit.ui-zendesk.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="fonts\Raty\raty.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Authentication.config" />
-    <Content Include="fonts\Raty\raty.eot" />
-    <Content Include="fonts\Raty\raty.ttf" />
-    <Content Include="fonts\Raty\raty.woff" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Content\JqueryUI\jquery-ui-1.12.1.min.css" />
-    <Content Include="Scripts\jquery.raty.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Scripts\JqueryUI\jquery-ui-1.12.1.min.js" />
     <Content Include="Scripts\JqueryUI\jquery-ui-1.8.12.min.js" />
@@ -189,6 +179,14 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\raty\fonts\raty.svg" />
+    <Content Include="Scripts\raty\images\cancel-off.png" />
+    <Content Include="Scripts\raty\images\cancel-on.png" />
+    <Content Include="Scripts\raty\images\star-half.png" />
+    <Content Include="Scripts\raty\images\star-off.png" />
+    <Content Include="Scripts\raty\images\star-on.png" />
+    <Content Include="Scripts\raty\jquery.raty.css" />
+    <Content Include="Scripts\raty\jquery.raty.js" />
     <Content Include="Scripts\tag-it.js" />
     <Content Include="Scripts\tag-it.min.js" />
     <Content Include="Scripts\Telledge\studentRoomsCall.js" />
@@ -226,6 +224,9 @@
     <Content Include="Views\Teachers\Rooms\Create.cshtml" />
     <Content Include="Views\Students\Rooms\call.cshtml" />
     <Content Include="Views\Students\Rooms\show.cshtml" />
+    <Content Include="Scripts\raty\fonts\raty.eot" />
+    <Content Include="Scripts\raty\fonts\raty.ttf" />
+    <Content Include="Scripts\raty\fonts\raty.woff" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
