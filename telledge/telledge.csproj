@@ -180,11 +180,11 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\raty\fonts\raty.svg" />
-    <Content Include="Scripts\raty\images\cancel-off.png" />
-    <Content Include="Scripts\raty\images\cancel-on.png" />
-    <Content Include="Scripts\raty\images\star-half.png" />
-    <Content Include="Scripts\raty\images\star-off.png" />
-    <Content Include="Scripts\raty\images\star-on.png" />
+    <Content Include="Assets\raty\cancel-off.png" />
+    <Content Include="Assets\raty\cancel-on.png" />
+    <Content Include="Assets\raty\star-half.png" />
+    <Content Include="Assets\raty\star-off.png" />
+    <Content Include="Assets\raty\star-on.png" />
     <Content Include="Scripts\raty\jquery.raty.css" />
     <Content Include="Scripts\raty\jquery.raty.js" />
     <Content Include="Scripts\tag-it.js" />
