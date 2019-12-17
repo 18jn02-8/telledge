@@ -180,7 +180,7 @@ namespace telledge.Models
 		}
 		public Section[] GetSection()
 		{
-			Section[] section = null;
+			Section[] section;
 			string cstr = ConfigurationManager.ConnectionStrings["Db"].ConnectionString;
 			using (SqlConnection connection = new SqlConnection(cstr))
 			{
@@ -189,7 +189,24 @@ namespace telledge.Models
 				adapter.SelectCommand.Parameters.Add("@id", SqlDbType.Int);
 				adapter.SelectCommand.Parameters["@id"].Value = id;
 				DataSet ds = new DataSet();
-				adapter.Fill(ds, "Student");
+				int cnt = adapter.Fill(ds, "Student");
+				if(cnt != 0)
+				{
+					DataTable dt = ds.Tables["Student"];
+					for(int i = 0;dt.Rows[i]["roomid"] != null; i++)
+					{
+						section[i].roomId = int.Parse(dt.Rows[i]["roomid"].ToString());
+						section[i].studentId = int.Parse(dt.Rows[i]["studentId"].ToString());
+						section[i].request = dt.Rows[i]["request"].ToString();
+						section[i].valuation = int.Parse(dt.Rows[i]["valuation"].ToString());
+						section[i].order = int.Parse(dt.Rows[i]["order"].ToString());
+						if (dt.Rows[i]["beginTime"] != DBNull.Value)
+						{
+							section[i].beginTime = DateTime.Parse(dt.Rows[i]["beginTime"].ToString());
+						}
+						section[i].talkTime = int.Parse(dt.Rows[i]["talkTime"].ToString());
+					}
+				}
 			}
 			return section;
 		}
