@@ -334,31 +334,8 @@ namespace telledge.Models
 			if (passwordDigest.SequenceEqual(CheckPasswordDigest))
 			{
 				input = Encoding.ASCII.GetBytes(newPasswordRaw);
-				passwordDigest = sha.ComputeHash(input);
-				string cstr = ConfigurationManager.ConnectionStrings["Db"].ConnectionString;
-				using (var connection = new SqlConnection(cstr))
-				{
-					try
-					{
-						String sql = "Update Student set passwordDigest = @passwordDigest Where id = @id";
-						SqlCommand command = new SqlCommand(sql, connection);
-						command.Parameters.Add("@passwordDigest", SqlDbType.VarBinary);
-						command.Parameters["@passwordDigest"].Value = passwordDigest;
-						command.Parameters.Add("@id", SqlDbType.Int);
-						command.Parameters["@id"].Value = id;
-						connection.Open();
-						int cnt = command.ExecuteNonQuery();
-						connection.Close();
-						if (cnt != 0)
-						{
-							check = true;
-						}
-					}catch (SqlException e)
-					{
-						//入力情報が足りないメッセージを吐く
-						return false;
-					}
-				}
+				passwordDigest = CheckPasswordDigest;
+				check = true;
 			}
 			return check;
 		}
