@@ -16,10 +16,11 @@
 	<link rel="stylesheet" href="~/StyleSheets/studentRoomCall.css">
 	<link rel="stylesheet" href="~/Content/bootstrap.min.css" />
 	<script type="text/javascript" src="~/Scripts/jquery-3.3.1.min.js"></script>
-	<script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
 	<script src="~/Scripts/jquery-1.9.1.min.js"></script>
+
+	<script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
 	<script src="~/Scripts/JqueryUI/jquery-ui-1.8.12.min.js"></script>
-	<script src="~/Scripts/jquery.raty.js"></script>
+	<script src="~/Scripts/raty/jquery.raty.js"></script>
 	<script src="~/Scripts/tag-it.js" type="text/javascript" charset="utf-8"></script>
 	<script src="~/Scripts/Telledge/studentRoomsCall.js"></script>
 	<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/flick/jquery-ui.css">
@@ -53,7 +54,7 @@
 					}
 				</ul>
 			</div>
-			<hr/>
+			<hr />
 			<div id="room-description" class="left-margin">
 				<h3 class="center">ルーム説明</h3>
 				<span>@Model.description</span>
@@ -77,7 +78,6 @@
 			<div id="room-request">
 				<h3 class="center">要望</h3>
 				<p>@Section.find(Model.id, Student.currentUser().id).request</p>
-
 			</div>
 		</div>
 		<div id="main-right" class="boxes float">
@@ -116,12 +116,12 @@
 				</table>
 			</div>
 		</div>
-		<div>
-			<div id="raty">
-				<p>Hint: <span id="review"></span></p>
-			</div>
-		</div>
 	</main>
+	<div>
+		<div id="raty">
+			<p>Hint: <span id="review"></span></p>
+		</div>
+	</div>
 	<script>
 		var con = new Timer('#timer', mintime, overtime);
 		con.setTimerAsEssential();	//最低通話として処理

@@ -1,3 +1,3 @@
 $(function () {
-	('#raty').raty({ target: '#review' });
+	$('#raty').raty({ target: '#review' });
 });
