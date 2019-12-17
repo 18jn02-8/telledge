@@ -180,7 +180,7 @@ namespace telledge.Models
 		}
 		public Section[] GetSection()
 		{
-			Section[] section;
+			Section[] section = null;
 			string cstr = ConfigurationManager.ConnectionStrings["Db"].ConnectionString;
 			using (SqlConnection connection = new SqlConnection(cstr))
 			{
@@ -192,19 +192,27 @@ namespace telledge.Models
 				int cnt = adapter.Fill(ds, "Student");
 				if(cnt != 0)
 				{
+					section = new Section[cnt];
 					DataTable dt = ds.Tables["Student"];
-					for(int i = 0;dt.Rows[i]["roomid"] != null; i++)
+					for(int i = 0;i < cnt; i++)
 					{
-						section[i].roomId = int.Parse(dt.Rows[i]["roomid"].ToString());
+						section[i] = new Section();
+						section[i].roomId = int.Parse(dt.Rows[i]["roomId"].ToString());
 						section[i].studentId = int.Parse(dt.Rows[i]["studentId"].ToString());
 						section[i].request = dt.Rows[i]["request"].ToString();
-						section[i].valuation = int.Parse(dt.Rows[i]["valuation"].ToString());
+						if (dt.Rows[i]["valuation"] != DBNull.Value)
+						{
+							section[i].valuation = int.Parse(dt.Rows[i]["valuation"].ToString());
+						}
 						section[i].order = int.Parse(dt.Rows[i]["order"].ToString());
 						if (dt.Rows[i]["beginTime"] != DBNull.Value)
 						{
 							section[i].beginTime = DateTime.Parse(dt.Rows[i]["beginTime"].ToString());
 						}
-						section[i].talkTime = int.Parse(dt.Rows[i]["talkTime"].ToString());
+						if (dt.Rows[i]["talkTime"] != DBNull.Value)
+						{
+							section[i].talkTime = int.Parse(dt.Rows[i]["talkTime"].ToString());
+						}
 					}
 				}
 			}
