@@ -107,10 +107,8 @@
 								<a href="/student/rooms/leave/@(Model.id)">
 									<button class="btn btn-danger">ルーム退出</button>
 								</a>
-								<a href="/student/rooms/end/@(Model.id)">
-									<button class="btn btn-danger" formmethod="get" formaction="/student/rooms/end/@(Model.id)">通話終了</button>
-								</a>
-								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#review-modal">
+
+								<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#review-modal">通話終了</button>
 							</td>
 						</tr>
 					</tbody>
@@ -124,7 +122,7 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal"><span>×</span></button>
-					<h4 class="modal-title">タイトル</h4>
+					<h4 class="modal-title">講師の評価をお願いします</h4>
 				</div>
 				<div class="modal-body">
 					<div id="raty">
@@ -132,8 +130,9 @@
 					</div>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
-					<button type="button" class="btn btn-primary">ボタン</button>
+					<a href="/student/rooms/end/@(Model.id)">
+						<button class="btn btn-primary">送信</button>
+					</a>
 				</div>
 			</div>
 		</div>
