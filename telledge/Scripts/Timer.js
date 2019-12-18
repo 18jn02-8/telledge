@@ -6,35 +6,45 @@
  * </タグ>
  */
 
+const Status = {
+	Undefined: 0,
+	NotStarted: 1,
+	Essential: 2,
+	Extend: 3,
+	AllDone: 4
+};
+
 class Timer{
 	constructor(parent_selector, mintime, overtime) {
 		this.selector = parent_selector;
 		this.mintime = mintime;
 		this.overtime = overtime;
-		this.status = 0;
+		this.status = Status.NotStarted;
 	}
-	setTimerAsEssential() {
-		this.sec = this.mintime * 60;
-		this.status = 1;
+
+	setState(statusCode) {
+		this.status = statusCode;
+		if (this.status == Status.NotStarted) {
+			//開始前の処理
+		}
+		if (this.status == Status.Essential) {
+			this.sec = this.mintime * 60;
+		}
+		else if (this.status == Status.Extend) {
+			this.sec = this.overtime * 60;
+			$(this.selector).children('#timer-count').css('color', 'red');
+			$(this.selector).children('#timer-status').css('color', 'red');
+			$(this.selector).children('#timer-status').text("延長時間");
+		}
+		else if (this.status == Status.AllDone) {
+			//すべての処理が完了したときの処理
+		}
+		else {
+			this.status = Status.Undefined;
+		}
 	}
-	setTimerAsExtend() {
-		this.sec = this.overtime * 60;
-		$(this.selector).children('#timer-count').css('color', 'red');
-		$(this.selector).children('#timer-status').css('color', 'red');
-		$(this.selector).children('#timer-status').text("延長時間");
-		this.status = 2;
-	}
-	getStatusCode() {
-		//statusコードを返却する
+	getState() {
 		return this.status;
-	}
-	getStatusDetail() {
-		//statusに応じた状態を返却する
-		let ret;
-		if (this.status == 0) ret = "Not started";
-		else if (this.status == 1) ret = "Essential";
-		else if (this.status == 2) ret = "Extend";
-		else ret = "All done";
 	}
 	showTime() {
 		//secを適切な形に変換して表示する
@@ -51,8 +61,7 @@ class Timer{
 			this.sec--;
 			if (this.sec < 0) {
 				this.status++;
-				if (this.status == 1) this.setTimerAsEssential();
-				if (this.status == 2) this.setTimerAsExtend();
+				this.setState(this.status);
 			}
 		}, 1000);
 	}

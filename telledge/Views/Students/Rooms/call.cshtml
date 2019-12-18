@@ -26,7 +26,7 @@
 	<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/flick/jquery-ui.css">
 	<link href="~/Content/jquery.tagit.css" rel="stylesheet" type="text/css">
 	<script type="text/javascript">
-		let mintime = @Model.worstTime;
+		let mintime = 0.1;
 		let overtime= @Model.extensionTime;
 	</script>
 	<script type="text/javascript" src="~/Scripts/Timer.js"></script>
@@ -139,8 +139,8 @@
 		</div>
 	</div>
 	<script>
-		var con = new Timer('#timer', mintime, overtime);
-		con.setTimerAsEssential();	//最低通話として処理
+		let con = new Timer('#timer', mintime, overtime);
+		con.setState(Status.Essential);	//最低通話として処理
 		con.setTimer()
 
 	</script>
