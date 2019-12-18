@@ -50,7 +50,7 @@ class Timer{
 		//secを適切な形に変換して表示する
 		const min = this.sec / 60;
 		const sec = this.sec % 60;
-		$(this.selector).children('#timer-count').text(parseInt(min) + ":" + parseInt(sec));
+		$(this.selector).children('#timer-count').text(('00' + parseInt(min)).slice(-2) + ":" + ('00' + parseInt(sec)).slice(-2));
 	}
 
 	setTimer() {
