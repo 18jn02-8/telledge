@@ -7,3 +7,15 @@ $(function () {
 		hints: ['最低', '悪い', '普通', '良い', '最高']
 	});
 });
+
+$(document).ready(function () {
+	$("#readOnlyTags").tagit({
+		readOnly: true
+	}).ready(function () {
+		$(this).find('.tagit-new').css('display', 'none')
+	});
+});
+
+let con = new Timer('#timer', mintime, overtime);
+con.setState(Status.Essential);	//最低通話として処理
+con.setTimer()
