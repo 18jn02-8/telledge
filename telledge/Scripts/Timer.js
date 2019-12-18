@@ -43,7 +43,13 @@ class Timer{
 		else {
 			this.status = Status.Undefined;
 		}
-		this.callback[this.status.toString(10)]();
+		const callback = this.callback[this.status.toString(10)];
+		if (typeof (callback) == "function") {
+			callback();
+		}
+		else {
+			console.log("Callback function is not defined at " + Status[this.status]);
+		}
 	}
 
 	setCallback(keyState, object) {
