@@ -11,7 +11,7 @@ namespace UnitTest.Rooms
 		public void succsess()
 		{
 			Room room = new Room();
-			room.tag = "tag";
+			room.tag = "eng";
 			Room[] rooms = Room.getRooms(room.tag);
 			Assert.IsNotNull(rooms);
 		}
