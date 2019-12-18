@@ -20,6 +20,7 @@ class Timer{
 		this.mintime = mintime;
 		this.overtime = overtime;
 		this.status = Status.NotStarted;
+		this.callback = {};
 	}
 
 	setState(statusCode) {
@@ -42,6 +43,11 @@ class Timer{
 		else {
 			this.status = Status.Undefined;
 		}
+		this.callback[this.status.toString(10)]();
+	}
+
+	setCallback(keyState, object) {
+		this.callback[keyState.toString(10)] = object;
 	}
 	getState() {
 		return this.status;
