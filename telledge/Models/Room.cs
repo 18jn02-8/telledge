@@ -235,7 +235,7 @@ namespace telledge.Models
 			string cstr = ConfigurationManager.ConnectionStrings["Db"].ConnectionString;
 			using (SqlConnection connection = new SqlConnection(cstr))
 			{
-				string sql = "SELECT * FROM Room WHERE tag LIKE '@tag%'";
+				string sql = "SELECT * FROM Room WHERE tag LIKE '%'+ @tag + '%'";
 				SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
 				adapter.SelectCommand.Parameters.Add("@tag", SqlDbType.NVarChar);
 				adapter.SelectCommand.Parameters["@tag"].Value = tag;
