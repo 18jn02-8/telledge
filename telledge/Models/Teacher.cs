@@ -189,5 +189,10 @@ namespace telledge.Models
 			}
 			return check;
 		}
+		public int getValuation()
+		{
+			int valuation = 0;
+			return valuation;
+		}
 	}
 }
