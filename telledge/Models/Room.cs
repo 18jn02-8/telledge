@@ -347,11 +347,11 @@ namespace telledge.Models
 		}
 		public double getValuation()
 		{
-			double valuation = 0;
+			double valuation = -1;
 			string cstr = ConfigurationManager.ConnectionStrings["Db"].ConnectionString;
 			using (SqlConnection connection = new SqlConnection(cstr))
 			{
-				string sql = "SELECT SELECT AVG(cast(valuation as float)) as avgVal FROM Room R " +
+				string sql = "SELECT AVG(cast(valuation as float)) as avgVal FROM Room R " +
 								"INNER JOIN Section S ON R.id = S.roomId " +
 								"WHERE S.roomid = @id AND valuation IS NOT NULL ";
 				SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
