@@ -263,14 +263,17 @@ namespace telledge.Models
 					connection.Open();
 					command.CommandText = "Update Student Set name = @name,mailaddress = @mailaddress,profileImage = @profileImage,skypeId = @skypeId,passwordDigest = @passwordDigest,is2FA = @is2FA,point = @point,inactiveDate = @inactiveDate where id = @id";
 					command.Parameters.Add(new SqlParameter("@id", id));
-					command.Parameters.Add(new SqlParameter("@name", name));
+					if(name != null) command.Parameters.Add(new SqlParameter("@name", name));
+					else command.Parameters.Add(new SqlParameter("@name", DBNull.Value));
 					command.Parameters.Add(new SqlParameter("@mailaddress", mailaddress));
-					command.Parameters.Add(new SqlParameter("@profileImage", profileImage));
+					if (profileImage != null) command.Parameters.Add(new SqlParameter("@profileImage", profileImage));
+					else command.Parameters.Add(new SqlParameter("@profileImage", DBNull.Value));
 					command.Parameters.Add(new SqlParameter("@skypeId", skypeId));
 					command.Parameters.Add(new SqlParameter("@passwordDigest", passwordDigest));
 					command.Parameters.Add(new SqlParameter("@is2FA", is2FA));
 					command.Parameters.Add(new SqlParameter("@point", point));
-					command.Parameters.Add(new SqlParameter("@inactiveDate", inactiveDate));
+					if (inactiveDate != null) command.Parameters.Add(new SqlParameter("@inactiveDate", inactiveDate));
+					else command.Parameters.Add(new SqlParameter("@inactiveDate", DBNull.Value)); 
 					int cnt = command.ExecuteNonQuery();
 					if (cnt != 0)
 					{

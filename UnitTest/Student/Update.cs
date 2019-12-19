@@ -11,15 +11,16 @@ namespace UnitTest.Students
         public void TestUpdate()
         {
             Student student = new Student();
-			student.id = 16;
-            student.name = "TestS";
-            student.mailaddress = "AOARO@jec.ac.jp";
+			student.id = 1;
+            student.name = "test";
+            student.mailaddress = "mailaddress";
             student.setPassword("password");
             student.is2FA = true;
             student.point = 0;
             student.profileImage = "kfswaoefa.pix";
             student.skypeId = "Tests@skypeid";
-            bool test = student.Update();
+			student.inactiveDate = null;
+			bool test = student.Update();
             Assert.IsTrue(test);
         }
         [TestMethod]
