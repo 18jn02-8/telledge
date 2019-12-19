@@ -280,7 +280,7 @@ namespace telledge.Models
 						check = true;
 					}
 					connection.Close();
-				}catch (SqlException e){
+				}catch (SqlException){
 					//エラー
 					connection.Close();
 					return check;
