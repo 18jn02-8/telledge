@@ -120,9 +120,9 @@
 					</tbody>
 				</table>
 				<div>
-					<button class="btn btn-success js-modal-open">通話終了</button>
-					<button class="btn btn-success" disabled="disabled">通話終了</button>
-					<button class="btn btn-danger">ルーム終了</button>
+					<button id="call-end" class="btn btn-success js-modal-open">通話終了</button>
+					<button id="disabled-call-end" class="btn btn-success" disabled="disabled">通話終了</button>
+					<button id="room-end" class="btn btn-danger">ルーム終了</button>
 
 				</div>
 				<div>
@@ -131,6 +131,10 @@
 
 			</div>
 		</div>
+		<script>
+			timer.setState(Status.Essential);	//最低通話として処理
+
+		</script>
 	</main>
 </body>
 </html>
