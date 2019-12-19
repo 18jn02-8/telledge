@@ -70,6 +70,7 @@
     <Compile Include="Room\getRooms.cs" />
     <Compile Include="Section\getStudent.cs" />
     <Compile Include="Student\changePassword.cs" />
+    <Compile Include="Student\Update.cs" />
     <Compile Include="Student\GetSection.cs" />
     <Compile Include="Student\Create.cs" />
     <Compile Include="Student\delete.cs" />

@@ -251,6 +251,40 @@ namespace telledge.Models
 			}
 			return check;
 		}
+		public bool Update()
+		{
+			bool check = false;
+			string cstr = ConfigurationManager.ConnectionStrings["Db"].ConnectionString;
+			using (var connection = new SqlConnection(cstr))
+			using (var command = connection.CreateCommand())
+			{
+				try
+				{
+					connection.Open();
+					command.CommandText = "Update Student Set name = @name,mailaddress = @mailaddress,profileImage = @profileImage,skypeId = @skypeId,passwordDigest = @passwordDigest,is2FA = @is2FA,point = @point,inactiveDate = @inactiveDate where id = @id";
+					command.Parameters.Add(new SqlParameter("@id", id));
+					command.Parameters.Add(new SqlParameter("@name", name));
+					command.Parameters.Add(new SqlParameter("@mailaddress", mailaddress));
+					command.Parameters.Add(new SqlParameter("@profileImage", profileImage));
+					command.Parameters.Add(new SqlParameter("@skypeId", skypeId));
+					command.Parameters.Add(new SqlParameter("@passwordDigest", passwordDigest));
+					command.Parameters.Add(new SqlParameter("@is2FA", is2FA));
+					command.Parameters.Add(new SqlParameter("@point", point));
+					command.Parameters.Add(new SqlParameter("@inactiveDate", inactiveDate));
+					int cnt = command.ExecuteNonQuery();
+					if (cnt != 0)
+					{
+						check = true;
+					}
+					connection.Close();
+				}catch (SqlException e){
+					//エラー
+					connection.Close();
+					return check;
+				}
+			}
+			return check;
+		}
 	}
 }
 	 //引数に渡されたメールアドレスを持つ生徒のパスワードダイジェストと引数の平文パスワードをSHA256でダイジェスト化したものを比較し、
