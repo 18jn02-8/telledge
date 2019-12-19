@@ -16,7 +16,7 @@ namespace UnitTest.Teachers
         {
 			Teacher teacher = new Teacher();
 			teacher.id = 1;
-			int valuation = teacher.getValuation();
+			double valuation = teacher.getValuation();
 			Assert.AreNotEqual(valuation,0);
         }
 		[TestMethod]
@@ -24,7 +24,7 @@ namespace UnitTest.Teachers
 		{
 			Teacher teacher = new Teacher();
 			teacher.id = 3;
-			int valuation = teacher.getValuation();
+			double valuation = teacher.getValuation();
 			Assert.AreEqual(valuation, 0);
 		}
 	}

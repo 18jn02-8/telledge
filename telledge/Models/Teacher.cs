@@ -189,9 +189,9 @@ namespace telledge.Models
 			}
 			return check;
 		}
-		public int getValuation()
+		public double getValuation()
 		{
-			int valuation = 0;
+			double valuation = 0;
 			string cstr = ConfigurationManager.ConnectionStrings["Db"].ConnectionString;
 			using (SqlConnection connection = new SqlConnection(cstr))
 			{
