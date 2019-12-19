@@ -21,7 +21,7 @@ namespace UnitTest.Rooms
 			Room room = new Room();
 			room.id = 9999;
 			double valuation = room.getValuation();
-			Assert.AreEqual(0, valuation);
+			Assert.AreEqual(-1,valuation);
 		}
     }
 }
