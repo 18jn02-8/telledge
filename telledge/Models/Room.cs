@@ -282,8 +282,8 @@ namespace telledge.Models
 					retSections = new Section[cnt];
 					for (int i = 0; i < cnt; i++)
 					{
+						retSections[i] = new Section();
 						DataTable dt = ds.Tables["Room"];
-						retSections = new Section[cnt];
 						retSections[i].order = (int)dt.Rows[i]["order"];
 						retSections[i].request = dt.Rows[i]["request"].ToString();
 						retSections[i].roomId = (int)dt.Rows[i]["roomId"];
