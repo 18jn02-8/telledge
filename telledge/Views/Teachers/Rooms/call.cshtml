@@ -75,21 +75,22 @@
 					</table>
 				</div>
 				<div id="room--list">
-					<table border="1" class="table-striped">
+					<table border="1" class="table  table-striped">
 						<tr>
-							<td>順番</td>
 							<td>名前</td>
 							<td>要望</td>
 							<td>対応不可</td>
 						</tr>
-						<tr>
-							<td>1</td>
-							<td>小暮</td>
-							<td>プログラム教えてください</td>
-							<td>
-								<button class="btn btn-danger">キャンセル</button>
-							</td>
-						</tr>
+						@foreach (var section in Model.GetSections())
+						{
+							<tr>
+								<td>@(section.getStudent().name)</td>
+								<td>@(section.request)</td>
+								<td>
+									<button class="btn btn-danger">キャンセル</button>
+								</td>
+							</tr>
+						}
 					</table>
 				</div>
 				@*  *@
@@ -121,9 +122,6 @@
 					<button id="disabled-call-end" class="btn btn-success" disabled="disabled">通話終了</button>
 					<button id="room-end" class="btn btn-danger">ルーム終了</button>
 
-				</div>
-				<div>
-					<td id="margin-bottommm"><input type="submit" id="button-blacklist" name="submit" value="ブラックリスト"></td>
 				</div>
 
 			</div>
