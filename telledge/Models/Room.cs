@@ -248,9 +248,10 @@ namespace telledge.Models
 					int rowOrder = (int)dt.Rows[0]["order"]; ;
 					for (int i = 1;i < cnt; i++)
 					{
-						if(rowOrder < (int)dt.Rows[i]["order"])
+						if(rowOrder > (int)dt.Rows[i]["order"])
 						{
 							row = i;
+							rowOrder = (int)dt.Rows[i]["order"];
 						}
 					}
 					section = new Section();
@@ -258,15 +259,15 @@ namespace telledge.Models
 					section.request = dt.Rows[row]["request"].ToString();
 					section.roomId = (int)dt.Rows[row]["roomId"];
 					section.studentId = (int)dt.Rows[row]["studentId"];
-					if (dt.Rows[0]["talkTime"] != DBNull.Value)
+					if (dt.Rows[row]["talkTime"] != DBNull.Value)
 					{
 						section.talkTime = (int)dt.Rows[row]["talkTime"];
 					}
-					if (dt.Rows[0]["valuation"] != DBNull.Value)
+					if (dt.Rows[row]["valuation"] != DBNull.Value)
 					{
 						section.valuation = (int)dt.Rows[row]["valuation"];
 					}
-					if (dt.Rows[0]["beginTime"] != DBNull.Value)
+					if (dt.Rows[row]["beginTime"] != DBNull.Value)
 					{
 						section.beginTime = DateTime.Parse(dt.Rows[row]["beginTime"].ToString());
 					}
