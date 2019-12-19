@@ -235,7 +235,7 @@ namespace telledge.Models
 			string cstr = ConfigurationManager.ConnectionStrings["Db"].ConnectionString;
 			using (SqlConnection connection = new SqlConnection(cstr))
 			{
-				string sql = "SELECT * FROM Section WHERE roomId = @id And valuation IS NULL order by [order] asc";
+				string sql = "SELECT * FROM Section WHERE roomId = @id And talkTime IS NULL order by [order] asc";
 				SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
 				adapter.SelectCommand.Parameters.Add("@id", SqlDbType.Int);
 				adapter.SelectCommand.Parameters["@id"].Value = id;
