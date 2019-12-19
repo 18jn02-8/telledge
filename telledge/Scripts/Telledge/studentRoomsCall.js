@@ -16,9 +16,14 @@ $(document).ready(function () {
 	});
 });
 
-let con = new Timer('#timer', mintime, overtime);
+let con = new Timer(mintime, overtime);
 con.setCallback(Status.Essential, function () {
 	console.log("callbacked!");
-})
+});
+con.setCallback(Status.Extend, () => {
+	$('#timer-count').css('color', 'red');
+	$('#timer-status').css('color', 'red');
+	$('#timer-status').text("延長時間");
+});
 con.setState(Status.Essential);	//最低通話として処理
 con.setTimer()

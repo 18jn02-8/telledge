@@ -15,8 +15,7 @@ const Status = {
 };
 
 class Timer{
-	constructor(parent_selector, mintime, overtime) {
-		this.selector = parent_selector;
+	constructor(mintime, overtime) {
 		this.mintime = mintime;
 		this.overtime = overtime;
 		this.status = Status.NotStarted;
@@ -33,9 +32,6 @@ class Timer{
 		}
 		else if (this.status == Status.Extend) {
 			this.sec = this.overtime * 60;
-			$(this.selector).children('#timer-count').css('color', 'red');
-			$(this.selector).children('#timer-status').css('color', 'red');
-			$(this.selector).children('#timer-status').text("延長時間");
 		}
 		else if (this.status == Status.AllDone) {
 			//すべての処理が完了したときの処理
@@ -62,7 +58,7 @@ class Timer{
 		//secを適切な形に変換して表示する
 		const min = this.sec / 60;
 		const sec = this.sec % 60;
-		$(this.selector).children('#timer-count').text(('00' + parseInt(min)).slice(-2) + ":" + ('00' + parseInt(sec)).slice(-2));
+		$('#timer-count').text(('00' + parseInt(min)).slice(-2) + ":" + ('00' + parseInt(sec)).slice(-2));
 	}
 
 	setTimer() {
