@@ -10,9 +10,7 @@ namespace UnitTest.Rooms
 		[TestMethod]
 		public void succsess()
 		{
-			Room room = new Room();
-			room.tag = "eng";
-			Room[] rooms = Room.getRooms(room.tag);
+			Room[] rooms = Room.getRooms("tag");
 			Assert.IsNotNull(rooms);
 		}
 	}
