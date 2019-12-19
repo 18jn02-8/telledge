@@ -17,5 +17,8 @@ $(document).ready(function () {
 });
 
 let con = new Timer('#timer', mintime, overtime);
+con.setCallback(Status.Essential, function () {
+	console.log("callbacked!");
+})
 con.setState(Status.Essential);	//最低通話として処理
 con.setTimer()

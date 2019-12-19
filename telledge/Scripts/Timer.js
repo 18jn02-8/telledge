@@ -48,7 +48,7 @@ class Timer{
 			callback();
 		}
 		else {
-			console.log("Callback function is not defined at " + Status[this.status]);
+			console.log("[information] Callback function is not defined at " + Status[this.status] + " from Timer.js");
 		}
 	}
 
