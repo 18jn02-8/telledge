@@ -42,3 +42,23 @@ timer.setCallback(Status.AllDone, () => {
 });
 
 timer.setTimer()
+
+// WebSocketの処理
+$(function () {
+	// 1. サーバとの接続オブジェクト作成
+	var connection = $.hubConnection();
+
+	// 2. Hubのプロキシ・オブジェクトを作成
+	var echo = connection.createHubProxy("Room");
+
+	// 3. サーバから呼び出される関数を登録
+	echo.on("removeStudent", function (studentId) {
+		$('student-' + studentId).remove();
+	});
+
+	// 4. 接続を開始
+	connection.start(function () {
+		//講師として登録する
+		echo.invoke("JoinTeacher", 1);
+	});
+})

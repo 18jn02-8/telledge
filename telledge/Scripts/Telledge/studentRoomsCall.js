@@ -42,9 +42,15 @@ $(function () {
 		alert(text);
 	});
 
+	$("#leave-button").click(function () {
+		//Sectionテーブルから情報を削除する処理を実行する
+		echo.invoke("leaveRoom", roomId, studentId);
+		location.href = '/student/rooms/index';
+	});
+
 	// 4. 接続を開始
 	connection.start(function () {
 		// 5. サーバのメソッドを呼び出し
-		echo.invoke("Join", 1);
+		echo.invoke("JoinStudent", roomId);
 	});
 })
