@@ -24,7 +24,9 @@ namespace telledge.Hubs
 		}
 		public void joinRoom(int roomId)
 		{
-			Clients.Group("room_" + roomId).joined();
+			Room room = Room.find(roomId);	//ルーム番号のルームインスタンスを取得する
+			Student student = Student.
+			Clients.Group("room_" + roomId).append();
 		}
 		public void Hello()
 		{
