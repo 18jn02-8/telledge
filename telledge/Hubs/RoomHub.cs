@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Microsoft.AspNet.SignalR;
+using Microsoft.AspNet.SignalR.Hubs;
 
 namespace telledge.Hubs
 {
+	[HubName("Room")]
 	public class RoomHub : Hub
 	{
 		// 指定されたグループへ参加する

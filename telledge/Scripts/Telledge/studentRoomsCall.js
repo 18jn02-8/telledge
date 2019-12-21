@@ -35,7 +35,7 @@ $(function () {
 	var connection = $.hubConnection();
 
 	// 2. Hubのプロキシ・オブジェクトを作成
-	var echo = connection.createHubProxy("echo");
+	var echo = connection.createHubProxy("Room");
 
 	// 3. サーバから呼び出される関数を登録
 	echo.on("Receive", function (text) {
