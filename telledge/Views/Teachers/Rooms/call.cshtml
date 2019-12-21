@@ -81,16 +81,24 @@
 							<td>要望</td>
 							<td>対応不可</td>
 						</tr>
-						@foreach (var section in Model.getSections())
-						{
-							<tr>
-								<td>@(section.getStudent().name)</td>
-								<td>@(section.request)</td>
-								<td>
-									<button class="btn btn-danger">キャンセル</button>
-								</td>
-							</tr>
+						@{
+							telledge.Models.Section[] sections;
+							if ((sections = Model.getSections()) != null)
+							{
+								foreach (var section in Model.getSections())
+								{
+									<!--- student-x というidはWebSocketでの識別子として利用 -->
+									<tr id="student-@(Model.id)">
+										<td>@(section.getStudent().name)</td>
+										<td>@(section.request)</td>
+										<td>
+											<button class="btn btn-danger">キャンセル</button>
+										</td>
+									</tr>
+								}
+							}
 						}
+
 					</table>
 				</div>
 				@*  *@
