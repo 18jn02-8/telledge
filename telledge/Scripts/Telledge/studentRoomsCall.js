@@ -27,3 +27,24 @@ con.setCallback(Status.Extend, () => {
 });
 con.setState(Status.Essential);	//最低通話として処理
 con.setTimer()
+
+
+// WebSocketの処理
+$(function () {
+	// 1. サーバとの接続オブジェクト作成
+	var connection = $.hubConnection();
+
+	// 2. Hubのプロキシ・オブジェクトを作成
+	var echo = connection.createHubProxy("echo");
+
+	// 3. サーバから呼び出される関数を登録
+	echo.on("Receive", function (text) {
+		alert(text);
+	});
+
+	// 4. 接続を開始
+	connection.start(function () {
+		// 5. サーバのメソッドを呼び出し
+		echo.invoke("Join", 1);
+	});
+})
