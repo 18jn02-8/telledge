@@ -12,21 +12,40 @@ namespace telledge.Hubs
 	public class RoomHub : Hub
 	{
 		// 指定されたグループへ参加する
-		public void Join(int roomId)
+		public void JoinStudent(int roomId)
 		{
-			Groups.Add(Context.ConnectionId, "room_" + roomId);
+			Groups.Add(Context.ConnectionId, "student_room_" + roomId);
 		}
 
 		// 指定されたグループから離脱する
-		public void Leave(int roomId)
+		public void LeaveStudent(int roomId)
 		{
-			Groups.Remove(Context.ConnectionId, "room_" + roomId);
+			Groups.Remove(Context.ConnectionId, "student_room_" + roomId);
 		}
+
+		public void JoinTeacher(int roomId)
+		{
+			Groups.Add(Context.ConnectionId, "teacher_room_" + roomId);
+		}
+
+		// 指定されたグループから離脱する
+		public void LeaveTeacher(int roomId)
+		{
+			Groups.Remove(Context.ConnectionId, "teacher_room_" + roomId);
+		}
+
+
+		// 生徒がルームに参加した時の処理
 		public void joinRoom(int roomId)
 		{
 			Room room = Room.find(roomId);	//ルーム番号のルームインスタンスを取得する
-			Student student = Student.
+			//Student student = Student.
 			Clients.Group("room_" + roomId).append();
+		}
+		// 生徒がルームから退出した時の処理
+		public void leaveRoom(int roomId)
+		{
+
 		}
 		public void Hello()
 		{
