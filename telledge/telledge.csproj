@@ -168,6 +168,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Hubs\RoomHub.cs" />
     <Compile Include="Models\FAQ.cs" />
     <Compile Include="Models\Inquiry.cs" />
     <Compile Include="Models\Room.cs" />
