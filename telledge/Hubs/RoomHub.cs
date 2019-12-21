@@ -9,17 +9,17 @@ namespace telledge.Hubs
 	public class RoomHub : Hub
 	{
 		// 指定されたグループへ参加する
-		public void Join(string groupName)
+		public void Join(int roomId)
 		{
-			Groups.Add(Context.ConnectionId, groupName);
+			Groups.Add(Context.ConnectionId, "room_" + roomId);
 		}
 
 		// 指定されたグループから離脱する
-		public void Leave(string groupName)
+		public void Leave(int roomId)
 		{
-			Groups.Remove(Context.ConnectionId, groupName);
+			Groups.Remove(Context.ConnectionId, "room_" + roomId);
 		}
-		public void joined(int roomId)
+		public void joinRoom(int roomId)
 		{
 			Clients.Group("room_" + roomId).joined();
 		}
