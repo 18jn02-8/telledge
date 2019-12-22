@@ -51,14 +51,14 @@ $(function () {
 	// 2. Hubのプロキシ・オブジェクトを作成
 	var echo = connection.createHubProxy("Room");
 
-	// 3. サーバから呼び出される関数を登録
+	// サーバから呼び出して要素を削除するメソッドを登録
 	echo.on("removeStudent", function (studentId) {
 		$('#student-' + studentId).remove();
 	});
 
-	// 4. 接続を開始
+	// 接続を開始
 	connection.start(function () {
-		//講師として登録する
+		//サーバーのJoinTeacherメソッドを実行し、講師として登録する
 		echo.invoke("JoinTeacher", roomId);
 	});
 })
