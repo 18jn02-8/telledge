@@ -11,12 +11,13 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<link rel="stylesheet" href="~/StyleSheets/ModalWindow.css">
 	<link rel="stylesheet" href="~/StyleSheets/TeacherRoomcall.css">
-	<script type="text/javascript" src="~/Scripts/jquery-3.3.1.min.js"></script>
+	<script src="~/Scripts/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="~/Scripts/jquery.signalR-2.4.1.min.js"></script>
 	<script src="~/Scripts/ModalWindow.js"></script>
 	<script>
 		mintime = @(Model.worstTime);
 		overtime = @(Model.extensionTime);
+		roomId = @(Model.id);
 	</script>
 	<script src="~/Scripts/Timer.js"></script>
 	<script src="~/Scripts/Telledge/teacherRoomCall.js"></script>
@@ -89,7 +90,7 @@
 								foreach (var scn in Model.getSections())
 								{
 									<!--- student-x というidはWebSocketでの識別子として利用 -->
-									<tr id="student-@(Model.id)">
+									<tr id="student-@(scn.studentId)">
 										<td>@(scn.getStudent().name)</td>
 										<td>@(scn.request)</td>
 										<td>

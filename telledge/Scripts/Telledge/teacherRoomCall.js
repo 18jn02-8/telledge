@@ -53,12 +53,12 @@ $(function () {
 
 	// 3. サーバから呼び出される関数を登録
 	echo.on("removeStudent", function (studentId) {
-		$('student-' + studentId).remove();
+		$('#student-' + studentId).remove();
 	});
 
 	// 4. 接続を開始
 	connection.start(function () {
 		//講師として登録する
-		echo.invoke("JoinTeacher", 1);
+		echo.invoke("JoinTeacher", roomId);
 	});
 })
