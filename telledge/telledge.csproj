@@ -228,6 +228,7 @@
     <Content Include="Scripts\Telledge\studentRoomsCall.js" />
     <Content Include="Scripts\Telledge\teacherRoomCall.js" />
     <Content Include="Scripts\Timer.js" />
+    <Content Include="StyleSheets\deactivate.css" />
     <Content Include="StyleSheets\TeacherRoomsindex.css" />
     <Content Include="StyleSheets\StudentLogin.css" />
     <Content Include="StyleSheets\studentMenuStyle.css" />
