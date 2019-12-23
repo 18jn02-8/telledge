@@ -9,5 +9,7 @@ $('.agreement-checkbox').click(() => {
 		$('#inactivedate-button').attr({
 			checked: 'checked'
 		});
+	} else {
+		$('#inactivedate-button').removeAttr('checked');
 	};
 });
