@@ -1,1 +1,1 @@
-﻿
+$('.agreement-checkbox')
