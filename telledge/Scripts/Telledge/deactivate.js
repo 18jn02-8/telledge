@@ -8,11 +8,9 @@ $(() => {
 			}
 		});
 		if (isChecked == true) {
-			$('#inactivedate-button').attr({
-				checked: 'checked'
-			});
+			$('#inactivedate-button').removeAttr('disabled');
 		} else {
-			$('#inactivedate-button').removeAttr('checked');
+			$('#inactivedate-button').attr({ disabled: 'disabled' });
 		};
 	});
 });
