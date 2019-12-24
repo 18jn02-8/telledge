@@ -155,9 +155,9 @@ namespace telledge.Controllers.Students
             return View("/Views/Students/Rooms/search.cshtml");
         }
         [HttpPost]
-        public ActionResult search(String tag)
-        {
-            var model = Room.getRooms(tag);
+        public ActionResult search(String keyword)
+		{
+            var model = Room.getRooms(keyword);
             return View("/Views/Students/Rooms/index.cshtml", model);
         }
     }
