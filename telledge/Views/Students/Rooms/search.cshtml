@@ -11,9 +11,11 @@
 <body>
 	<h1>ルーム検索</h1>
     <div>
-		<span>タグ</span>
-		<span><input type="text" name="text"></span>
-		<span><input type="submit"name="submit"value="検索"></span>
-    </div>
+		<form action="/student/Rooms/search" method="post" name="Student">
+			<span>タグ</span>
+			<span><input type="text" name="tag"></span>
+			<span><input type="submit" name="submit" value="検索"></span>
+		</form>
+	</div>
 </body>
 </html>
