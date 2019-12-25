@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using telledge.Models;
 
 namespace telledge.Controllers.Students
 {
@@ -17,6 +18,23 @@ namespace telledge.Controllers.Students
 		public ActionResult edit()
 		{
 			return View("/Views/Students/Homes/edit.cshtml");
+		}
+		public ActionResult update(String mailaddress,String nickname,String imagePath,String skypeId)
+		{
+			Student student = new Student();
+			student.mailaddress = mailaddress;
+			//student.nick;
+			student.profileImage = imagePath;
+			student.skypeId = skypeId;
+			bool check = student.Update();
+			if(check == true)
+			{
+				return RedirectToRoute("Student", new { controller = "Homes", Action = "mypage"});
+			}
+			else
+			{
+				return View("/Views/Students/Homes/edit.cshtml");
+			}
 		}
     }
 }
