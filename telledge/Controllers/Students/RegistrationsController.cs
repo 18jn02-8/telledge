@@ -24,5 +24,20 @@ namespace telledge.Controllers.Students
 			Student.logout();
 			return RedirectToAction("top", "Homes");
 		}
+		public ActionResult create(String mailaddress,String password,String passwordConfirmation)
+		{
+			Student student = new Student();
+			if(password != "" && passwordConfirmation != "")
+			{
+				if(password == passwordConfirmation)
+				{
+					student.setPassword(password);
+					student.mailaddress = mailaddress;
+					student.create();
+					return View("/Views/Students/Registrations/top.cshtml");
+				}
+			}
+			return View("/Views/Students/Registrations/create.cshtml");
+		}
 	}
 }
