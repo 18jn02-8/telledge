@@ -32,14 +32,14 @@ namespace telledge.Controllers.Teachers
 		[HttpPost]
 		public ActionResult create(String name,String mailaddress,String password,String passwordConfirmation,String imagePath)
 		{
-			if(password != "" && passwordConfirmation != "")
+			if(password != "" && passwordConfirmation != "")//空文字で登録できないようにする
 			{
-				if(password == passwordConfirmation)
+				if(password == passwordConfirmation)//パスワードと確認用パスワードの一致
 				{
 					Teacher teacher = new Teacher();
 					teacher.name = name;
 					teacher.mailaddress = mailaddress;
-					teacher.setPassword(password);
+					teacher.setPassword(password);//パスワードダイジェスト化
 					teacher.profileImage = imagePath;
 					teacher.language = DBNull.Value.ToString();
 					teacher.intoroduction = DBNull.Value.ToString();
