@@ -12,6 +12,7 @@ namespace telledge.Controllers.Teachers
 		// GET: Registrations
 		public ActionResult deactivate()
 		{
+			if (Teacher.currentUser() == null) return RedirectToRoute("Teacher", new { controller = "Sessions", Action = "create" });
 			return View("/Views/Teachers/Registrations/deactivate.cshtml");
 		}
 
