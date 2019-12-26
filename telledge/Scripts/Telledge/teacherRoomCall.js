@@ -56,6 +56,10 @@ $(function () {
 		$('#student-' + studentId).remove();
 	});
 
+	echo.on("append", (student_json) => {
+		console.log(student_json);
+	})
+
 	// 接続を開始
 	connection.start(function () {
 		//サーバーのJoinTeacherメソッドを実行し、講師として登録する
