@@ -34,6 +34,7 @@ namespace telledge.Controllers.Students
 					Student student = new Student();
 					student.setPassword(password);
 					student.mailaddress = mailaddress;
+					student.skypeId = "";
 					student.create();
 					return View("/Views/Students/Registrations/top.cshtml");
 				}
