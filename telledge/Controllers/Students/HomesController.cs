@@ -19,11 +19,11 @@ namespace telledge.Controllers.Students
 		{
 			return View("/Views/Students/Homes/edit.cshtml");
 		}
-		public ActionResult update(String mailaddress,String nickname,String imagePath,String skypeId)
+		public ActionResult update(String mailaddress,String name,String imagePath,String skypeId)
 		{
 			Student student = new Student();
 			student.mailaddress = mailaddress;
-			//student.nick;
+			student.name = name;
 			student.profileImage = imagePath;
 			student.skypeId = skypeId;
 			bool check = student.Update();
