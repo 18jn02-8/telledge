@@ -21,9 +21,25 @@ namespace telledge.Controllers.Students
 		}
 		public ActionResult update(String mailaddress,String name,String imagePath,String skypeId)
 		{
-			Student student = new Student();
-			student.passwordDigest = Student.currentUser().passwordDigest;//ログイン済みパスワードダイジェスト取得
-			student.id = Student.currentUser().id;//ログイン済みのID取得
+			Student student = Student.currentUser();
+			if(mailaddress == "")//未入力であれば、現在のメールアドレスを保持する。
+			{
+				mailaddress = student.mailaddress;
+			}
+			if(name == "")//未入力であれば、現在の名前を保持する。
+			{
+				name = student.name;
+			}
+			if(imagePath == "")//未入力であれば、現在の画像パスを保持する。
+			{
+				imagePath = student.profileImage;
+			}
+			if(skypeId == "")//未入力であれば、現在のスカイプIDを保持する。
+			{
+				skypeId = student.skypeId;
+			}
+			student.passwordDigest = student.passwordDigest;//ログイン済みパスワードダイジェスト取得
+			student.id = student.id;//ログイン済みのID取得
 			student.mailaddress = mailaddress;
 			student.name = name;
 			student.profileImage = imagePath;
