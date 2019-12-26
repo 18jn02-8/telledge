@@ -27,14 +27,16 @@ namespace telledge.Controllers.Students
 		[HttpPost]
 		public ActionResult create(String mailaddress,String password,String passwordConfirmation)
 		{		
-			if(password != "" && passwordConfirmation != "")
+			if(password != "" && passwordConfirmation != "")//空文字で登録できないようにする
 			{
-				if(password == passwordConfirmation)
+				if(password == passwordConfirmation)//パスワードと確認用パスワードの一致
 				{
 					Student student = new Student();
-					student.setPassword(password);
+					student.setPassword(password);//パスワードダイジェスト化
 					student.mailaddress = mailaddress;
-					student.skypeId = "";
+					student.skypeId = ""; //nullが自動で入ってしまう為、空文字を代入
+					student.name = DBNull.Value.ToString();
+					student.profileImage = DBNull.Value.ToString();
 					student.create();
 					return View("/Views/Students/Registrations/top.cshtml");
 				}
