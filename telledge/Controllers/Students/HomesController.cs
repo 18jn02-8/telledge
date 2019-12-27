@@ -22,25 +22,22 @@ namespace telledge.Controllers.Students
 		public ActionResult update(String mailaddress,String name,String imagePath,String skypeId)
 		{
 			Student student = Student.currentUser();
-			if(mailaddress == "")//未入力であれば、現在のメールアドレスを保持する。
+			if(mailaddress != "")//入力してあれば、引数をデータを保持する。
 			{
-				mailaddress = student.mailaddress;
+				student.mailaddress = mailaddress;
 			}
-			if(name == "")//未入力であれば、現在の名前を保持する。
+			if(name != "")//入力してあれば、引数をデータを保持する。
 			{
-				name = student.name;
+				student.name = name;
 			}
-			if(imagePath == "")//未入力であれば、現在の画像パスを保持する。
+			if(imagePath != "")//入力してあれば、引数をデータを保持する。
 			{
-				imagePath = student.profileImage;
+				student.profileImage = imagePath;
 			}
-			if(skypeId == "")//未入力であれば、現在のスカイプIDを保持する。
+			if(skypeId != "")//入力してあれば、引数をデータを保持する。
 			{
-				skypeId = student.skypeId;
+				student.skypeId = skypeId;
 			}
-			student.name = name;
-			student.profileImage = imagePath;
-			student.skypeId = skypeId;
 			bool check = student.Update();
 			if(check == true)
 			{
