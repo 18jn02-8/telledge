@@ -70,9 +70,11 @@ $(function () {
 
 	})
 
+	//リジェクトボタンを押したときの処理
 	$("#student-list button").click(function () {
-		$(this).closest("tr").remove();
-		echo.invoke("rejectRoom", roomId, studentId);
+		const $tr = $(this).closest("tr");
+		console.log(echo.invoke("rejectRoom", roomId, 1));
+		$tr.remove();
 	});
 
 	// 接続を開始
