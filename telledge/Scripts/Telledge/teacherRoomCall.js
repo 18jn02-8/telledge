@@ -77,6 +77,7 @@ $(function () {
 
 () => {
 	$("#student-list tr").click(() => {
+		console.log("Deleted list");
 		this.remove();
 	});
 };
