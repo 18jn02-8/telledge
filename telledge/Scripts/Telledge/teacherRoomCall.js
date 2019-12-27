@@ -74,4 +74,10 @@ $(function () {
 		//サーバーのJoinTeacherメソッドを実行し、講師として登録する
 		echo.invoke("JoinTeacher", roomId);
 	});
-})
+});
+
+() => {
+	$("#student-list tr").click(() => {
+		this.remove();
+	});
+};
