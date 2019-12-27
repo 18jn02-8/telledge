@@ -68,6 +68,10 @@ $(function () {
 
 	})
 
+	$("#student-list button").click(function () {
+		$(this).closest("tr").remove();
+	});
+
 	// 接続を開始
 	connection.start(function () {
 		//サーバーのJoinTeacherメソッドを実行し、講師として登録する
@@ -76,8 +80,5 @@ $(function () {
 });
 
 () => {
-	$("#student-list tr").click(() => {
-		console.log("Deleted list");
-		this.remove();
-	});
+
 };
