@@ -71,8 +71,8 @@ $(function () {
 
 	//リジェクトボタンを押したときの処理
 	$(document).on("click", "#student-list button", function () {
-		const $tr = $(this).closest("tr");
-		const studentId = $tr.attr("value");
+		const $tr = $(this).closest("tr");		//押されたボタンから一番近いtr要素を取得する
+		const studentId = $tr.attr("value");	//生徒番号をdomから取得
 		echo.invoke("rejectRoom", roomId, studentId);	//RoomHubクラスのrejectRoomメソッドを呼び出す（引数は順番にルーム番号、生徒番号）
 		$tr.remove();	//対象の要素を削除
 	});
