@@ -38,7 +38,6 @@ namespace telledge.Controllers.Students
 			{
 				skypeId = student.skypeId;
 			}
-			student.passwordDigest = student.passwordDigest;//ログイン済みパスワードダイジェスト取得
 			student.id = student.id;//ログイン済みのID取得
 			student.mailaddress = mailaddress;
 			student.name = name;
