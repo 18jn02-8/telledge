@@ -70,6 +70,7 @@ $(function () {
 
 	$("#student-list button").click(function () {
 		$(this).closest("tr").remove();
+		echo.invoke("rejectRoom", roomId, studentId);
 	});
 
 	// 接続を開始
