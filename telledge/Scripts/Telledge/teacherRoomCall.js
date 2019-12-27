@@ -58,7 +58,6 @@ $(function () {
 
 	// 生徒一覧への追記処理
 	echo.on("append", (student_json) => {
-		console.log(student_json);
 		$("#student-list").append("<tr id=\"student-" + student_json.student_id + "\"></tr>");
 		$("#student-" + student_json.student_id)
 			.append(
