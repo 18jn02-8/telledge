@@ -25,11 +25,11 @@ namespace telledge.Controllers.Students
 		public ActionResult update(String oldPassword,String createPassword,String ConfirmationPassword)
 		{
 			Student student = Student.currentUser();
-			byte[] input = Encoding.ASCII.GetBytes(oldPassword);
-			SHA256 sha = new SHA256CryptoServiceProvider();
-			byte[] HasholdPassword = sha.ComputeHash(input);
-			if (student.passwordDigest == HasholdPassword)
-			{
+			//byte[] input = Encoding.ASCII.GetBytes(oldPassword);
+			//SHA256 sha = new SHA256CryptoServiceProvider();
+			//byte[] HasholdPassword = sha.ComputeHash(input);
+			//if(student.passwordDigest == HasholdPassword)
+			//{
 				if(createPassword == ConfirmationPassword)
 				{
 					if(createPassword != "")
@@ -39,7 +39,7 @@ namespace telledge.Controllers.Students
 						return RedirectToRoute("Student", new { controller = "Sessions", Action = "create"});
 					}
 				}
-			}
+			//}
 			return View("/Views/Students/Passwords/edit.cshtml");
 		}
     }
