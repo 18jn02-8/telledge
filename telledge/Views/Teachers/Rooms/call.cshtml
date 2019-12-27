@@ -93,7 +93,7 @@
 									foreach (var scn in Model.getSections())
 									{
 										<!--- student-x というidはWebSocketでの識別子として利用 -->
-										<tr id="student-@(scn.studentId)">
+										<tr id="student-@(scn.studentId)" value="@(scn.studentId)">
 											<td>@(scn.getStudent().name)</td>
 											<td>@(scn.request)</td>
 											<td>
