@@ -67,13 +67,13 @@ $(function () {
 				"<td>" + student_json.request + "</td>",
 				"<td><button class=\"btn btn-danger\">キャンセル</button></td>"
 			);
-
-	})
+	});
 
 	//リジェクトボタンを押したときの処理
 	$("#student-list button").click(function () {
 		const $tr = $(this).closest("tr");
-		console.log(echo.invoke("rejectRoom", roomId, 1));
+		const studentId = $tr.attr("value");
+		echo.invoke("rejectRoom", roomId, studentId);
 		$tr.remove();
 	});
 
