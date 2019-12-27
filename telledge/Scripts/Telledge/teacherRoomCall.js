@@ -70,7 +70,7 @@ $(function () {
 	});
 
 	//リジェクトボタンを押したときの処理
-	$("#student-list button").click(function () {
+	$(document).on("click", "#student-list button", function () {
 		const $tr = $(this).closest("tr");
 		const studentId = $tr.attr("value");
 		echo.invoke("rejectRoom", roomId, studentId);
