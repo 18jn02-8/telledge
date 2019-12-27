@@ -42,6 +42,16 @@ $(function () {
 		alert(text);
 	});
 
+	// RoomHubクラスのrejectRoomメソッドから呼び出す処理
+	echo.on("reject", (arg) => {
+		if (arg.student_id == studentId) {
+			//リジェクトされたのが自分ならば
+		}
+		else {
+			//リジェクトされたのが他人ならば
+		}
+	});
+
 	//Sectionテーブルから情報を削除する処理を実行する
 	$("#leave-button").click(function () {
 		echo.invoke("leaveRoom", roomId, studentId);	//RoomHubに定義されているサーバーのleaveRoomメソッドを実行する
