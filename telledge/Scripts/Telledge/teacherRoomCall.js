@@ -78,7 +78,3 @@ $(function () {
 		echo.invoke("JoinTeacher", roomId);
 	});
 });
-
-() => {
-
-};
