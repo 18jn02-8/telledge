@@ -38,7 +38,6 @@ namespace telledge.Controllers.Students
 			{
 				skypeId = student.skypeId;
 			}
-			student.mailaddress = mailaddress;
 			student.name = name;
 			student.profileImage = imagePath;
 			student.skypeId = skypeId;
