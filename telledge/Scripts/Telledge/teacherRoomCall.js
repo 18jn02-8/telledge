@@ -73,8 +73,8 @@ $(function () {
 	$(document).on("click", "#student-list button", function () {
 		const $tr = $(this).closest("tr");
 		const studentId = $tr.attr("value");
-		echo.invoke("rejectRoom", roomId, studentId);
-		$tr.remove();
+		echo.invoke("rejectRoom", roomId, studentId);	//RoomHubクラスのrejectRoomメソッドを呼び出す（引数は順番にルーム番号、生徒番号）
+		$tr.remove();	//対象の要素を削除
 	});
 
 	// 接続を開始
