@@ -111,10 +111,11 @@
 		</div>
 	</main>
 
+	<!-- 評価のモーダルウィンドウ -->
 	<div class="modal fade" id="review-modal" tabindex="-1">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<form action="/student/rooms/end" method="post" >
+				<form action="/student/rooms/end" method="post">
 					<input name="id" type="hidden" value="@(Model.id)" />
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal"><span>×</span></button>
@@ -129,6 +130,28 @@
 						<input type="submit" class="btn btn-primary" />
 					</div>
 				</form>
+			</div>
+		</div>
+	</div>
+
+	<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#reject-modal">
+		リジェクトモーダル
+	</button>
+	<!-- リジェクトのモーダルウィンドウ -->
+	<div class="modal fade" id="reject-modal" tabindex="-1">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+					<h4 class="modal-title">タイトル</h4>
+				</div>
+				<div class="modal-body">
+					本文
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+					<button type="button" class="btn btn-primary">ボタン</button>
+				</div>
 			</div>
 		</div>
 	</div>
