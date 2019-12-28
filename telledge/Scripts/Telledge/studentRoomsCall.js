@@ -47,7 +47,7 @@ $(function () {
 		console.log(arg);
 		if (arg.student_id == studentId) {
 			//リジェクトされたのが自分ならば
-			$("reject-modal").modal('show',{
+			$("#reject-modal").modal('show',{
 				backdrop: "static"
 			});
 			console.log("you are rejected...");
