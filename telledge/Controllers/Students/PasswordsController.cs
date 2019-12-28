@@ -25,14 +25,11 @@ namespace telledge.Controllers.Students
 		public ActionResult update(String oldPassword,String createPassword,String ConfirmationPassword)
 		{
 		Student student = Student.currentUser();
-		byte[] input = Encoding.ASCII.GetBytes(oldPassword);
-		SHA256 sha = new SHA256CryptoServiceProvider();
-		byte[] HasholdPassword = sha.ComputeHash(input);
-		if (student.passwordDigest.SequenceEqual(HasholdPassword))
+		if(student.changePassword(oldPassword, createPassword) == true)
 		{
-			if (createPassword == ConfirmationPassword)
+			if(createPassword == ConfirmationPassword)
 			{
-				if (createPassword != "")
+				if(createPassword != "")
 				{
 					student.setPassword(createPassword);
 					student.Update();
