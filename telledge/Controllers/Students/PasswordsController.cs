@@ -24,23 +24,23 @@ namespace telledge.Controllers.Students
 		[HttpPost]
 		public ActionResult update(String oldPassword,String createPassword,String ConfirmationPassword)
 		{
-			Student student = Student.currentUser();
-			//byte[] input = Encoding.ASCII.GetBytes(oldPassword);
-			//SHA256 sha = new SHA256CryptoServiceProvider();
-			//byte[] HasholdPassword = sha.ComputeHash(input);
-			//if(student.passwordDigest == HasholdPassword)
-			//{
-				if(createPassword == ConfirmationPassword)
+		Student student = Student.currentUser();
+		byte[] input = Encoding.ASCII.GetBytes(oldPassword);
+		SHA256 sha = new SHA256CryptoServiceProvider();
+		byte[] HasholdPassword = sha.ComputeHash(input);
+		if (student.passwordDigest.SequenceEqual(HasholdPassword))
+		{
+			if (createPassword == ConfirmationPassword)
+			{
+				if (createPassword != "")
 				{
-					if(createPassword != "")
-					{
-						student.setPassword(createPassword);
-						student.Update();
-						return RedirectToRoute("Student", new { controller = "Sessions", Action = "create"});
-					}
+					student.setPassword(createPassword);
+					student.Update();
+					return RedirectToRoute("Student", new { controller = "Sessions", Action = "create" });
 				}
-			//}
-			return View("/Views/Students/Passwords/edit.cshtml");
+			}
+		}
+		return View("/Views/Students/Passwords/edit.cshtml");
 		}
     }
 }
