@@ -47,11 +47,13 @@ $(function () {
 		console.log(arg);
 		if (arg.student_id == studentId) {
 			//リジェクトされたのが自分ならば
+
+			//モーダルウィンドウの外側をクリックすることでモーダルウィンドウを閉じれないようにする
 			$("#reject-modal").modal({
 				backdrop: "static"
 			});
+			// モーダルウィンドウを開く
 			$("#reject-modal").modal('show');
-			console.log("you are rejected...");
 		}
 		else {
 			//リジェクトされたのが他人ならば
