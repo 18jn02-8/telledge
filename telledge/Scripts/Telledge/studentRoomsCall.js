@@ -44,7 +44,6 @@ $(function () {
 
 	// RoomHubクラスのrejectRoomメソッドから呼び出す処理
 	echo.on("reject", (arg) => {
-		console.log(arg);
 		if (arg.student_id == studentId) {
 			//リジェクトされたのが自分ならば
 
