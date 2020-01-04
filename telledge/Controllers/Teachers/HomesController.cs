@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,9 +9,9 @@ namespace telledge.Controllers.Teachers
     public class HomesController : Controller
     {
         // GET: Homes
-        public ActionResult Index()
+        public ActionResult mypage()
         {
-            return View();
+            return View("/Views/Teachers/Homes/mypage.cshtml");
         }
     }
 }
