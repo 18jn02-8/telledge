@@ -197,6 +197,10 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Authentication.config" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Content\JqueryUI\jquery-ui-1.12.1.min.css" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
@@ -205,6 +209,24 @@
     <Content Include="Scripts\JqueryUI\jquery-ui-1.12.1.min.js" />
     <Content Include="Scripts\JqueryUI\jquery-ui-1.8.12.min.js" />
     <Content Include="Scripts\lazeemenu\lazeemenu-jquery.js" />
+    <Content Include="Scripts\lazeemenu\sass\lazeemenu-dark-theme.css">
+      <DependentUpon>lazeemenu-dark-theme.scss</DependentUpon>
+    </Content>
+    <Content Include="Scripts\lazeemenu\sass\lazeemenu-dark-theme.min.css">
+      <DependentUpon>lazeemenu-dark-theme.css</DependentUpon>
+    </Content>
+    <Content Include="Scripts\lazeemenu\sass\lazeemenu-stripped-theme.css">
+      <DependentUpon>lazeemenu-stripped-theme.scss</DependentUpon>
+    </Content>
+    <Content Include="Scripts\lazeemenu\sass\lazeemenu-stripped-theme.min.css">
+      <DependentUpon>lazeemenu-stripped-theme.css</DependentUpon>
+    </Content>
+    <Content Include="Scripts\lazeemenu\sass\lazeemenu.css">
+      <DependentUpon>lazeemenu.scss</DependentUpon>
+    </Content>
+    <Content Include="Scripts\lazeemenu\sass\lazeemenu.min.css">
+      <DependentUpon>lazeemenu.css</DependentUpon>
+    </Content>
     <Content Include="Scripts\ModalWindow.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
