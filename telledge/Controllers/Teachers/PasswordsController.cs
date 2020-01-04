@@ -29,13 +29,12 @@ namespace telledge.Controllers.Teachers
 				{
 					if (createPassword != "")
 					{
-						teacher.setPassword(createPassword);
 						teacher.Update();
-						return RedirectToRoute("Student", new { controller = "Sessions", Action = "create" });
+						return RedirectToRoute("Teacher", new { controller = "Sessions", Action = "create" });
 					}
 				}
 			}
-			return View("/Views/Students/Passwords/edit.cshtml");
+			return View("/Views/Teachers/Passwords/edit.cshtml");
 		}
 	}
 }
