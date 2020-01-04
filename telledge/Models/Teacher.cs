@@ -82,6 +82,7 @@ namespace telledge.Models
                             retTeacher.nationality = dt.Rows[0]["nationality"].ToString();
                             retTeacher.is2FA = (bool)dt.Rows[0]["is2FA"];
                             retTeacher.point = (int)dt.Rows[0]["point"];
+							retTeacher.address = dt.Rows[0]["address"].ToString();
                             if (dt.Rows[0]["inactiveDate"] != DBNull.Value)
                             {
                                 retTeacher.inactiveDate = DateTime.Parse(dt.Rows[0]["inactiveDate"].ToString());
