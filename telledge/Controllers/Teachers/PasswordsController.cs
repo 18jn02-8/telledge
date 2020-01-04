@@ -23,15 +23,12 @@ namespace telledge.Controllers.Teachers
 		public ActionResult update(String oldPassword, String createPassword, String ConfirmationPassword)
 		{
 			Teacher teacher = Teacher.currentUser();
-			if (teacher.changePassword(oldPassword, createPassword) == true)
+			if (createPassword == ConfirmationPassword && createPassword != "")
 			{
-				if (createPassword == ConfirmationPassword)
+				if(teacher.changePassword(oldPassword, createPassword) == true)
 				{
-					if (createPassword != "")
-					{
-						teacher.Update();
-						return RedirectToRoute("Teacher", new { controller = "Sessions", Action = "create" });
-					}
+					teacher.Update();
+					return RedirectToRoute("Teacher", new { controller = "Sessions", Action = "create" });
 				}
 			}
 			return View("/Views/Teachers/Passwords/edit.cshtml");
