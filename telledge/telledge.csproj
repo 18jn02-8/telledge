@@ -204,6 +204,7 @@
     <Content Include="Scripts\jquery.signalR-2.4.1.min.js" />
     <Content Include="Scripts\JqueryUI\jquery-ui-1.12.1.min.js" />
     <Content Include="Scripts\JqueryUI\jquery-ui-1.8.12.min.js" />
+    <Content Include="Scripts\lazeemenu\lazeemenu-jquery.js" />
     <Content Include="Scripts\ModalWindow.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -279,6 +280,9 @@
     <Content Include="Views\Students\Passwords\edit.cshtml" />
     <Content Include="Views\Teachers\Homes\mypage.cshtml" />
     <Content Include="Views\Teachers\Passwords\edit.cshtml" />
+    <Content Include="Scripts\lazeemenu\sass\lazeemenu-dark-theme.scss" />
+    <Content Include="Scripts\lazeemenu\sass\lazeemenu-stripped-theme.scss" />
+    <Content Include="Scripts\lazeemenu\sass\lazeemenu.scss" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
