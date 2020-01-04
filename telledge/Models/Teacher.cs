@@ -231,6 +231,7 @@ namespace telledge.Models
 					command.Parameters.Add(new SqlParameter("@id", id));
 					if (name != null) command.Parameters.Add(new SqlParameter("@name", name));
 					else command.Parameters.Add(new SqlParameter("@name", DBNull.Value));
+					command.Parameters.Add(new SqlParameter("@age", sex));
 					if (profileImage != null) command.Parameters.Add(new SqlParameter("@profileImage", profileImage));
 					else command.Parameters.Add(new SqlParameter("@profileImage", DBNull.Value));
 					command.Parameters.Add(new SqlParameter("@age", age));
