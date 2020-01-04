@@ -18,5 +18,10 @@ namespace telledge.Controllers.Students
 		{
 			return View("/Views/Students/points/create.cshtml");
 		}
+		[HttpPost]
+		public ActionResult create(String cardNumber,DateTime validatedDate,String secureCode,int selectedPoint)
+		{
+
+		}
     }
 }
