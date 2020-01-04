@@ -24,19 +24,16 @@ namespace telledge.Controllers.Students
 		[HttpPost]
 		public ActionResult update(String oldPassword,String createPassword,String ConfirmationPassword)
 		{
-		Student student = Student.currentUser();
-		if(student.changePassword(oldPassword, createPassword) == true)
-		{
-			if(createPassword == ConfirmationPassword)
+			Student student = Student.currentUser();
+			if(createPassword == ConfirmationPassword && createPassword != "")
 			{
-				if(createPassword != "")
+				if (student.changePassword(oldPassword, createPassword) == true)
 				{
 					student.Update();
 					return RedirectToRoute("Student", new { controller = "Sessions", Action = "create" });
 				}
 			}
-		}
-		return View("/Views/Students/Passwords/edit.cshtml");
+			return View("/Views/Students/Passwords/edit.cshtml");
 		}
     }
 }
