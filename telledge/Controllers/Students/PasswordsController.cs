@@ -31,7 +31,6 @@ namespace telledge.Controllers.Students
 			{
 				if(createPassword != "")
 				{
-					student.setPassword(createPassword);
 					student.Update();
 					return RedirectToRoute("Student", new { controller = "Sessions", Action = "create" });
 				}
