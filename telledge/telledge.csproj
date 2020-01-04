@@ -256,6 +256,7 @@
     <Content Include="StyleSheets\deactivate.css" />
     <Content Include="StyleSheets\studentRoomSearch.css" />
     <Content Include="StyleSheets\teacherHomeMypage.css" />
+    <Content Include="StyleSheets\TeacherMenu.css" />
     <Content Include="StyleSheets\TeacherRoomsindex.css" />
     <Content Include="StyleSheets\StudentLogin.css" />
     <Content Include="StyleSheets\studentMenuStyle.css" />
