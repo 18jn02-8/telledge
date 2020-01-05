@@ -23,7 +23,8 @@ namespace telledge.Controllers.Students
 		public ActionResult create(int selectedPoint)
 		{
 			Student student = Student.currentUser();
-			student.point = student.point + selectedPoint;
+			student.point += selectedPoint;
+			student.Update();
 			return RedirectToRoute("Student", new { controller = "Homes", Action = "mypage" });
 		}
     }
