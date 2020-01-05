@@ -12,7 +12,9 @@ namespace telledge.Controllers.Teachers
         // GET: Homes
         public ActionResult mypage()
         {
+			if (Teacher.currentUser() == null) return RedirectToRoute("Teacher", new { controller = "Sessions", Action = "create" });
             return View("/Views/Teachers/Homes/mypage.cshtml", Teacher.currentUser());
-        }
+
+		}
     }
 }
