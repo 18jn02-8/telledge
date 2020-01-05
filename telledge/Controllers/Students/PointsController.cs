@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using telledge.Models;
 
 namespace telledge.Controllers.Students
 {
@@ -19,9 +20,11 @@ namespace telledge.Controllers.Students
 			return View("/Views/Students/points/create.cshtml");
 		}
 		[HttpPost]
-		public ActionResult create(String cardNumber,DateTime validatedDate,String secureCode,int selectedPoint)
+		public ActionResult create(int selectedPoint)
 		{
-
+			Student student = Student.currentUser();
+			student.point += selectedPoint;
+			return RedirectToRoute("Student", new { controller = "Homes", Action = "mypage" });
 		}
     }
 }
