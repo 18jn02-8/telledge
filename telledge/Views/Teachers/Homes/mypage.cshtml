@@ -17,18 +17,22 @@
         <li>
             <h3><span>プロフィール</span></h3>
             <ul>
-                <li></li>
+                <li><span class="list-width">画像</span></li>
                 <li><span class="list-width">メールアドレス</span>@Model.mailaddress</li>
                 <li><span class="list-width">名前</span>@Model.name</li>
-                <li></li>
-                <li><a href="/">Tournaments</a></li>
+                <li>
+                    <button class="btn btn-primary center" type="button" onclick="location.href='/teacher/homes/edit'">変更</button>
+                </li>
             </ul>
         </li>
         <li>
             <h3><span>セキュリティ</span></h3>
             <ul>
-                <li><a href="/">Dancers</a></li>
-                <li><a href="/">Famous acts</a></li>
+                <li><span class="list-width">パスワード</span>********</li>
+                <li><span class="list-width">二段階認証</span>無効</li>
+                <li>
+                    <button class="btn btn-primary center" type="button" onclick="location.href='/teacher/passwords/edit'">変更</button>
+                </li>
             </ul>
         </li>
         <li>
