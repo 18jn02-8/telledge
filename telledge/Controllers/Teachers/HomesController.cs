@@ -16,5 +16,15 @@ namespace telledge.Controllers.Teachers
             return View("/Views/Teachers/Homes/mypage.cshtml", Teacher.currentUser());
 
 		}
+
+		public ActionResult update(String imagePath ,String mailaddress ,String nickname, String nationality, int sex)
+		{
+
+		}
+
+		public ActionResult edit()
+		{
+			return View("/Views/Teacher/Homes/edit.cshtml");
+		}
     }
 }
