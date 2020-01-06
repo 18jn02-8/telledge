@@ -17,7 +17,7 @@ namespace telledge.Controllers.Teachers
 
 		}
 
-		public ActionResult update(String imagePath ,String mailaddress ,String nickname, String nationality, int sex)
+		public ActionResult update(String imagePath ,String mailaddress ,String name, String nationality, int sex)
 		{
 
 		}
