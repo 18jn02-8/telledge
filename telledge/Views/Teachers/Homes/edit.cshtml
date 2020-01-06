@@ -28,9 +28,9 @@
     <div class="form-group">
         <label class="control-label col-md-2" for="sex">性別</label>
         <div class="col-md-10">
-            @Html.EditorFor(model => model.sex, new { htmlAttributes = new { @class = "", @type = "radio", @value = "1" } })男性
-            @Html.EditorFor(model => model.sex, new { htmlAttributes = new { @class = "", @type = "radio", @value = "2" } })女性
-            @Html.EditorFor(model => model.sex, new { htmlAttributes = new { @class = "", @type = "radio", @value = "3", @checked = "" } })未設定
+            <input class=" text-box single-line" name="sex" type="radio" value="1">男性
+            <input class=" text-box single-line" name="sex" type="radio" value="2">女性
+            <input class=" text-box single-line" name="sex" type="radio" value="3" checked>未設定
 
             @Html.ValidationMessageFor(model => model.sex, "", new { @class = "text-danger" })
         </div>
