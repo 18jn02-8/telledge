@@ -59,6 +59,11 @@ $(function () {
 		}
 	});
 
+	// 通話終了の信号を受信したときの処理
+	echo.on("endCall", (roomId, studentId) => {
+
+	});
+
 	//Sectionテーブルから情報を削除する処理を実行する
 	$("#leave-button").click(function () {
 		echo.invoke("leaveRoom", roomId, studentId);	//RoomHubに定義されているサーバーのleaveRoomメソッドを実行する
