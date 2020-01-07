@@ -20,9 +20,21 @@
 		roomId = @(Model.id);
 	</script>
 	<script src="~/Scripts/Timer.js"></script>
+	<script src="~/Scripts/Counter.js"></script>
+	<script src="~/Scripts/Telledge/teacherRoomCall.js"></script>
+
+	<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="~/Scripts/jquery.signalR-2.4.1.min.js"></script>
+	<script src="~/Scripts/ModalWindow.js"></script>
+	<script>
+		mintime = @(Model.worstTime);
+		overtime = @(Model.extensionTime);
+		roomId = @(Model.id);
+	<script src="~/Scripts/Timer.js"></script>
 	<script src="~/Scripts/Telledge/teacherRoomCall.js"></script>
 	<link rel="stylesheet" href="~/Content/bootstrap.min.css">
 	<script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
+	</script>
 </head>
 <body>
 
@@ -69,6 +81,13 @@
 						<tr>
 							<td>予想通話時間</td>
 							<td>@(Model.getWaitTime())分</td>
+						</tr>
+						<tr id="Counter">
+							<td>通話時間</td>
+							<td id="timer-counter"></td>
+							<td>
+								<button class="btn btn-success"　id="Timertext">一時停止</button>
+							</td>
 						</tr>
 					</table>
 				</div>
@@ -123,7 +142,7 @@
 									}
 								</td>
 							</tr>
-							<tr>
+							<tr id="Timer">
 								<td id="timer-title">残り時間</td>
 								<td id="timer-count"></td>
 							</tr>
@@ -150,6 +169,11 @@
 				</div>
 
 			</div>
+		</div>
+		<script>
+			timer.setState(Status.Essential);	//最低通話として処理
+		</script>
+	</main>
 		</div>
 		<script>
 			timer.setState(Status.Essential);	//最低通話として処理

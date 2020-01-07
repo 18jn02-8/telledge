@@ -40,8 +40,60 @@ timer.setCallback(Status.AllDone, () => {
 	$('#room-end').css('display', 'inline');
 
 });
+timer.setTimer();
 
-timer.setTimer()
+let counter = new Counter();
+counter.setCallback(Status.NotStarted, () => {
+	$('#call-end').css('display', 'none');
+	$('#disabled-call-end').css('display', 'none');
+	$('#room-end').css('display', 'inline');
+
+	$('#timer-counter').css('display', 'none');
+
+});
+counter.setCallback(Status.Stop, () => {
+	$('#timer-counter').css('display', 'inline');
+	$('#timer-counter').css('color', 'black');
+
+	$('#call-end').css('display', 'none');
+	$('#disabled-call-end').css('display', 'inline');
+	$('#room-end').css('display', 'none');
+});
+counter.setCallback(Status.Restart, () => {
+	$('#timer-counter').css('color', 'red');
+	$('#timer-counter').css('display', 'inline');
+
+
+	$('#call-end').css('display', 'inline');
+	$('#disabled-call-end').css('display', 'none');
+	$('#room-end').css('display', 'none');
+});
+counter.setCallback(Status.AllDone, () => {
+	$('#timer-counter').css('display', 'none');
+
+	$('#call-end').css('display', 'none');
+	$('#disabled-call-end').css('display', 'none');
+	$('#room-end').css('display', 'inline');
+
+});
+counter.setState(Status.Restart);
+counter.startTimer();
+var flag = 0;
+
+//タイマーの一時停止処理
+$(function () {
+	$('#Timertext').click(function () {
+		if (flag == 0) {
+			$('#Timertext').text("再開");
+			counter.stopTimer();
+			flag = 1;
+		} else {
+			$('#Timertext').text("一時停止");
+			counter.startTimer();
+			flag = 0;
+		}
+	})
+});
 
 // WebSocketの処理
 $(function () {
