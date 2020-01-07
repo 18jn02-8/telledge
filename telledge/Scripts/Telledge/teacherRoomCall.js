@@ -69,6 +69,11 @@ $(function () {
 			);
 	});
 
+	// 通話終了の信号を受信したときの処理
+	echo.on("endCall", (roomId, studentId) => {
+
+	});
+
 	//リジェクトボタンを押したときの処理
 	$(document).on("click", "#student-list button", function () {
 		const $tr = $(this).closest("tr");		//押されたボタンから一番近いtr要素を取得する
