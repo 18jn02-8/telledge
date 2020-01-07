@@ -76,11 +76,15 @@ $(function () {
 
 	// 通話終了の信号を受信したときの処理
 	echo.on("endCall", (section, student) => {
-		console.log(section);
 		if (section != null) {
 			//次に待っている生徒がいる場合
-			$('#student-name').text(section.)
+			$('.student-name').text(student.name);
+			$('.student-request').text(section.request);
+		} else {
+			$('.student-name').text("");
+			$('.student-request').text("");
 		}
+		$('#student-' + student.id).remove();
 		$("#break-modal").modal({
 			backdrop: "static"
 		});
