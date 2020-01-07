@@ -69,9 +69,20 @@ $(function () {
 			);
 	});
 
-	// 通話終了の信号を受信したときの処理
-	echo.on("endCall", (roomId, studentId) => {
+	//通話終了ボタンの入力を検知したときの処理
+	$("#room-end").click(function () {
+		echo.invoke("endCall", roomId, studentId);	//ルームの終了を知らせる信号を送信する
+	});
 
+	// 通話終了の信号を受信したときの処理
+	echo.on("endCall", (section) => {
+		console.log(section);
+		$("#break-modal").modal({
+			backdrop: "static"
+		});
+		// モーダルウィンドウを開く
+		$("#break-modal").modal('show');
+		
 	});
 
 	//リジェクトボタンを押したときの処理
