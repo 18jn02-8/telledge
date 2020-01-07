@@ -46,6 +46,33 @@
 </body>
 </html>
 
+
+<!-- リジェクトのモーダルウィンドウ -->
+<div class="modal fade" id="break-modal" tabindex="-1">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h3 class="h3-margin-left">休憩時間です!!次の生徒の対応を開始しますか?</h3>
+			</div>
+			<div class="modal-body">
+				<div class="div-margin">
+					<span>生徒名</span>
+					<span>山田</span>
+				</div>
+				<div class="div-margin">
+					<span>要望</span>
+					<span>こうしてください。</span>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<input class="buttom-margin" type="submit" value="対応不可" id="button-color-red">
+				<input class="buttom-margin" type="submit" value="次の生徒へ" id="button-color-Green">
+				<button type="button" class="btn btn-primary" onclick="location.href='/student/rooms/index'">ルーム一覧へ戻る</button>
+			</div>
+		</div>
+	</div>
+</div>
+
 <html>
 <head>
 	<meta name="viewport" content="width=device-width" />
@@ -121,9 +148,9 @@
 							<tr>
 								<td>生徒名</td>
 								<td>
-									@if(section != null)
+									@if (section != null)
 									{
-									@(section.getStudent().name)
+										@(section.getStudent().name)
 									}
 								</td>
 							</tr>
