@@ -289,7 +289,7 @@
     <Content Include="StyleSheets\teacherHomeMypage.css" />
     <Content Include="StyleSheets\TeacherMenu.css" />
     <Content Include="StyleSheets\TeacherRoomsindex.css" />
-    <Content Include="StyleSheets\StudentLogin.css" />
+    <Content Include="StyleSheets\Login.css" />
     <Content Include="StyleSheets\studentMenuStyle.css" />
     <Content Include="StyleSheets\studentRoomShow.css" />
     <Content Include="StyleSheets\TeacherLogin.css" />
