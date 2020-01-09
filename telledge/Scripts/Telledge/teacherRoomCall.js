@@ -100,12 +100,18 @@ $(function () {
 				"<td>" + student_json.student_name + "</td>",
 				"<td>" + student_json.request + "</td>",
 				"<td><button class=\"btn btn-danger\">キャンセル</button></td>"
-			);
+		);
+		if (current_student_id == null) current_student_id = student_json.student_id;
+	});
+
+	$(".startCall-button").click(function () {
+		echo.invoke("startCall", roomId, current_student_id);	//ルームの開始を知らせる信号を送信する
+		//カウンター起動処理をここに <--
 	});
 
 	//通話終了ボタンの入力を検知したときの処理
 	$("#room-end").click(function () {
-		echo.invoke("endCall", roomId, studentId);	//ルームの終了を知らせる信号を送信する
+		echo.invoke("endCall", roomId, current_student_id);	//ルームの終了を知らせる信号を送信する
 	});
 
 	// 通話終了の信号を受信したときの処理
@@ -114,9 +120,11 @@ $(function () {
 			//次に待っている生徒がいる場合
 			$('.student-name').text(student.name);
 			$('.student-request').text(section.request);
+			current_student_id = section.studentId;
 		} else {
 			$('.student-name').text("");
 			$('.student-request').text("");
+			current_student_id = null;
 		}
 		$('#student-' + student.id).remove();
 		$("#break-modal").modal({
