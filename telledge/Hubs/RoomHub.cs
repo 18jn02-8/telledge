@@ -38,6 +38,9 @@ namespace telledge.Hubs
 		// 生徒がルームに参加した時の処理
 		public void joinRoom(int roomId, int studentId)
 		{
+			//実行されない処理？
+			//呼び出しがStudent/RoomsControllerのjoinメソッドにあり。
+
 			Room room = Room.find(roomId);  //ルーム番号のルームインスタンスを取得する
 			Section section = Section.find(roomId, studentId);
 			//Student student = Student.
