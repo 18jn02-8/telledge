@@ -78,10 +78,10 @@ counter.setCallback(Status.AllDone, () => {
 });
 counter.setState(Status.Restart);
 counter.startTimer();
-var flag = 0;
 
 //タイマーの一時停止処理
 $(function () {
+	var flag = 0;
 	$('#Timertext').click(function () {
 		if (flag == 0) {
 			$('#Timertext').text("再開");
