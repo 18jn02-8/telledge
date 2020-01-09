@@ -16,3 +16,7 @@
 .inline-block{
 	display: inline-block;
 }
+
+.hide{
+	display: none;
+}
