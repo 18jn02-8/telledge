@@ -51,6 +51,17 @@ namespace telledge.Hubs
 			});
 			Clients.Group("student_room_" + roomId).updateWaitInfo(room, room.getSections());
 		}
+
+		//通話を開始する信号を受け取ったときの処理
+		public void startCall(int roomId, int studentId)
+		{
+			Section section = Section.find(roomId, studentId);
+			section.beginTime = DateTime.Now;
+			section.update();
+
+			Clients.Group("student_room_" + roomId).updateCallStudent(studentId);
+		}
+
 		//通話を終了する信号を受け取ったときに実行する処理（呼び出し元は問わない）
 		public void endCall(int roomId, int studentId)
 		{
