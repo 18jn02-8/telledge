@@ -1,5 +1,5 @@
-@model telledge.Models.Student
-@*@model IEnumerable<telledge.Models.Room>*@
+@model IEnumerable<telledge.Models.Room>
+
 
 @{
 	ViewBag.Title = "mypage";
@@ -47,9 +47,9 @@
 				@foreach (var item in Model)
 				{
 					<tr>
-						<td><span class="list-width"></span>
-						<td><span class="list-width"></span>
-						<td><span class="list-width"></span>
+						<td><span class="list-width">@item.getTeacher().name</span>
+						<td><span class="list-width">@item.roomName</span>
+						<td><span class="list-width">@item.tag</span>
 					</tr>
 				}
 			</table>
