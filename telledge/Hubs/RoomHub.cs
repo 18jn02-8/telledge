@@ -71,11 +71,12 @@ namespace telledge.Hubs
 		public void leaveRoom(int roomId, int studentId)
 		{
 			Section section = new Section();
+			Room room = Room.find(roomId);
 			section.roomId = roomId;
 			section.studentId = studentId;
 			section.delete();
-			// 講師のフロントエンド処理を呼び出す
-			Clients.Group("teacher_room_" + roomId).removeStudent(studentId);
+			Clients.Group("teacher_room_" + roomId).removeStudent(studentId);   //講師のリストから削除する
+			Clients.Group("student_room_" + roomId).updateWaitInfo(room.getWaitTime(), room.getWaitCount());	//生徒の待ち情報を更新する
 		}
 
 		//講師が生徒を対応拒否した場合の処理
