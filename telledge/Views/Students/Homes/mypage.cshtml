@@ -38,27 +38,38 @@
 		</li>
 		<li>
 			<h3><span>受講履歴</span></h3>
-			<table>
-				<tr>
-					<td><span class="list-width">講師名</span></td>
-					<td><span class="list-width">ルーム名</span></td>
-					<td><span class="list-width">特徴タグ</span></td>
-				</tr>
-				@foreach (var item in Model.GetSections())
-				{
-					<tr>
-						<td><span class="list-width">@item.getRoom().getTeacher().name</span>
-						<td><span class="list-width">@item.getRoom().roomName</span>
-						<td><span class="list-width">@item.getRoom().tag</span>
-					</tr>
-				}
-			</table>
+			<ul>
+				<li>
+					<table>
+						<tr>
+							<td><span class="list-width">講師名</span></td>
+							<td><span class="list-width">ルーム名</span></td>
+							<td><span class="list-width">特徴タグ</span></td>
+						</tr>
+
+						@foreach (var item in Model.GetSections())
+						{
+							<tr>
+								<td><span class="list-width">@item.getRoom().getTeacher().name</span>
+								<td><span class="list-width">@item.getRoom().roomName</span>
+								<td><span class="list-width">@item.getRoom().tag</span>
+							</tr>
+						}
+					</table>
+				</li>
+			</ul>
+		</li>
+		<li>
 			<h3><span>アカウント</span></h3>
 			<ul>
 				<li>
 					<div class="list-paddings">
 						<p>アカウントを削除します</p>
-						<button class="btn btn-danger center" type="button" onclick="location.href='/student/registrations/deactivate'">退会</button>
+						<ul>
+							<li>
+								<button class="btn btn-danger center" type="button" onclick="location.href='/student/registrations/deactivate'">退会</button>
+							</li>
+						</ul>
 					</div>
 				</li>
 			</ul>
