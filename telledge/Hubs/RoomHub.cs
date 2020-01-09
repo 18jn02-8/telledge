@@ -49,7 +49,7 @@ namespace telledge.Hubs
 				student_name = section.getStudent().name,
 				request = section.request
 			});
-			Clients.Group("student_room_" + roomId).updateWaitInfo(room.getSections());
+			Clients.Group("student_room_" + roomId).updateWaitInfo(room, room.getSections());
 		}
 		//通話を終了する信号を受け取ったときに実行する処理（呼び出し元は問わない）
 		public void endCall(int roomId, int studentId)
