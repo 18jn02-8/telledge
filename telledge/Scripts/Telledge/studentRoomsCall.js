@@ -79,7 +79,7 @@ $(function () {
 
 	//通話する人を更新する処理
 	// updateStudent(新たに通話する生徒番号)
-	echo.on("updateStudent", (student_id, waitTime, waitCount) => {
+	echo.on("updateStudent", (student_id) => {
 		if (student_id == studentId) {
 			//通話が自分の番なら　＝　自分は通話側
 		}
