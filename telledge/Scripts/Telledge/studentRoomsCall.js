@@ -89,8 +89,10 @@ $(function () {
 	});
 
 	//情報を更新するメソッド
-	//updateInfo(更新後の予想待ち時間、更新後の待機人数)
-	echo.on("updateInfo", (waitTime, waitCount) => {
+	//updateWaitInfo(更新後の予想待ち時間、更新後の待機人数)
+	echo.on("updateWaitInfo", (waitTime, waitCount) => {
+		$('#waitTime').text(waitTime);
+		$('#waitCount').text(waitCount);
 	});
 
 	//Sectionテーブルから情報を削除する処理を実行する
