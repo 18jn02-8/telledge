@@ -82,9 +82,13 @@ $(function () {
 	echo.on("updateCallStudent", (student_id) => {
 		if (student_id == studentId) {
 			//通話が自分の番なら　＝　自分は通話側
+			$('#waiting').addClass('hidden');
+			$('#calling').removeClass('hidden');
 		}
 		else {
 			//通話が他人なら ＝　自分は待機側
+			$('#waiting').removeClass('hidden');
+			$('#calling').addClass('hidden');
 		}
 	});
 
