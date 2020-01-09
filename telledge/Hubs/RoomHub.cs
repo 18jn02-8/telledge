@@ -58,7 +58,6 @@ namespace telledge.Hubs
 			Section section = Section.find(roomId, studentId);
 			section.beginTime = DateTime.Now;
 			section.update();
-
 			Clients.Group("student_room_" + roomId).updateCallStudent(studentId);
 		}
 
@@ -66,8 +65,8 @@ namespace telledge.Hubs
 		public void endCall(int roomId, int studentId)
 		{
 			Section section = Section.find(roomId, studentId);
-			TimeSpan talkSpan = (DateTime.Now - section.beginTime);
-			section.talkTime = talkSpan.Minutes + talkSpan.Hours * 60;
+			TimeSpan? talkSpan = (DateTime.Now - section.beginTime);
+			section.talkTime = talkSpan.Value.Minutes + talkSpan.Value.Hours * 60;
 			if (section.update())
 			{
 				//各ユーザに通話の終了を伝達する
