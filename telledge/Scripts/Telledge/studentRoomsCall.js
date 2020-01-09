@@ -94,23 +94,18 @@ $(function () {
 
 	//情報を更新するメソッド
 	//updateWaitInfo(sectionの配列オブジェクト)
-	echo.on("updateWaitInfo", (sections) => {
-		sections.sort((a, b) => {
-			if (a.order < b.order) return -1;
-			if (a.order > b.order) return 1;
-			return 0;
-		});
-
+	echo.on("updateWaitInfo", (room, sections) => {
 		// 自分のorderを求める
 		const order = sections.find(section => section.studentId > studentId).order;
 
-
-
-		console.log(sections);
-
-		sections.some((section) => {
-
+		// 自分より前に並んでいる情報を抽出する
+		const selected_sections = sections.filter((section) => {
+			return section.order < order;
 		});
+
+		const waitTime = selected_sections.length * (room.worstTime + room.extensionTime) / 2;
+		const waitCount = selected_sections.length;
+
 		$('#waitTime').text(waitTime);
 		$('#waitCount').text(waitCount);
 	});
