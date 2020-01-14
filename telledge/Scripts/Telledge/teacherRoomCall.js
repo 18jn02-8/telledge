@@ -79,22 +79,6 @@ counter.setCallback(Status.AllDone, () => {
 counter.setState(Status.Restart);
 counter.startTimer();
 
-//タイマーの一時停止処理
-$(function () {
-	var flag = 0;
-	$('#Timertext').click(function () {
-		if (flag == 0) {
-			$('#Timertext').text("再開");
-			counter.stopTimer();
-			flag = 1;
-		} else {
-			$('#Timertext').text("一時停止");
-			counter.startTimer();
-			flag = 0;
-		}
-	})
-});
-
 // WebSocketの処理
 $(function () {
 	// 1. サーバとの接続オブジェクト作成
@@ -158,4 +142,20 @@ $(function () {
 		//サーバーのJoinTeacherメソッドを実行し、講師として登録する
 		echo.invoke("JoinTeacher", roomId);
 	});
+
+	//タイマーの一時停止処理
+	var flag = 0;
+	$(document).on("click", "#Timertext", function () {
+		if (flag == 0) {
+			$("#Timertext").text("再開");
+			counter.setState(Status.Stop);
+			counter.stopTimer();
+			flag = 1;
+		} else {
+			$("#Timertext").text("一時停止");
+			counter.setState(Status.Restart);
+			counter.startTimer();
+			flag = 0;
+		}
+	})
 });
