@@ -76,8 +76,6 @@ counter.setCallback(Status.AllDone, () => {
 	$('#room-end').css('display', 'inline');
 
 });
-counter.setState(Status.Restart);
-counter.startTimer();
 
 // WebSocketの処理
 $(function () {
@@ -143,9 +141,13 @@ $(function () {
 		echo.invoke("JoinTeacher", roomId);
 	});
 
+	//タイマーの始動
+	/*counter.setState(Status.Restart);
+	 counter.startTimer();
+
 	//タイマーの一時停止処理
 	var flag = 0;
-	$(document).on("click", "#Timertext", function () {
+	$("#Timertext").click(function () {
 		if (flag == 0) {
 			$("#Timertext").text("再開");
 			counter.setState(Status.Stop);
@@ -157,5 +159,5 @@ $(function () {
 			counter.startTimer();
 			flag = 0;
 		}
-	})
+	})*/
 });

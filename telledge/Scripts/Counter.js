@@ -62,24 +62,22 @@ class Counter{
 
 	startTimer() {
 		//secを増やす
-		const interval = setInterval(() => {
+		this.interval = setInterval(() => {
 			this.showTime();
 			this.time++;
 		}, 1000);
 	}
 
 	stopTimer() {
-		clearInterval(interval)
+		clearInterval(this.interval);
 		this.status = CounterStatus.Stop;
 		this.setState(this.status);
-		$('#Timertext').text('再開');
 	}
 
 	restartTimer() {
-		$('#Timertext').text('一時停止');
 		this.status = CounterStatus.Restart;
 		//secを増やす
-		const interval = setInterval(() => {
+		this.interval = setInterval(() => {
 			this.showTime();
 			this.time++;
 		}, 1000);
