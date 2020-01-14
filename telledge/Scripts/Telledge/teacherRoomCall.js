@@ -1,4 +1,4 @@
-let timer = new Timer(mintime, overtime);
+const timer = new Timer(mintime, overtime);
 timer.setCallback(Status.NotStarted, () => {
 	$('#call-end').css('display', 'none');
 	$('#disabled-call-end').css('display', 'none');
@@ -107,6 +107,9 @@ $(function () {
 
 	$(".startCall-button").click(function () {
 		echo.invoke("startCall", roomId, current_student_id);	//ルームの開始を知らせる信号を送信する
+		timer.setState(Status.Essential);	//最低通話として処理
+		timer.setTimer()
+
 		//カウンター起動処理をここに <--
 	});
 
