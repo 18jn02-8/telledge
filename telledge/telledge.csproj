@@ -250,6 +250,7 @@
     <Content Include="Scripts\tag-it.js" />
     <Content Include="Scripts\tag-it.min.js" />
     <Content Include="Scripts\Telledge\deactivate.js" />
+    <Content Include="Scripts\Telledge\top.js" />
     <Content Include="Scripts\Telledge\studentRoomsCall.js" />
     <Content Include="Scripts\Telledge\teacherRoomCall.js" />
     <Content Include="Scripts\Counter.js" />
@@ -258,6 +259,7 @@
     <Content Include="StyleSheets\deactivate.css" />
     <Content Include="StyleSheets\studentHomeMypage.css" />
     <Content Include="StyleSheets\studentRoomSearch.css" />
+    <Content Include="StyleSheets\top.css" />
     <Content Include="StyleSheets\teacherHomeMypage.css" />
     <Content Include="StyleSheets\TeacherMenu.css" />
     <Content Include="StyleSheets\TeacherRoomsindex.css" />
@@ -269,6 +271,7 @@
     <Content Include="StyleSheets\TeacherRoomnew.css" />
     <Content Include="StyleSheets\studentRoomCall.css" />
     <Content Include="StyleSheets\studentRoomIndex.css" />
+    <None Include="Views\Homes\top.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
