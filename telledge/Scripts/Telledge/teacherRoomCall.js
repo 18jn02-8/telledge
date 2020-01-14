@@ -102,7 +102,7 @@ $(function () {
 				"<td>" + student_json.request + "</td>",
 				"<td><button class=\"btn btn-danger\">キャンセル</button></td>"
 		);
-		if (current_student_id == null) current_student_id = student_json.student_id;
+		if (current_student_id == -1) current_student_id = student_json.student_id;
 	});
 
 	$(".startCall-button").click(function () {
