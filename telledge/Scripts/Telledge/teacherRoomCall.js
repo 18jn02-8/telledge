@@ -124,7 +124,7 @@ $(function () {
 		} else {
 			$('.student-name').text("");
 			$('.student-request').text("");
-			current_student_id = null;
+			current_student_id = -1;
 		}
 		$('#student-' + student.id).remove();
 		$("#break-modal").modal({
