@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +10,7 @@ namespace telledge.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            return View("/Views/Homes/top.cshtml");
         }
 
         public ActionResult About()
