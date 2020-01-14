@@ -6,9 +6,9 @@ using System.Web.Mvc;
 
 namespace telledge.Controllers
 {
-    public class HomesController : Controller
+    public class HomeController : Controller
     {
-        public ActionResult Index()
+        public ActionResult top()
         {
             return View("/Views/Homes/top.cshtml");
         }
