@@ -185,6 +185,7 @@
   <ItemGroup>
     <Content Include="Assets\Pictures\top-business.svg" />
     <Content Include="Assets\Pictures\top-personal.svg" />
+    <Content Include="Assets\Pictures\top-student.svg" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
