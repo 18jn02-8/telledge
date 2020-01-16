@@ -183,9 +183,13 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Pictures\top-debate.svg" />
+    <Content Include="Assets\Pictures\top-learning-new-thing.svg" />
     <Content Include="Assets\Pictures\top-business.svg" />
+    <Content Include="Assets\Pictures\top-look.svg" />
     <Content Include="Assets\Pictures\top-personal.svg" />
     <Content Include="Assets\Pictures\top-student.svg" />
+    <Content Include="Assets\Pictures\top-teacher.svg" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
