@@ -6,15 +6,6 @@ Layout = "~/Views/Shared/studentMenu.cshtml";
 }
 
 <main>
-	<div>
-		<a href="/student/Homes/edit">登録情報変更</a>
-	</div>
-	<div>
-		<a href="/student/Passwords/edit">パスワード変更画面</a>
-	</div>
-	<div>
-		<a href="/student/Points/create">ポイント購入画面</a>
-	</div>
 	@foreach (var item in Model)
 	{
 		<div class="room-boxes">
@@ -23,7 +14,7 @@ Layout = "~/Views/Shared/studentMenu.cshtml";
 			</a>
 			<div class="flex">
 				<div class="float flex flex-middle">
-					<img class="example">
+					<img class="room-images" src="/uproadFiles/@(item.getTeacher().profileImage)" width="200px" />
 				</div>
 				<div class="room-detail" class="float">
 					<table class="rooms-table">
