@@ -46,10 +46,5 @@
 			<span><input type="submit" value="キャンセル"></span>
 		</div>
 	</form>
-	@using (Html.BeginForm("create", "Registrations", FormMethod.Post, new { enctype = "multipart/form-data" }))
-	{
-		<input type="file" name="imagePath" />
-		<input type="submit" value="アップロード" />
-	}
 </body>
 </html>
