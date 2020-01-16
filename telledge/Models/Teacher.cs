@@ -39,6 +39,8 @@ namespace telledge.Models
 		public String nationality { set; get; }
 		//講師退会日
 		public DateTime? inactiveDate { set; get; }
+		//アップロード後のプロフィール画像
+		public String newProfileImage { set; get; }
 
 		public static bool logout()
 		{
