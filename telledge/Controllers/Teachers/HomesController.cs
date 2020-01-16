@@ -69,7 +69,7 @@ namespace telledge.Controllers.Teachers
 				// エンティティにアップロード・ファイルの情報をセット
 				var ph = new Teacher();
 				ph.profileImage = Path.GetFileName(imagePath.FileName);  // ファイル名
-				ph.newProfileImage = imagePath.ContentType;  // コンテンツ・タイプ
+				ph.uploadedProfileImage = imagePath.ContentType;  // コンテンツ・タイプ
 
 				// エンティティを追加＆データソースに反映
 				_db.AddObject("Teacher", ph);
