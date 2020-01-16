@@ -32,7 +32,9 @@
 			<span>証明写真</span>
 		</div>
 		<div>
+			<% using (Html.BeginForm("DbUpload", "Homes", FormMethod.Post, new {enctype = "multipart/form-data"})) { %>
 			<span><input type="file" name="imagePath"></span>
+			<% } %>
 		</div>
 		<div>
 			<span>
