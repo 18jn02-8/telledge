@@ -39,8 +39,6 @@ namespace telledge.Models
 		public String nationality { set; get; }
 		//講師退会日
 		public DateTime? inactiveDate { set; get; }
-		//アップロード後のプロフィール画像
-		public String UploadedProfileImage { set; get; }
 
 		public static bool logout()
 		{
@@ -137,7 +135,7 @@ namespace telledge.Models
 					}
 					connection.Close();
 				}
-				catch (SqlException)
+				catch (SqlException e)
 				{
 					//入力情報が足りないメッセージを吐く
 				}
