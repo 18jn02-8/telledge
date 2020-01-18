@@ -11,8 +11,8 @@ Or, can be learning skills a lot as student.
 Our skills will be beyond previous!  
 
 ## Required
-Operation System : Above Windows 10  
-Envirnment : Visual Studio that above 2017.  
+Operation System :  Windows 10  
+Envirnment : Visual Studio that 2017, or later.  
 
 ## Installation
 Open the solution in the folder after clone the repository from our Github!
