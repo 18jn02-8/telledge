@@ -13,7 +13,7 @@ For example, Youtube, Twitter, blogs, etc...
 We think they are providing "just" informations.  
 But Telledge would provide informations as knowlledge.  
 There are huge difference between information and knowlledge.  
-We hope you get information as knowlledge!
+We hope you get information as knowlledge through the system!
 
 ## Required
 Operation System :  Windows 10  
