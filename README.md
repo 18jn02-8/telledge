@@ -1,5 +1,5 @@
 # Telledge
-これは英語版のドキュメントです。日本語版が必要な場合は[こちら](./README.ja.md)を参照してください。  
+これは英語版のドキュメントです。日本語版(不完全)が必要な場合は[こちら](./README.ja.md)を参照してください。  
 This is a English documentation for the project, look [here](./README.ja.md) if you need Japanese one.
 
 ## Introduction
