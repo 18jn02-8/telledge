@@ -11,7 +11,7 @@ Our skills will be beyond previous!
 In the world, there are many platforms for learning things.  
 For example, Youtube, Twitter, blogs, etc...  
 We think they are providing "just" informations.  
-But the platform would provide informations as knowlledge.  
+But Telledge would provide informations as knowlledge.  
 There are many difference between information and knowlledge.  
 We hope you get information as knowlledge!
 
