@@ -28,4 +28,4 @@ After joined a room, wait until your teacher start calling with you.
 If you prefer the teacher, put on five stars at valuaton page :)
 
 ## License
-[Open license](docs/LICENSE)
+[Open license](./LICENSE)
