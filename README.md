@@ -8,7 +8,7 @@ Or, can be learning skills a lot as student.
 Our skills will be beyond previous!  
 
 ## Why using Telledge?
-In the world, there are many platform for learning things.  
+In the world, there are many platforms for learning things.  
 We think these are providing "just" informations.  
 But the platform would provide informations as knowlledge.  
 There are many difference between information and knowlledge.  
