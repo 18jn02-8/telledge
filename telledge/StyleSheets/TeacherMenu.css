@@ -34,6 +34,10 @@ header {
 	background: linear-gradient(305deg, rgba(248,228,245,0.7959558823529411) 0%, rgba(252,207,246,1) 30%, rgba(248,228,245,0.7959558823529411) 100%);
 }
 
+#right-box {
+	width: 100%;
+}
+
 .menu_box {
     padding: 2em 2em;
     font-weight: bold;
