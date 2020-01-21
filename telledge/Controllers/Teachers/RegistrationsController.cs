@@ -51,7 +51,7 @@ namespace telledge.Controllers.Teachers
 					teacher.address = DBNull.Value.ToString();
 					teacher.nationality = DBNull.Value.ToString();
 					teacher.create();
-					return View("/Views/Teachers/Registrations/top.cshtml");
+					return View("/Views/Homes/top.cshtml");
 				}
 			}
 			return View("/Views/Teachers/Registrations/create.cshtml");
