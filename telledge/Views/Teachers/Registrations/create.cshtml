@@ -1,49 +1,54 @@
+@{
+	Layout = null;
+}
 <!DOCTYPE html>
-
+<head>
+	<link rel="stylesheet" href="~/StyleSheets/signin.css">
+	<link rel="stylesheet" href="~/Content/bootstrap.min.css">
 </head>
-<body class="Registrations-box">
-	<form action="/teacher/Registrations/create"  encType="multipart/form-data" method="post" name="Teacher">
+<body class="Registrations-box center">
+	<form action="/teacher/Registrations/create" encType="multipart/form-data" method="post" name="Teacher">
 		<h1>講師用登録画面</h1>
-		<div>
+		<div class="margin-right-40">
 			<span>名前</span>
 		</div>
 		<div>
 			<span><input type="text" name="name"></span>
 		</div>
-		<div>
+		<div class="margin-right-22">
 			<span>メールアドレス</span>
 		</div>
 		<div>
 			<span><input type="text" name="mailaddress"></span>
 		</div>
-		<div>
+		<div class="margin-right-30">
 			<span>パスワード</span>
 		</div>
 		<div>
 			<span><input type="password" name="password"></span>
 		</div>
-		<div>
+		<div class="margin-right-19">
 			<span>確認用パスワード</span>
 		</div>
 		<div>
 			<span><input type="password" name="passwordConfirmation"></span>
 		</div>
-		<div>
+		<div class="margin-right-33">
 			<span>証明写真</span>
 		</div>
-		<div>
+		<div class="margin-left-22">
 			<span><input asp-for="FileUpload.FormatFile" type="file" name="imagePath" id="imagePath" /></span>
 		</div>
-		<div>
+		<div class="small">
 			<span>
 				続行することで、 Telledgeの<a href="xxxx.html">利用規約</a><br>
 				および<a href="xxxx.html">プライバシーポリシ</a>に
 				同意するものとみなされます。
 			</span>
 		</div>
-		<div>
-			<span><input type="submit" value="登録"></span>
-			<span><input type="submit" value="キャンセル"></span>
+		<div class="margin-buttom">
+			<button class="btn btn-success" style="width:40%">登録</button>
+			<button class="btn btn-default" style="width:40%">キャンセル</button>
 		</div>
 	</form>
 </body>
