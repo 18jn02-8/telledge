@@ -4,18 +4,29 @@
 
 .mainvisual {
 	display: inline-block;
+	position: relative;
 	height: 100vh;
+	line-height: 100vh;
 	width: 100%;
 	color: black;
 	background-image: url("/Assets/Pictures/top-mainvisual.jpg");
 }
 .mainvisual h1{
 	font-size:64px;
+	margin: 0;
+	padding: 0 !important;
 }
 .mainvisual h4{
 	font-size: 48px;
 }
 
+#mainvisual-content-box {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+}
 
 #home-row-2 {
 	padding: 30px 15%;
@@ -216,7 +227,7 @@ body {
 
 #about-us {
   background-color: #1abc9c;
-  color: #e4e6e5;
+  color: #black;
   padding-top: 90px;
 }
 
@@ -226,7 +237,7 @@ body {
 }
 
 .line-row .hr {
-  background-color: #e4e6e5;
+  background-color: black;
   height: 5px;
   margin: 0 auto;
   width: 33%;
@@ -352,7 +363,7 @@ i {
 
 #clients {
   background-color: #f39c12;
-  color: #e4e6e5;
+  color: black;
   padding-top: 90px;
 }
 
