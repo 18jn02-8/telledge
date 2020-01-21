@@ -38,7 +38,7 @@ namespace telledge.Controllers.Students
 					student.name = DBNull.Value.ToString();
 					student.profileImage = DBNull.Value.ToString();
 					student.create();
-					return View("/Views/Students/Registrations/top.cshtml");
+					return View("/Views/Homes/top.cshtml");
 				}
 			}
 			return View("/Views/Students/Registrations/create.cshtml");
