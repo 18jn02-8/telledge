@@ -5,7 +5,14 @@
 .mainvisual {
 	display: inline-block;
 	height: 500px;
+	width: 100%;
 	background-image: url("/Assets/Pictures/top-mainvisual.jpg");
+}
+.mainvisual h1{
+	font-size:64px;
+}
+.mainvisual h4{
+	font-size: 48px;
 }
 
 /**
