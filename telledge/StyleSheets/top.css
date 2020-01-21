@@ -1,3 +1,13 @@
+/*
+	Original settings
+*/
+
+.mainvisual {
+	display: inline-block;
+	height: 500px;
+	background-image: url("/Assets/Pictures/top-mainvisual.jpg");
+}
+
 /**
 *  Template Name: Munter
 *  Template URL: https://templatemag.com/munter-bootstrap-one-page-template/
