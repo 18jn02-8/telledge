@@ -1,0 +1,43 @@
+.Registrations-box{
+	border : solid 1px #808080;
+	border-radius : 10px;
+	width : 40%;
+	margin:auto;
+
+}
+.center{
+	text-align : center;
+}
+.small{
+	font-size:xx-small;
+}
+.margin-buttom{
+	margin-bottom :  20px;
+}
+.margin-right{
+	margin-right : 15%;
+}
+.margin-right-2{
+	margin-right : 23%;
+}
+.margin-right-3{
+	margin-right : 11%;
+}
+.margin-right-40{
+	margin-right:40%;
+}
+.margin-right-22{
+	margin-right:22%;
+}
+.margin-right-30{
+	margin-right:30%;
+}
+.margin-right-19{
+	margin-right:19%;
+}
+.margin-right-33{
+	margin-right:33%;
+}
+.margin-left-22{
+	margin-left:22%;
+}
