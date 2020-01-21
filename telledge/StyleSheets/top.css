@@ -27,6 +27,11 @@
 	transform: translate(-50%,-50%);
 }
 
+.jumbotron{
+	margin: 0;
+	text-align: center;
+}
+
 #home-row-2 {
 	padding: 30px 15%;
 	background-color: mediumpurple;
