@@ -1,3 +1,6 @@
+.radious {
+	border-radius: 10px;
+}
 #room-name {
     margin: 50px;
 }
@@ -100,9 +103,9 @@
 
 .room-boxes {
 	width: 40%;
-	padding: 50px 100px;
 	margin: 30px auto;
 	border: solid;
+	border-color:gainsboro;
 }
 .margin-top-login {
 	margin-top : 10px;
