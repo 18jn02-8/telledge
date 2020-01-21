@@ -12,6 +12,12 @@ flex-container {
 
 }
 
+#above {
+}
+
+#below {
+}
+
 .footer-boxes:nth-child(1) {
 	border-bottom: 0px;
 }
@@ -206,3 +212,6 @@ body {
 					padding-bottom: 13px;
 					color: #aeb2b7;
 				}
+logosize{
+	top: 2px;
+}
