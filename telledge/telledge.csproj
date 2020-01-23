@@ -347,6 +347,7 @@
     <Content Include="Views\Students\Teachers\show.cshtml" />
     <Content Include="Views\Students\Homes\mypage.cshtml" />
     <Content Include="Views\Teachers\Passwords\create.cshtml" />
+    <Content Include="Views\Shared\signin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
