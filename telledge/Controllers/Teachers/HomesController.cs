@@ -20,11 +20,16 @@ namespace telledge.Controllers.Teachers
 		}
 
 		[HttpPost]
-		public ActionResult update(String imagePath ,String mailaddress ,String name, String nationality, int sex, String intoroduction)
+		public ActionResult update(HttpPostedFileWrapper imagePath ,String mailaddress ,String name, String nationality, int sex, String intoroduction)
 		{
 			Teacher teacher = Teacher.currentUser();
 			if (teacher != null)
 			{
+				if(imagePath != null)
+				{
+					imagePath.SaveAs(Server.MapPath(@"/uproadFiles/") + Path.GetFileName(imagePath.FileName));
+					teacher.profileImage = Path.GetFileName(imagePath.FileName);
+				}
 				if (mailaddress != "") teacher.mailaddress = mailaddress;
 				if (name != "") teacher.name = name;
 				if (nationality != "") teacher.nationality = nationality;
