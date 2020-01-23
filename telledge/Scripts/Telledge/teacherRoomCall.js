@@ -159,6 +159,7 @@ $(function () {
 		}
 		timer.deleteTimer();	//タイマーを削除する
 		$("#student-" + students[0].student.id).remove();	//先頭の生徒を削除する
+		students.shift();
 	});
 
 	//生徒リストのリジェクトボタンを押したときの処理
