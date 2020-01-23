@@ -53,8 +53,8 @@ namespace telledge.Controllers.Teachers
 					if (teacher.create() == true)
 					{
 						Teacher.login(mailaddress, password);
+						return View("/Views/Teachers/Homes/mypage.cshtml", Teacher.currentUser());
 					}
-					return View("/Views/Teachers/Homes/mypage.cshtml",Teacher.currentUser());
 				}
 			}
 			return View("/Views/Teachers/Registrations/create.cshtml");
