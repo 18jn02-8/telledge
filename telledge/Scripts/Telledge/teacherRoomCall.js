@@ -77,9 +77,11 @@ counter.setCallback(Status.AllDone, () => {
 });
 counter.setState(Status.Restart);
 
+
+let students = [];
+
 // WebSocketの処理
 $(function () {
-	let students = {};
 	// 1. サーバとの接続オブジェクト作成
 	var connection = $.hubConnection();
 
@@ -89,6 +91,9 @@ $(function () {
 	// サーバから呼び出して要素を削除するメソッドを登録
 	echo.on("removeStudent", function (studentId) {
 		$('#student-' + studentId).remove();
+		students = students.filter((student) => {
+			return student.student.id != studentId;
+		});
 	});
 
 	// 生徒一覧への追記処理
@@ -103,11 +108,11 @@ $(function () {
 				"<td>" + section.request + "</td>",
 				"<td><button class=\"btn btn-danger\">キャンセル</button></td>"
 		);
-		if (current_student_id == -1) current_student_id = student.id;
-		students[student.id.toString(10)] = { student: student, section: section };
+		students.push({ student: student, section: section });
 	});
 
 	$(".startCall-button").click(function () {
+
 		echo.invoke("startCall", roomId, current_student_id);	//ルームの開始を知らせる信号を送信する
 		timer.setState(Status.Essential);	//最低通話として処理
 		timer.setTimer();
@@ -150,7 +155,7 @@ $(function () {
 			// モーダルウィンドウを開く
 			$("#break-last-modal").modal('show');
 		}
-		//$('#student-' + student.id).remove();
+		$('#student-' + current_student_id).remove();
 		delete students[current_student_id.toString(10)];
 
 
