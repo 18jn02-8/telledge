@@ -138,8 +138,10 @@ $(function () {
 			// モーダルウィンドウを開く
 			$("#break-modal").modal('show');
 		} else {
+			//次の生徒がいない場合の処理
 			$('.student-name').text("");
 			$('.student-request').text("");
+			$('#student-skype-id').text("");
 			current_student_id = -1;
 
 			$("#break-last-modal").modal({
