@@ -123,7 +123,7 @@
 							section = Model.getSection();
 							<tr>
 								<td>生徒名</td>
-								<td class="student-name">
+								<td id="student-name" class="student-name">
 									@if (section != null)
 									{
 										@(section.getStudent().name)
@@ -136,7 +136,7 @@
 							</tr>
 							<tr>
 								<td id="">要望</td>
-								<td id="" class="student-request">
+								<td id="student-request" class="student-request">
 									@if (section != null)
 									{
 										@(Model.getSection().request)
@@ -146,7 +146,7 @@
 							</tr>
 							<tr>
 								<td>Skype ID</td>
-								<td id=" skype_id">
+								<td id="student-skype-id">
 									@if(section!= null)
 									{
 										@Model.getSection().getStudent().skypeId

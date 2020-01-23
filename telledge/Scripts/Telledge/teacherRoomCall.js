@@ -111,8 +111,11 @@ $(function () {
 		echo.invoke("startCall", roomId, current_student_id);	//ルームの開始を知らせる信号を送信する
 		timer.setState(Status.Essential);	//最低通話として処理
 		timer.setTimer();
-
 		counter.startTimer();
+		const call_student = students[current_student_id];	//生徒情報を取得する
+		$("#student-name").text(call_student.student.name);
+		$("#student-request").text(call_student.section.request);
+		$("#student-skype-id").text(call_student.student.skypeId);
 	});
 
 	//通話終了ボタンの入力を検知したときの処理
@@ -132,7 +135,9 @@ $(function () {
 			$('.student-request').text("");
 			current_student_id = -1;
 		}
-		$('#student-' + student.id).remove();
+		//$('#student-' + student.id).remove();
+		delete students[current_student_id.toString(10)];
+
 		$("#break-modal").modal({
 			backdrop: "static"
 		});
