@@ -108,11 +108,13 @@ $(function () {
 				"<td>" + section.request + "</td>",
 				"<td><button class=\"btn btn-danger\">キャンセル</button></td>"
 		);
-		students.push({ student: student, section: section });
+		students.push({ student: student, section: section });	//入室した生徒を管理対象へ追加する
+		student.sort(function (a, b) {		//生徒の順番をorder順に並び替える
+			return a.section.order - b.section.order;
+		});
 	});
 
 	$(".startCall-button").click(function () {
-
 		echo.invoke("startCall", roomId, current_student_id);	//ルームの開始を知らせる信号を送信する
 		timer.setState(Status.Essential);	//最低通話として処理
 		timer.setTimer();
