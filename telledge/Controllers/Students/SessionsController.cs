@@ -25,11 +25,14 @@ namespace telledge.Controllers.Students
 			{
 				return RedirectToAction("Index", "Rooms");
 			}
+			ViewBag.signInPath = "/student/sessions/create";
+			ViewBag.signUpPath = "/student/registrations/create";
+			ViewBag.pageTitle = "生徒用ログイン画面";
 			ViewBag.ErrorMessage = "メールアドレスかパスワードが一致しませんでした";
-			return View("/Views/Students/Sessions/create.cshtml");
+			return View("/Views/Shared/signin.cshtml");
 
-        }
-        [HttpPost]
+		}
+		[HttpPost]
         public ActionResult Delete()
         {
             Student.logout();
