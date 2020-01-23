@@ -9,34 +9,34 @@
 <body class="Registrations-box center">
 	<form action="/teacher/Registrations/create" encType="multipart/form-data" method="post" name="Teacher">
 		<h1>講師用登録画面</h1>
-		<div class="margin-right-40">
+		<div>
 			<span>名前</span>
 		</div>
 		<div>
 			<span><input type="text" name="name"></span>
 		</div>
-		<div class="margin-right-22">
+		<div>
 			<span>メールアドレス</span>
 		</div>
 		<div>
 			<span><input type="text" name="mailaddress"></span>
 		</div>
-		<div class="margin-right-30">
+		<div>
 			<span>パスワード</span>
 		</div>
 		<div>
 			<span><input type="password" name="password"></span>
 		</div>
-		<div class="margin-right-19">
+		<div>
 			<span>確認用パスワード</span>
 		</div>
 		<div>
 			<span><input type="password" name="passwordConfirmation"></span>
 		</div>
-		<div class="margin-right-33">
+		<div>
 			<span>証明写真</span>
 		</div>
-		<div class="margin-left-22">
+		<div>
 			<span><input asp-for="FileUpload.FormatFile" type="file" name="imagePath" id="imagePath" /></span>
 		</div>
 		<div class="small">
