@@ -10,6 +10,10 @@
 	<form action="/teacher/Registrations/create" encType="multipart/form-data" method="post" name="Teacher">
 		<h1>講師用登録画面</h1>
 		<div>
+			<span style="color:red">@ViewBag.ErrorMessage</span>
+			<span style="color:red">@ViewBag.ErrorMessagePassword</span>
+		</div>
+		<div>
 			<span>名前</span>
 		</div>
 		<div>
