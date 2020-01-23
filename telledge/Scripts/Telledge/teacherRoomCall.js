@@ -155,10 +155,10 @@ $(function () {
 			// モーダルウィンドウを開く
 			$("#break-last-modal").modal('show');
 		}
-		$('#student-' + current_student_id).remove();
-		delete students[current_student_id.toString(10)];
-
-
+		$('#student-' + student.id).remove();
+		students = students.filter((filter_student) => {
+			return filter_student.student.id != student.id
+		});
 
 		timer.deleteTimer();	//タイマーを削除する
 	});
