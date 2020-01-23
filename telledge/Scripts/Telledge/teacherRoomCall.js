@@ -131,19 +131,27 @@ $(function () {
 			$('.student-name').text(student.name);
 			$('.student-request').text(section.request);
 			current_student_id = section.studentId;
+
+			$("#break-modal").modal({
+				backdrop: "static"
+			});
+			// モーダルウィンドウを開く
+			$("#break-modal").modal('show');
 		} else {
 			$('.student-name').text("");
 			$('.student-request').text("");
 			current_student_id = -1;
+
+			$("#break-last-modal").modal({
+				backdrop: "static"
+			});
+			// モーダルウィンドウを開く
+			$("#break-last-modal").modal('show');
 		}
 		//$('#student-' + student.id).remove();
 		delete students[current_student_id.toString(10)];
 
-		$("#break-modal").modal({
-			backdrop: "static"
-		});
-		// モーダルウィンドウを開く
-		$("#break-modal").modal('show');
+
 
 		timer.deleteTimer();	//タイマーを削除する
 	});
