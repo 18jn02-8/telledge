@@ -169,7 +169,9 @@ $(function () {
 	$(document).on("click", "#student-list button", function () {
 		const $tr = $(this).closest("tr");		//押されたボタンから一番近いtr要素を取得する
 		const studentId = $tr.attr("value");	//生徒番号をdomから取得
-		delete students[studentId];
+		students = students.filter((filter_student) => {
+			return filter_student.student.id != studentId
+		});
 		echo.invoke("rejectRoom", roomId, studentId);	//RoomHubクラスのrejectRoomメソッドを呼び出す（引数は順番にルーム番号、生徒番号）
 		$tr.remove();	//対象の要素を削除
 	});
