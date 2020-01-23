@@ -83,6 +83,7 @@ $(function () {
 			//通話が自分の番なら　＝　自分は通話側
 			$('#waiting').addClass('hidden');
 			$('#calling').removeClass('hidden');
+			$('#endCall-button').attr('disabled', 'disabled');
 			con.setState(Status.Essential);	//最低通話として処理
 			con.setTimer();	//タイマー開始
 		}
