@@ -79,6 +79,7 @@ counter.setState(Status.Restart);
 
 // WebSocketの処理
 $(function () {
+	let students = {};
 	// 1. サーバとの接続オブジェクト作成
 	var connection = $.hubConnection();
 
@@ -91,18 +92,20 @@ $(function () {
 	});
 
 	// 生徒一覧への追記処理
-	echo.on("append", (student_json) => {
-		current_student_id = student_json.student_id;
-		const id = "id=\"student-" + student_json.student_id + "\"";
-		const value = "value=\"" + student_json.student_id + "\"";
+	echo.on("append", (student, section) => {
+		current_student_id = student.id;
+		const id = "id=\"student-" + student.id + "\"";
+		const value = "value=\"" + student.id + "\"";
 		$("#student-list").append("<tr " + id + " " + value + "></tr>");
-		$("#student-" + student_json.student_id)
+		$("#student-" + student.id)
 			.append(
-				"<td>" + student_json.student_name + "</td>",
-				"<td>" + student_json.request + "</td>",
+				"<td>" + student.name + "</td>",
+				"<td>" + section.request + "</td>",
 				"<td><button class=\"btn btn-danger\">キャンセル</button></td>"
 		);
-		if (current_student_id == -1) current_student_id = student_json.student_id;
+		if (current_student_id == -1) current_student_id = student.id;
+		students[student.id.toString(10)] = { student: student, section: section };
+		console.log(students);
 	});
 
 	$(".startCall-button").click(function () {
