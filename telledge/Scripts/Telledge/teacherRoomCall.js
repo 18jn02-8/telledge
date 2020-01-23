@@ -109,17 +109,17 @@ $(function () {
 				"<td><button class=\"btn btn-danger\">キャンセル</button></td>"
 		);
 		students.push({ student: student, section: section });	//入室した生徒を管理対象へ追加する
-		student.sort(function (a, b) {		//生徒の順番をorder順に並び替える
+		students.sort(function (a, b) {		//生徒の順番をorder順に並び替える
 			return a.section.order - b.section.order;
 		});
 	});
 
 	$(".startCall-button").click(function () {
-		echo.invoke("startCall", roomId, current_student_id);	//ルームの開始を知らせる信号を送信する
+		echo.invoke("startCall", roomId, students[0].student.id);	//ルームの開始を知らせる信号を送信する
 		timer.setState(Status.Essential);	//最低通話として処理
 		timer.setTimer();
 		counter.startTimer();
-		const call_student = students[current_student_id];	//生徒情報を取得する
+		const call_student = students[0];	//生徒情報を取得する
 		$("#student-name").text(call_student.student.name);
 		$("#student-request").text(call_student.section.request);
 		$("#student-skype-id").text(call_student.student.skypeId);
@@ -157,12 +157,8 @@ $(function () {
 			// モーダルウィンドウを開く
 			$("#break-last-modal").modal('show');
 		}
-		$('#student-' + student.id).remove();
-		students = students.filter((filter_student) => {
-			return filter_student.student.id != student.id
-		});
-
 		timer.deleteTimer();	//タイマーを削除する
+		$("#student-" + students[0].student.id);	//先頭の生徒を
 	});
 
 	//生徒リストのリジェクトボタンを押したときの処理
