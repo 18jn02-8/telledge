@@ -116,6 +116,7 @@ $(function () {
 		$("#student-name").text(call_student.student.name);
 		$("#student-request").text(call_student.section.request);
 		$("#student-skype-id").text(call_student.student.skypeId);
+		$("#call-start").attr('disabled', "disabled");
 	});
 
 	//通話終了ボタンの入力を検知したときの処理
