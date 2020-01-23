@@ -135,12 +135,21 @@
 								<td id="timer-count"></td>
 							</tr>
 							<tr>
-								<td id="margin-bottom">要望</td>
-								<td id="margin-bottom" class="student-request">
+								<td id="">要望</td>
+								<td id="" class="student-request">
 									@if (section != null)
 									{
 										@(Model.getSection().request)
 
+									}
+								</td>
+							</tr>
+							<tr>
+								<td>Skype ID</td>
+								<td id=" skype_id">
+									@if(section!= null)
+									{
+										@Model.getSection().getStudent().skypeId
 									}
 								</td>
 							</tr>
