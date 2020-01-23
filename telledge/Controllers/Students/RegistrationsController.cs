@@ -40,8 +40,8 @@ namespace telledge.Controllers.Students
 					if (student.create()==true)
 					{
 						Student.login(mailaddress, password);
+						return View("/Views/Students/Homes/mypage.cshtml", Student.currentUser());
 					}
-					return View("/Views/Students/Homes/mypage.cshtml",Student.currentUser());
 				}
 			}
 			return View("/Views/Students/Registrations/create.cshtml");
