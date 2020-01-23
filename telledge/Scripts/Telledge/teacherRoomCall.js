@@ -105,7 +105,6 @@ $(function () {
 		);
 		if (current_student_id == -1) current_student_id = student.id;
 		students[student.id.toString(10)] = { student: student, section: section };
-		console.log(students);
 	});
 
 	$(".startCall-button").click(function () {
@@ -147,6 +146,7 @@ $(function () {
 	$(document).on("click", "#student-list button", function () {
 		const $tr = $(this).closest("tr");		//押されたボタンから一番近いtr要素を取得する
 		const studentId = $tr.attr("value");	//生徒番号をdomから取得
+		delete students[studentId];
 		echo.invoke("rejectRoom", roomId, studentId);	//RoomHubクラスのrejectRoomメソッドを呼び出す（引数は順番にルーム番号、生徒番号）
 		$tr.remove();	//対象の要素を削除
 	});
