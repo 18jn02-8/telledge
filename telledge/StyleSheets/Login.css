@@ -29,6 +29,9 @@
 	margin:0 auto;
 	display: block;
 }
+#signup-table{
+	margin: 0 auto;
+}
 
 .Room-buttom {
 	display: inline-block;
