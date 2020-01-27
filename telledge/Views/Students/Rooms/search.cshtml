@@ -8,11 +8,21 @@
 	<h1 class="center">ルーム検索</h1>
 	<div>
 		<form action="/student/Rooms/search" method="post" name="Student">
-			<div id="tag-box">
+			<div id="tag-box" class="boxes">
+				<h3>必須項目</h3>
 				<span>タグ</span>
 				<span><input type="text" name="keyword" placeholder="e.g. Programming"></span>
 			</div>
-			<span><input type="submit" name="submit" value="検索"></span>
+			<div id="optional-box" class="boxes">
+				<h3>任意項目</h3>
+				<div>
+					<span>国籍<input type="text" name="" placeholder="e.g. Japanese"></span>
+				</div>
+				<div>
+					<span>性別<input type="text" name="" placeholder="e.g. Man"></span>
+				</div>
+			</div>
+			<span><input id="search-button" class="btn btn-success" type="submit" name="submit" value="検索"></span>
 		</form>
 	</div>
 </div>
