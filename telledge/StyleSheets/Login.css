@@ -24,6 +24,11 @@
 	margin: 0 auto;
 	display: block;
 }
+#to-signup-button{
+	width: 30%;
+	margin:0 auto;
+	display: block;
+}
 
 .Room-buttom {
 	display: inline-block;
