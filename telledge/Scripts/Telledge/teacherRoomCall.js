@@ -127,8 +127,12 @@ $(function () {
 		$("#call-start").addClass("hidden");
 	});
 
+	$('#room-end').click(() => {
+		echo.invoke("endRoom", roomId);
+	});
+
 	//通話終了ボタンの入力を検知したときの処理
-	$("#room-end").click(function () {
+	$("#call-end").click(function () {
 		echo.invoke("endCall", roomId, current_student_id);	//ルームの終了を知らせる信号を送信する
 	});
 
