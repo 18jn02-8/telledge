@@ -44,7 +44,14 @@ namespace telledge.Hubs
 			Clients.Group("student_room_" + roomId).updateCallStudent(studentId);
 		}
 
-
+		//ルーム終了処理
+		public void endRoom(int roomId)
+		{
+			Room room = Room.find(roomId);
+			room.endTime = DateTime.Now;
+			//room.update();
+			Clients.Group("student_room_" + roomId).endRoom();
+		}
 
 		//通話を終了する信号を受け取ったときに実行する処理（呼び出し元は問わない）
 		public void endCall(int roomId, int studentId)
