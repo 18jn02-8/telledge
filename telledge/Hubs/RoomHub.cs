@@ -35,25 +35,6 @@ namespace telledge.Hubs
 		}
 
 
-		// 生徒がルームに参加した時の処理
-		public void joinRoom(int roomId, int studentId)
-		{
-			//実行されない処理？
-			//呼び出しがStudent/RoomsControllerのjoinメソッドにあり。
-
-			Room room = Room.find(roomId);  //ルーム番号のルームインスタンスを取得する
-			Section section = Section.find(roomId, studentId);
-			/*
-			Clients.Group("teacher_room_" + roomId).append(new {
-				student_id = section.studentId,
-				student_name = section.getStudent().name,
-				request = section.request
-			});
-			*/
-			Clients.Group("teacher_room_" + roomId).append(section.getStudent(), section);
-			Clients.Group("student_room_" + roomId).updateWaitInfo(room, room.getSections());
-		}
-
 		//通話を開始する信号を受け取ったときの処理
 		public void startCall(int roomId, int studentId)
 		{
@@ -62,6 +43,8 @@ namespace telledge.Hubs
 			section.update();
 			Clients.Group("student_room_" + roomId).updateCallStudent(studentId);
 		}
+
+
 
 		//通話を終了する信号を受け取ったときに実行する処理（呼び出し元は問わない）
 		public void endCall(int roomId, int studentId)
