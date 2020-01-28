@@ -290,6 +290,7 @@
     <Content Include="StyleSheets\deactivate.css" />
     <Content Include="StyleSheets\signin.css" />
     <Content Include="StyleSheets\studentHomeMypage.css" />
+    <Content Include="StyleSheets\studentPointCreate.css" />
     <Content Include="StyleSheets\studentRoomSearch.css" />
     <Content Include="StyleSheets\top.css" />
     <Content Include="StyleSheets\teacherHomeMypage.css" />
