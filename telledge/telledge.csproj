@@ -348,6 +348,7 @@
     <Content Include="Views\Shared\signin.cshtml" />
     <Content Include="Views\Shared\_rule.cshtml" />
     <Content Include="Views\Students\Homes\rule.cshtml" />
+    <Content Include="Views\Teachers\Homes\rule.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
