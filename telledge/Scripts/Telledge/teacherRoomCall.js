@@ -140,6 +140,15 @@ $(function () {
 		timer.deleteTimer();	//タイマーを削除する
 		$("#student-" + students[0].student.id).remove();	//先頭の生徒を削除する
 		students.shift();
+
+		$('#room-end').removeClass('hidden');
+		$('#call-end').addClass('hidden');
+		
+		if (students.length != 0) {
+			$('#call-start').removeClass('hidden');
+		} else {
+			$('#call-start').addClass('hidden');
+		}
 	});
 
 	//生徒リストのリジェクトボタンを押したときの処理
