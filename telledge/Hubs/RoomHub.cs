@@ -26,6 +26,22 @@ namespace telledge.Hubs
 		public void JoinTeacher(int roomId)
 		{
 			Groups.Add(Context.ConnectionId, "teacher_room_" + roomId);
+
+			Room room = Room.find(roomId);
+			Section[] sections = room.getSections();
+			StudentData[] data = null;
+			if (sections != null)
+			{
+				data = new StudentData[sections.Length];
+				for (int i = 0; i < sections.Length; i++)
+				{
+					StudentData datum = new StudentData();
+					datum.section = sections[i];
+					datum.student = sections[i].getStudent();
+					data[i] = datum;
+				}
+			}
+			Clients.Group("teacher_room_" + roomId).setStudents(data);
 		}
 
 		// 指定されたグループから離脱する
@@ -101,5 +117,11 @@ namespace telledge.Hubs
 		{
 			Clients.All.hello();
 		}
+	}
+
+	public struct StudentData
+	{
+		public Student student;
+		public Section section;
 	}
 }
