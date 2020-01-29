@@ -163,7 +163,6 @@ $(function () {
 				};
 			});
 		}
-		console.log(arg_students);
 	});
 
 	// 接続を開始
