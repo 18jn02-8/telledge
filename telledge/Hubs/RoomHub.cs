@@ -65,7 +65,7 @@ namespace telledge.Hubs
 				Room room = Room.find(roomId);
 				Section room_section = room == null ? null : room.getSection();
 				Student room_section_student = room_section == null ? null : room_section.getStudent();
-				Clients.Group("teacher_room_" + roomId).endCall(room_section, room_section_student);
+				Clients.Group("teacher_room_" + roomId).endCall();
 				Clients.Group("student_room_" + roomId).endCall(roomId, studentId);
 				Clients.Group("student_room_" + roomId).updateWaitInfo(room, room.getSections());    //生徒の待ち情報を更新する
 			}
