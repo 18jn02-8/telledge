@@ -374,28 +374,17 @@ namespace telledge.Models
 		{
 			bool check = false;
 			string cstr = ConfigurationManager.ConnectionStrings["Db"].ConnectionString;
-			using (var connection = new SqlConnection(cstr))
-			using (var command = connection.CreateCommand())
+			using (SqlConnection connection = new SqlConnection(cstr))
 			{
-				try
-				{
-					connection.Open();
-					command.CommandText = "Update Room set endTime = @endTime Where id = @id";
-					command.Parameters.Add(new SqlParameter("@id", id));
-					command.Parameters.Add(new SqlParameter("@endTime", DateTime.Now));
-					int cnt = command.ExecuteNonQuery();
-					if (cnt != 0)
-					{
-						check = true;
-					}
-					connection.Close();
-				}
-				catch (SqlException)
-				{
-					//エラー
-					connection.Close();
-					return check;
-				}
+				string sql = "Update Room set endTime = @endTime Where id = @id";
+				SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
+				adapter.SelectCommand.Parameters.Add("@endTime", SqlDbType.DateTime);
+				adapter.SelectCommand.Parameters["@endTime"].Value = DateTime.Now;
+				adapter.SelectCommand.Parameters.Add("@id", SqlDbType.Int);
+				adapter.SelectCommand.Parameters["@id"].Value = id;
+				DataSet ds = new DataSet();
+				int cnt = adapter.Fill(ds, "Room");
+				if (cnt != 0) check = true;
 			}
 			return check;
 		}
