@@ -153,6 +153,19 @@ $(function () {
 		$tr.remove();	//対象の要素を削除
 	});
 
+	echo.on("setStudents", (arg_students) => {
+		if (arg_students == null) students = [];
+		else {
+			students = arg_students.map(student => {
+				return {
+					student : student.student,
+					section : student.section
+				};
+			});
+		}
+		console.log(arg_students);
+	});
+
 	// 接続を開始
 	connection.start(function () {
 		//サーバーのJoinTeacherメソッドを実行し、講師として登録する
