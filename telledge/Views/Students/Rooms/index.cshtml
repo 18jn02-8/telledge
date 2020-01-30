@@ -13,9 +13,10 @@ Layout = "~/Views/Shared/studentMenu.cshtml";
 	<link href="~/Content/jquery.tagit.css" rel="stylesheet" type="text/css">
 	<script src="~/Scripts/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="~/Content/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="~/StyleSheets/studentRoomIndex.css" />
 	<script type="text/javascript">
 		$(document).ready(function () {
-			$("#readOnlyTags").tagit({
+			$(".readOnlyTags").tagit({
 				readOnly: true
 			}).ready(function () {
 				$(this).find('.tagit-new').css('display', 'none')
@@ -42,11 +43,13 @@ Layout = "~/Views/Shared/studentMenu.cshtml";
 								</tr>
 								<tr>
 									<td>タグ</td>
-									<td class="tagFlex" id="readOnlyTags">
-										@foreach (var tag in item.tag.Split(','))
-										{
-											@(tag)
-										}
+									<td class="tagFlex readOnlyTags">
+										<ul>
+											@foreach (var tag in item.tag.Split(',', '、'))
+											{
+												<li>@(tag)</li>
+											}
+										</ul>
 									</td>
 								</tr>
 								<tr>
