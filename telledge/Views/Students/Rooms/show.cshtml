@@ -40,14 +40,25 @@
 				<p>
 					<img src="/uproadFiles/@Model.getTeacher().profileImage" width="150px" />
 				</p>
-				<table>
+				<table id="detail-table">
 					<tr>
 						<td>講師名</td>
 						<td>@(Model.getTeacher().name)</td>
 					</tr>
 					<tr>
 						<td>評価</td>
-						<td>@(Model.getValuation())</td>
+						<td>
+							@{
+								double val;
+								if((val=Model.getValuation()) == -1.0){
+									<span>評価なし</span>
+								}
+								else
+								{
+									<span>@val</span>
+								}
+							}
+						</td>
 					</tr>
 					<tr>
 						<td>開始時間</td>
@@ -73,8 +84,10 @@
 						<td>最大延長時間</td>
 						<td>@(Model.extensionTime)分</td>
 					</tr>
-					<tr>予想待ち時間</tr>
-					<tr>@(Model.getWaitTime())分</tr>
+					<tr>
+						<td>予想待ち時間</td>
+						<td>@(Model.getWaitTime())分</td>
+					</tr>
 				</table>
 				<p>
 					<h3>講師からのメッセージ</h3>
