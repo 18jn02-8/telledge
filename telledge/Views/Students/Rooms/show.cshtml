@@ -56,7 +56,8 @@
 						<td>
 							@{
 								double val;
-								if((val=Model.getValuation()) == -1.0){
+								if ((val = Model.getValuation()) == -1.0)
+								{
 									<span>評価なし</span>
 								}
 								else
@@ -78,10 +79,7 @@
 						<td>料金</td>
 						<td>@(Model.point)ポイント</td>
 					</tr>
-					<tr>
-						<td>待機人数</td>
-						<td>@(Model.getWaitCount())人</td>
-					</tr>
+
 					<tr>
 						<td>最低通話時間</td>
 						<td>@(Model.worstTime)分</td>
@@ -91,17 +89,17 @@
 						<td>@(Model.extensionTime)分</td>
 					</tr>
 					<tr>
+						<td>待機人数</td>
+						<td>@(Model.getWaitCount())人</td>
+					</tr>
+					<tr>
 						<td>予想待ち時間</td>
-						<td>@(Model.getWaitTime())分</td>
+						<td>約@(Model.getWaitTime())分</td>
 					</tr>
 				</table>
-				<p>
-					<h3>講師からのメッセージ</h3>
-				</p>
-				<p>
-					@(Model.description)
-				</p>
-				<input type="button" value="戻る" onclick="">
+				<hr width="70%" align="center">
+
+				<input type="button" class="btn btn-success" value="戻る" onclick="">
 				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#joinModal">要望入力</button>
 			</div>
 		</div>
