@@ -2,16 +2,36 @@
 @{
 	Layout = "~/Views/Shared/studentMenu.cshtml";
 }
+<link type="text/css" rel="stylesheet"
+  href="http://code.jquery.com/ui/1.10.3/themes/cupertino/jquery-ui.min.css" />
+<script type="text/javascript"
+		src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript"
+		src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
 <link rel="stylesheet" href="~/StyleSheets/studentRoomSearch.css" />
 <link rel="stylesheet" href="~/StyleSheets/common.css" />
+<script type="text/javascript">
+	$(function () {
+		// 3候補リストに表示するデータを配列で準備
+		var data = ['A', 'A+', 'ABAP', 'ABC', 'ABCL', 'ActionScript', 'Ada', 'Advanced Boolean Expression Language(ABEL)', 'Agena', 'AHDL', 'ALGOL', 'Alice', 'ash', 'APL', 'Apex', 'AppleScript', 'as','Atom','AutoIt','AutoLISP']
+
+		// 2オートコンプリート機能を適用
+		$('#txtKeywd').autocomplete({
+			source: data,
+			autoFocus: true,
+			delay: 200,
+			minLength: 1
+		});
+	});
+</script>
 <div>
 	<h1 class="center">ルーム検索</h1>
 	<div>
 		<form id="search-form" action="/student/Rooms/search" method="post" name="Student">
-			<div id="tag-box" class="boxes">
+			<div class="boxes" id="tag-box">
 				<h3>必須項目</h3>
 				<span>タグ</span>
-				<span><input type="text" name="keyword" placeholder="e.g. Programming"></span>
+				<span><input id="txtKeywd" type="text" name="keyword" placeholder="e.g. Programming"></span>
 			</div>
 			<div id="optional-box" class="boxes">
 				<h3>任意項目</h3>
