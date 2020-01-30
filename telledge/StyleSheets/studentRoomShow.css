@@ -23,8 +23,13 @@
 	text-align: left;
 }
 
-#hr-1 {
+main hr
+{
+	width: 70%;
 	margin: 0 auto;
 	background-color: #a7a7a7;
 	height: 1.5px;
+}
+#button-box{
+	margin: 20px 0;
 }

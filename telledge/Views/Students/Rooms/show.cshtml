@@ -45,7 +45,7 @@
 					<h4>@(Model.description)</h4>
 						
 				</div>
-				<hr id="hr-1" width="70%" />
+				<hr/>
 				<table id="detail-table">
 					<tr>
 						<td>講師名</td>
@@ -97,10 +97,12 @@
 						<td>約@(Model.getWaitTime())分</td>
 					</tr>
 				</table>
-				<hr width="70%" align="center">
+				<hr>
+				<div id="button-box">
+					<input type="button" class="btn btn-success" value="戻る" onclick="">
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#joinModal">要望入力</button>
+				</div>
 
-				<input type="button" class="btn btn-success" value="戻る" onclick="">
-				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#joinModal">要望入力</button>
 			</div>
 		</div>
 	</div>
