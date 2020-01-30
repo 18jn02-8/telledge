@@ -28,8 +28,8 @@
 		<div class="bkRGBA">
 			<div class="Text">
 				<p>
-					<h3>ルーム名</h3>
-					@(Model.roomName)
+					<h2>ルーム名</h2>
+					<h3>@(Model.roomName)</h3>
 				</p>
 				<ul class="tagFlex" id="readOnlyTags">
 					@foreach (var tag in Model.tag.Split(','))
@@ -40,6 +40,12 @@
 				<p>
 					<img src="/uproadFiles/@Model.getTeacher().profileImage" width="150px" />
 				</p>
+				<div>
+					<h3>講師からのメッセージ</h3>
+					<h4>@(Model.description)</h4>
+						
+				</div>
+
 				<table id="detail-table">
 					<tr>
 						<td>講師名</td>
