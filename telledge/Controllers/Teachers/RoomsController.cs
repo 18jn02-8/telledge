@@ -45,6 +45,7 @@ namespace telledge.Controllers.Teachers
 			}
 			catch (InvalidOperationException)
 			{
+				ViewBag.ErrorMsg = "必須項目を入力してください。";
 				return View("/Views/Teachers/Rooms/create.cshtml");
 			}
 			
@@ -54,6 +55,7 @@ namespace telledge.Controllers.Teachers
 				return RedirectToRoute("Teacher", new { controller = "Rooms", Action = "call" , id = ret });
 			}else
 			{
+				ViewBag.ErrorMsg = "必須項目を入力してください。";
 				return View("/Views/Teachers/Sessions/create.cshtml");
 			}
 		}
