@@ -37,6 +37,9 @@
 						<li>@(tag)</li>
 					}
 				</ul>
+				<p>
+					<img src="/uproadFiles/@Model.getTeacher().profileImage" width="150px" />
+				</p>
 				<table>
 					<tr>
 						<td>講師名</td>
@@ -44,44 +47,35 @@
 					</tr>
 					<tr>
 						<td>評価</td>
+						<td>@(Model.getValuation())</td>
 					</tr>
+					<tr>
+						<td>開始時間</td>
+						<td>@(Model.beginTime)</td>
+					</tr>
+					<tr>
+						<td>終了予定時刻</td>
+						<td>@(Model.endScheduleTime)</td>
+					</tr>
+					<tr>
+						<td>料金</td>
+						<td>@(Model.point)ポイント</td>
+					</tr>
+					<tr>
+						<td>待機人数</td>
+						<td>@(Model.getWaitCount())人</td>
+					</tr>
+					<tr>
+						<td>最低通話時間</td>
+						<td>@(Model.worstTime)分</td>
+					</tr>
+					<tr>
+						<td>最大延長時間</td>
+						<td>@(Model.extensionTime)分</td>
+					</tr>
+					<tr>予想待ち時間</tr>
+					<tr>@(Model.getWaitTime())分</tr>
 				</table>
-				<p>
-					<img src="/uproadFiles/@Model.getTeacher().profileImage" width="150px" />
-				</p>
-				<p>
-					
-					@(Model.getValuation())
-				</p>
-				<p>
-					開始時間
-					@(Model.beginTime)
-				</p>
-				<p>
-					終了予定時刻
-					@(Model.endScheduleTime)
-				</p>
-				<p>
-					料金
-					@(Model.point)ポイント
-				</p>
-				<p>
-					待機人数
-					@(Model.getWaitCount())人
-				</p>
-				<p>
-					最低通話時間
-					@(Model.worstTime)分
-				</p>
-				<p>
-					最大延長時間
-					@(Model.extensionTime)分
-				</p>
-				<p>
-					予想待ち時間
-					@(Model.getWaitTime())分
-				</p>
-				<hr wight="70%" />
 				<p>
 					<h3>講師からのメッセージ</h3>
 				</p>
