@@ -4,6 +4,11 @@
   clear: both;
 }
 
+.tagFlex {
+	display: flex;
+	justify-content: center;
+}
+
 .room-images{
 	height: 100px;
 	width: 100px;
