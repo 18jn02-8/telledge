@@ -19,6 +19,12 @@
 #detail-table{
 	font-size: 18px;
 	width: 30%;
-	margin:0 auto;
+	margin:30px auto;
 	text-align: left;
+}
+
+#hr-1 {
+	margin: 0 auto;
+	background-color: #a7a7a7;
+	height: 1.5px;
 }
