@@ -37,15 +37,20 @@
 						<li>@(tag)</li>
 					}
 				</ul>
+				<table>
+					<tr>
+						<td>講師名</td>
+						<td>@(Model.getTeacher().name)</td>
+					</tr>
+					<tr>
+						<td>評価</td>
+					</tr>
+				</table>
 				<p>
 					<img src="/uproadFiles/@Model.getTeacher().profileImage" width="150px" />
 				</p>
 				<p>
-					講師名
-					@(Model.getTeacher().name)
-				</p>
-				<p>
-					評価
+					
 					@(Model.getValuation())
 				</p>
 				<p>
