@@ -11,7 +11,7 @@ namespace UnitTest.Rooms
         public void success()
         {
             Room room = new Room();
-            room.id = 1;
+            room.id = 16;
 			bool check = room.update();
 			Assert.IsTrue(check);
         }
