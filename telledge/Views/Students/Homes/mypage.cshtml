@@ -41,13 +41,13 @@
 			<ul>
 				<li>
 					<table>
-						<tr>
-							<td><span class="list-width">講師名</span></td>
-							<td><span class="list-width">ルーム名</span></td>
-							<td><span class="list-width">特徴タグ</span></td>
-						</tr>
 						@if (Model.GetSections() != null)
 						{
+							<tr>
+								<td><span class="list-width">講師名</span></td>
+								<td><span class="list-width">ルーム名</span></td>
+								<td><span class="list-width">特徴タグ</span></td>
+							</tr>
 							foreach (var item in Model.GetSections())
 							{
 								<tr>
