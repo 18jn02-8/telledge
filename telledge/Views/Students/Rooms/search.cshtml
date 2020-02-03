@@ -10,19 +10,7 @@
 		src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
 <link rel="stylesheet" href="~/StyleSheets/studentRoomSearch.css" />
 <link rel="stylesheet" href="~/StyleSheets/common.css" />
-<script type="text/javascript">
-	$(function () {
-		// 3候補リストに表示するデータを配列で準備
-		var data = ['A', 'A+', 'ABAP', 'ABC', 'ABCL', 'ActionScript', 'Ada', 'Advanced Boolean Expression Language(ABEL)', 'Agena', 'AHDL', 'ALGOL', 'Alice', 'ash', 'APL', 'Apex', 'AppleScript', 'as','Atom','AutoIt','AutoLISP']
-
-		// 2オートコンプリート機能を適用
-		$('#txtKeywd').autocomplete({
-			source: data,
-			autoFocus: true,
-			delay: 200,
-			minLength: 1
-		});
-	});
+<script type="text/javascript" src="~/Scripts/Telledge/Autocomp.js">
 </script>
 <div>
 	<h1 class="center">ルーム検索</h1>
