@@ -19,7 +19,30 @@ OS：Windows 10
 開発環境 : Visual Studio 2017以降のバージョン
 
 ## インストール方法
-Githubにある私たちのリポジトリをクローンして中にあるソリューションファイルを開けるだけです！
+以下のステップの順番に設定を進めてください。
+1. リポジトリからクローンする。
+2. 設定ファイルを準備する。  
+	2-1. 新しく`Authentication.config`をリポジトリルートのtelledgeディレクトリに作成。  
+		以下に設定ファイルの例を示します。必要な項目を変更して保存してください。
+		   
+		<?xml version="1.0"?>  
+		<connectionStrings>  
+    		<add name="Db" connectionString="Data Source=TypeYourDBHost;Initial Catalog= TypeYourCatalog;User ID = TypeYourId;Password=TypeYourPassword" />  
+		</connectionStrings>  
+	     
+	2-2. 新しく`App.config`をリポジトリルートのUnitTestディレクトリに作成.
+		以下に設定ファイルの例を示します。必要な項目を変更して保存してください。
+
+	<?xml version="1.0" encoding="utf-8" ?>
+	<configuration>
+		<appSettings>
+
+		</appSettings>
+
+		<connectionStrings>
+		  <add name="Db" connectionString="Data Source=TypeYourDBHost;Initial Catalog= TypeYourCatalog;User ID = TypeYourId;Password=TypeYourPassword" /> 
+		</connectionStrings>
+	</configuration>
 
 ## 使い方(講師)
 講師としてログインします。  
