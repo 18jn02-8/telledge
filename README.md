@@ -45,8 +45,6 @@ Follow these steps.
 		</connectionStrings>
 	</configuration>
 
-Open the solution in the folder after clone the repository from our Github!
-
 
 ## Usage for teacher
 Login as a teacher.  
