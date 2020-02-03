@@ -20,7 +20,19 @@ Operation System :  Windows 10
 Envirnment : Visual Studio that 2017, or later.  
 
 ## Installation
+Follow these steps.
+1. Clone from our repository.
+2. Set up some setting files.
+  2-1. Create an `Authentication.config` to your telledge directory at repository root.  
+       This is example for you. So you have to change it with your environment.  
+	   
+		<?xml version="1.0"?>  
+		<connectionStrings>  
+    		<add name="Db" connectionString="Data Source=TypeYourDBHost;Initial Catalog= TypeYourCatalog;User ID = TypeYourId;Password=TypeYourPassword" />  
+		</connectionStrings>  
+	     
 Open the solution in the folder after clone the repository from our Github!
+
 
 ## Usage for teacher
 Login as a teacher.  
