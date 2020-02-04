@@ -9,6 +9,7 @@
 	width: 100%;
 	color: black;
 	background-image: url("/Assets/Pictures/top-mainvisual.jpg");
+	background-size: cover;
 }
 .mainvisual h1{
 	font-size:64px;
